@@ -1,0 +1,306 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WesternDecor from '../components/WesternDecor.astro';
+---
+
+<Layout
+    title="Sobre a Indiana Ranch — Mais de 30 Anos de Tradição Western"
+    description="Conheça a história da Indiana Ranch desde 1994: sede própria na Estância Indiana/SP, fabricação própria Top Equine e Austin Western, e a importação oficial das marcas líderes mundiais de montaria e hipismo western."
+    currentPath="/sobre"
+>
+    <!-- ========================================================= -->
+    <!-- HERO INSTITUCIONAL: A LENDA DE 30 ANOS NO WESTERN BRASILEIRO -->
+    <!-- ========================================================= -->
+    <section class="py-14 sm:py-20 bg-paper-texture border-b border-divider-rustic relative overflow-hidden">
+        <!-- ELEMENTOS DECORATIVOS SHERIDAN E OAK NOS CANTOS -->
+        <WesternDecor type="oak-acorn" class="absolute top-2 left-2 w-36 h-36 sm:w-48 sm:h-48" opacity="opacity-30" />
+        <WesternDecor type="sheridan-corner" flip="both" class="absolute bottom-4 right-4 w-40 h-40 sm:w-52 sm:h-52" opacity="opacity-30" />
+
+        <div class="container-shell relative z-10">
+            <!-- BREADCRUMB NAVEGACIONAL -->
+            <nav aria-label="Navegação estrutural" class="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-6 uppercase tracking-wider">
+                <a href="/" class="hover:text-[#B91C1C] transition-colors">Início</a>
+                <span class="text-slate-300">/</span>
+                <span class="text-[#B91C1C] font-bold">Sobre a Indiana Ranch</span>
+            </nav>
+
+            <div class="max-w-3xl">
+                <span class="badge-indiana px-3.5 py-1.5 inline-block mb-3 rounded-[3px]">★ Tradição & Manufatura desde 1994 ★</span>
+                <h1 class="font-western text-3xl sm:text-5xl lg:text-6xl text-[#000726] tracking-tight leading-tight">
+                    MAIS DE 30 ANOS DE TRADIÇÃO, PAIXÃO & FORÇA NO CAMPO
+                </h1>
+                <p class="text-slate-700 text-sm sm:text-base lg:text-lg mt-4 leading-relaxed font-sans">
+                    Nascida no oeste paulista para abastecer quem vive o cavalo de verdade, a <strong>Indiana Ranch</strong> consolidou-se como a principal referência nacional em equipamentos para montaria de alta performance, importação direta das lendas mundiais e manufatura própria de excelência.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- BLOCO 1: NOSSA HISTÓRIA & PIONEIRISMO -->
+    <!-- ========================================================= -->
+    <section class="py-16 sm:py-20 bg-white border-b border-divider-rustic relative">
+        <div class="container-shell">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+
+                <!-- COLUNA DE TEXTO COM CARTAZ ESTILO EDITORIAL -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <span class="text-[11px] uppercase font-bold tracking-widest text-[#B91C1C] block">O Legado Western</span>
+                        <h2 class="font-western text-2xl sm:text-4xl text-[#000726] mt-1">Do Treinamento nas Pistas ao Polo Distribuidor do País</h2>
+                    </div>
+
+                    <div class="prose prose-slate max-w-none text-xs sm:text-sm text-slate-600 leading-relaxed space-y-4">
+                        <p>
+                            Em 1994, o cenário do esporte equestre no Brasil enfrentava uma carência crônica: o acesso a equipamentos calibrados, protetores com absorção real de impacto e laços com trançado milimétrico dependia de viagens esporádicas aos Estados Unidos ou importações informais sem garantia.
+                        </p>
+                        <p>
+                            Foi para preencher essa lacuna de forma profissional que nasceu a <strong>Indiana Ranch</strong>. O que começou com a paixão pelas provas de laço, tambor e rédeas transformou-se no maior canal de distribuição de marcas homologadas do país, com relações diretas e duradouras de mais de 3 décadas com os principais fabricantes dos Estados Unidos e Europa.
+                        </p>
+                        <p>
+                            Ao longo desses 30 anos, nos tornamos parceiros oficiais dos maiores centros de treinamento, haras de elite, atletas recordistas e das principais lojas agropecuárias do território nacional, assegurando que o que há de mais moderno no hipismo western mundial chegue com rapidez e procedência comprovada até a sua fazenda.
+                        </p>
+                    </div>
+
+                    <!-- NÚMEROS E MARCOS HISTÓRICOS -->
+                    <div class="grid grid-cols-3 gap-4 pt-4 border-t border-slate-100">
+                        <div class="p-4 bg-paper-texture border border-[#000726]/15 rounded-[3px] text-center">
+                            <span class="font-western text-2xl sm:text-3xl text-[#000726] block">30+</span>
+                            <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#B91C1C] mt-1 block">Anos de Mercado</span>
+                        </div>
+                        <div class="p-4 bg-paper-texture border border-[#000726]/15 rounded-[3px] text-center">
+                            <span class="font-western text-2xl sm:text-3xl text-[#000726] block">12+</span>
+                            <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#B91C1C] mt-1 block">Marcas Globais</span>
+                        </div>
+                        <div class="p-4 bg-paper-texture border border-[#000726]/15 rounded-[3px] text-center">
+                            <span class="font-western text-2xl sm:text-3xl text-[#000726] block">100%</span>
+                            <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#B91C1C] mt-1 block">Legalizado & NF-e</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUNA FOTOGRÁFICA: SEDE & ESTRUTURA -->
+                <div class="lg:col-span-5 flex flex-col gap-4">
+                    <div class="card-leather relative h-[260px] sm:h-[300px] w-full overflow-hidden group shadow-md rounded-[3px]">
+                        <img
+                            src="/images/empresa/empresa-1.avif"
+                            alt="Estrutura e Sede da Indiana Ranch"
+                            width="800"
+                            height="600"
+                            loading="lazy"
+                            decoding="async"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <!-- MOLDURA DUPLA PONTILHADA BRANCA -->
+                        <div class="pointer-events-none absolute inset-2 sm:inset-2.5 border border-dotted border-white/75 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] rounded-[2px] z-20" aria-hidden="true"></div>
+                        <div class="pointer-events-none absolute inset-3.5 sm:inset-4 border-2 border-dotted border-white/95 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] rounded-[2px] z-20" aria-hidden="true"></div>
+                        <div class="absolute bottom-3 left-3 z-20 bg-black/75 backdrop-blur-xs text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-[2px]">
+                            📍 Sede Própria — Indiana / SP
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="card-leather relative h-[150px] w-full overflow-hidden group shadow-sm rounded-[3px]">
+                            <img
+                                src="/images/empresa/empresa-2.avif"
+                                alt="Instalações Indiana Ranch"
+                                width="400"
+                                height="300"
+                                loading="lazy"
+                                decoding="async"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                            <div class="pointer-events-none absolute inset-2 border border-dotted border-white/75 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] rounded-[2px] z-20" aria-hidden="true"></div>
+                            <div class="pointer-events-none absolute inset-3 border border-dotted border-white/95 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] rounded-[2px] z-20" aria-hidden="true"></div>
+                        </div>
+                        <div class="card-leather relative h-[150px] w-full overflow-hidden group shadow-sm rounded-[3px]">
+                            <img
+                                src="/images/empresa/empresa-3.avif"
+                                alt="Centro de Expedição e Depósito"
+                                width="400"
+                                height="300"
+                                loading="lazy"
+                                decoding="async"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                            <div class="pointer-events-none absolute inset-2 border border-dotted border-white/75 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] rounded-[2px] z-20" aria-hidden="true"></div>
+                            <div class="pointer-events-none absolute inset-3 border border-dotted border-white/95 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] rounded-[2px] z-20" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- BLOCO 2: AS DUAS FORÇAS (FABRICAÇÃO PRÓPRIA & IMPORTAÇÃO) -->
+    <!-- ========================================================= -->
+    <section class="py-16 sm:py-20 bg-paper-texture border-b border-divider-rustic relative">
+        <div class="container-shell">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="badge-indiana px-3 py-1 inline-block mb-2 rounded-[3px]">Pilares do Nosso Catálogo</span>
+                <h2 class="font-western text-3xl sm:text-4xl text-[#000726]">FABRICAÇÃO PRÓPRIA & IMPORTAÇÃO EXCLUSIVA</h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-2">
+                    Combinamos o padrão de tecnologia dos laboratórios norte-americanos com a manufatura brasileira artesanal sob medida para o clima e dorso dos nossos animais.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <!-- CARD 1: FABRICAÇÃO PRÓPRIA -->
+                <div class="relative bg-white border-2 border-[#000726] p-7 sm:p-9 rounded-[3px] shadow-[0_15px_35px_rgba(0,7,38,0.08)] flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300">
+                    <!-- Tacha Concho Central Superior -->
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 z-30 pointer-events-none drop-shadow-md">
+                        <svg class="w-7 h-7" viewBox="0 0 32 32">
+                            <circle cx="16" cy="16" r="14" fill="#291104" />
+                            <circle cx="16" cy="16" r="10.5" fill="#D97706" stroke="#78350F" stroke-width="0.8" />
+                            <circle cx="16" cy="16" r="1.5" fill="#FEF3C7" />
+                        </svg>
+                    </div>
+
+                    <!-- PESPONTO TRACEJADO DUPLO -->
+                    <div class="pointer-events-none absolute inset-2 border border-[#000726]/40 rounded-[1px] z-10"></div>
+                    <div class="pointer-events-none absolute inset-3.5 border border-dashed border-[#B91C1C]/35 rounded-[1px] z-10"></div>
+
+                    <div class="space-y-4 relative z-10">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[11px] font-extrabold uppercase tracking-widest text-[#B91C1C] flex items-center gap-1.5">
+                                ★ MANUFATURA INTERNA INDIANA RANCH
+                            </span>
+                            <span class="text-xs bg-red-50 text-[#B91C1C] font-bold px-2.5 py-1 rounded-[2px] border border-red-200">
+                                100% Nacional
+                            </span>
+                        </div>
+
+                        <h3 class="font-western text-2xl text-[#000726]">Top Equine & Austin Western</h3>
+
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Desenvolvemos internamente duas marcas consagradas para atender às demandas de alto rendimento no campo:
+                        </p>
+
+                        <div class="space-y-3 pt-2">
+                            <div class="p-3.5 bg-paper-texture border border-slate-200 rounded-[2px]">
+                                <strong class="text-[#000726] text-xs uppercase font-bold block">Top Equine — Saúde, Higiene & Cuidados Equinos</strong>
+                                <span class="text-xs text-slate-600 block mt-0.5">Formulaço avançada para hidratação de crina, xampus especiais, óleos cicatrizantes, desinfetantes de baias e insumos de estábulo.</span>
+                            </div>
+
+                            <div class="p-3.5 bg-paper-texture border border-slate-200 rounded-[2px]">
+                                <strong class="text-[#000726] text-xs uppercase font-bold block">Austin Western — Moda & Vestuário Country Autêntico</strong>
+                                <span class="text-xs text-slate-600 block mt-0.5">Camisaria com botões de pressão (pearl snaps), camisas polo premium, cintos em couro entalhado e acessórios de elegância western.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 pt-6 mt-6 border-t border-slate-200">
+                        <a href="/#marcas" class="btn btn-outline-navy w-full text-xs font-bold uppercase tracking-wider py-3 rounded-[3px]">
+                            Ver Marcas de Fabricação Própria &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CARD 2: IMPORTAÇÃO OFICIAL -->
+                <div class="relative bg-white border-2 border-[#000726] p-7 sm:p-9 rounded-[3px] shadow-[0_15px_35px_rgba(0,7,38,0.08)] flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300">
+                    <!-- Tacha Concho Central Superior -->
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 z-30 pointer-events-none drop-shadow-md">
+                        <svg class="w-7 h-7" viewBox="0 0 32 32">
+                            <circle cx="16" cy="16" r="14" fill="#291104" />
+                            <circle cx="16" cy="16" r="10.5" fill="#D97706" stroke="#78350F" stroke-width="0.8" />
+                            <circle cx="16" cy="16" r="1.5" fill="#FEF3C7" />
+                        </svg>
+                    </div>
+
+                    <!-- PESPONTO TRACEJADO DUPLO -->
+                    <div class="pointer-events-none absolute inset-2 border border-[#000726]/40 rounded-[1px] z-10"></div>
+                    <div class="pointer-events-none absolute inset-3.5 border border-dashed border-[#B91C1C]/35 rounded-[1px] z-10"></div>
+
+                    <div class="space-y-4 relative z-10">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[11px] font-extrabold uppercase tracking-widest text-[#B91C1C] flex items-center gap-1.5">
+                                🌐 IMPORTAÇÃO DIRETA DOS EUA
+                            </span>
+                            <span class="text-xs bg-slate-100 text-[#000726] font-bold px-2.5 py-1 rounded-[2px] border border-slate-300">
+                                Liderança Global
+                            </span>
+                        </div>
+
+                        <h3 class="font-western text-2xl text-[#000726]">As Lendas da Pista Mundial</h3>
+
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Somos o canal oficial no Brasil para os nomes que definem os títulos mundiais da PRCA, AQHA e NFR nos Estados Unidos:
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-2.5 pt-2 text-xs">
+                            <div class="p-2.5 bg-paper-texture border border-slate-200 rounded-[2px]">
+                                <strong class="text-[#000726] block font-bold">Classic Equine</strong>
+                                <span class="text-[11px] text-slate-500">Mantas, protetores & acessórios</span>
+                            </div>
+                            <div class="p-2.5 bg-paper-texture border border-slate-200 rounded-[2px]">
+                                <strong class="text-[#000726] block font-bold">Professional's Choice</strong>
+                                <span class="text-[11px] text-slate-500">Tecnologia SMB ortopédica</span>
+                            </div>
+                            <div class="p-2.5 bg-paper-texture border border-slate-200 rounded-[2px]">
+                                <strong class="text-[#000726] block font-bold">Fast Back Ropes</strong>
+                                <span class="text-[11px] text-slate-500">Cordas calibradas de Team Roping</span>
+                            </div>
+                            <div class="p-2.5 bg-paper-texture border border-slate-200 rounded-[2px]">
+                                <strong class="text-[#000726] block font-bold">King Ropes</strong>
+                                <span class="text-[11px] text-slate-500">A clássica lenda de Sheridan/WY</span>
+                            </div>
+                            <div class="p-2.5 bg-paper-texture border border-slate-200 rounded-[2px]">
+                                <strong class="text-[#000726] block font-bold">Cinch Jeans & Shirts</strong>
+                                <span class="text-[11px] text-slate-500">Vestuário cowboy de resistência</span>
+                            </div>
+                            <div class="p-2.5 bg-paper-texture border border-slate-200 rounded-[2px]">
+                                <strong class="text-[#000726] block font-bold">Partrade & Weaver</strong>
+                                <span class="text-[11px] text-slate-500">Embocaduras e couro legítimo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 pt-6 mt-6 border-t border-slate-200">
+                        <a href="/contato" class="btn btn-indiana-red w-full text-xs font-bold uppercase tracking-wider py-3 rounded-[3px]">
+                            Solicitar Catálogo de Importados &rarr;
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- BLOCO 3: LOCALIZAÇÃO & VISITAÇÃO À ESTÂNCIA -->
+    <!-- ========================================================= -->
+    <section class="py-16 sm:py-20 bg-white relative">
+        <div class="container-shell">
+            <div class="bg-[#000726] text-white rounded-[3px] p-8 sm:p-12 relative overflow-hidden shadow-xl border-t-4 border-[#B91C1C]">
+                <!-- Ornamento no fundo -->
+                <div class="absolute -right-10 -bottom-10 opacity-10 text-white w-80 h-80 pointer-events-none">
+                    <svg viewBox="0 0 100 100" fill="currentColor">
+                        <path d="M50 0 L60 38 L98 38 L68 62 L79 98 L50 75 L21 98 L32 62 L2 38 L40 38 Z" />
+                    </svg>
+                </div>
+
+                <div class="relative z-10 max-w-2xl space-y-4">
+                    <span class="text-[11px] font-bold uppercase tracking-widest text-[#B91C1C] block">Visitação & Retirada de Pedidos</span>
+                    <h2 class="font-western text-2xl sm:text-4xl text-white">CONHEÇA A ESTÂNCIA INDIANA</h2>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Nossa sede própria em Indiana, no interior do estado de São Paulo, conta com estrutura de armazenagem climatizada, pista de treinamento e baias. Se você é lojista ou criador e deseja retirar pedidos ou conhecer de perto o showroom, entre em contato e agende sua visita.
+                    </p>
+
+                    <div class="pt-4 flex flex-wrap items-center gap-4">
+                        <a href="https://wa.me/5518996652244?text=Ola%2C%20gostaria%20de%20agendar%20uma%20visita%20na%20Estancia%20Indiana"
+                           target="_blank" rel="noopener"
+                           class="btn btn-indiana-red px-6 py-3 text-xs uppercase font-bold tracking-wider rounded-[3px]">
+                            Agendar Visita com a Diretoria &rarr;
+                        </a>
+                        <a href="/contato" class="btn btn-outline border-white/40 text-white hover:bg-white/10 px-6 py-3 text-xs uppercase font-bold tracking-wider rounded-[3px]">
+                            Ver Mapa & Como Chegar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

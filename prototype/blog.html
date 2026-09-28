@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+
+<head>
+    <link rel="icon" type="image/png" href="images/logo-indiana-ranch.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artigos & Dicas Técnicas do Campo — Indiana Ranch | O Conhecimento das Pistas</title>
+    <meta name="description"
+        content="Artigos técnicos práticos sobre proteção equina, mantas ortopédicas, calibragem de laços, conservação de selaria e gestão de lojas western." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rye&family=Oswald:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    borderRadius: {
+                        DEFAULT: '3px',
+                        sm: '3px',
+                        md: '3px',
+                        lg: '3px',
+                        xl: '3px',
+                        '2xl': '3px',
+                        '3xl': '3px',
+                        full: '3px',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Rye"', 'serif'],
+                        western: ['"Rye"', 'serif'],
+                    },
+                    colors: {
+                        indiana: {
+                            navy: '#000726',
+                            'navy-dark': '#000726',
+                            'navy-light': '#0b1961',
+                            red: '#B91C1C',
+                            'red-hover': '#991B1B',
+                            'red-subtle': '#FFF0F0',
+                            white: '#FFFFFF',
+                            slate: '#F1F5F9',
+                            border: '#E2E8F0',
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- DaisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        :root {
+            --color-navy: #000726;
+            --color-red: #B91C1C;
+            --color-white: #FFFFFF;
+            --rounded-btn: 3px;
+            --rounded-badge: 3px;
+            --rounded-box: 3px;
+        }
+
+        .btn,
+        .card,
+        .badge,
+        .input,
+        .select,
+        .textarea,
+        .collapse,
+        .navbar,
+        article,
+        section>div,
+        iframe,
+        img,
+        .rounded-3px,
+        .rounded-5px {
+            border-radius: 3px !important;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAF8F5;
+            color: #000726;
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Rye', serif;
+            letter-spacing: 0.03em;
+        }
+
+        .font-western {
+            font-family: 'Rye', serif;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            -webkit-text-stroke: 0.15px currentColor;
+        }
+
+        .container-shell {
+            width: min(100% - 3.5rem, 1260px);
+            margin-inline: auto;
+        }
+
+        @media (min-width: 1024px) {
+            .container-shell {
+                width: min(100% - 5rem, 1260px);
+            }
+        }
+
+        
+        /* ========================================================= */
+        /* TEXTURA GLOBAL DE AREIA / PAPEL VINTAGE (SAND GRAIN)      */
+        /* ========================================================= */
+        .bg-paper-texture {
+            background-color: #FAF6F0 !important;
+        }
+        .sand-grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: multiply;
+            opacity: 0.85;
+        }
+
+        /* TEXTURA DE PAPEL PERGAMINHO VINTAGE RRL */
+        .bg-paper-texture {
+            background-color: #FAF8F5 !important;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E") !important;
+            background-repeat: repeat !important;
+        }
+
+        .border-divider-rustic {
+            border-color: #EAE3D7 !important;
+        }
+
+        .badge-indiana {
+            background-color: rgba(185, 28, 28, 0.08);
+            color: #B91C1C;
+            border: 1px solid rgba(185, 28, 28, 0.25);
+            border-radius: 3px !important;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.72rem;
+        }
+
+        /* BOTÃO PRIMÁRIO COM BRILHO NATURAL */
+        .btn-indiana-red {
+            position: relative;
+            overflow: hidden;
+            background-color: #B91C1C;
+            color: #FFFFFF;
+            border: 1px solid #991B1B;
+            border-radius: 3px !important;
+            font-weight: 700;
+            transition: all 0.25s ease;
+            z-index: 1;
+        }
+
+        .btn-indiana-red::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -150%;
+            width: 100%;
+            height: 200%;
+            background: linear-gradient(
+                115deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.02) 25%,
+                rgba(255, 255, 255, 0.25) 50%,
+                rgba(255, 255, 255, 0.02) 75%,
+                transparent 100%
+            );
+            transform: rotate(20deg);
+            pointer-events: none;
+            animation: btnShimmerNatural 6.5s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        @keyframes btnShimmerNatural {
+            0%, 65% {
+                left: -150%;
+                opacity: 0;
+            }
+            70% {
+                opacity: 1;
+            }
+            85% {
+                left: 180%;
+                opacity: 1;
+            }
+            90%, 100% {
+                left: 180%;
+                opacity: 0;
+            }
+        }
+
+        .btn-indiana-red:hover {
+            background-color: #991B1B;
+            border-color: #B50D0D;
+            color: #FFFFFF;
+            box-shadow: 0 6px 20px -3px rgba(185, 28, 28, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline-navy {
+            border: 1.5px dashed #000726 !important;
+            color: #000726;
+            background: transparent;
+            border-radius: 3px !important;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-outline-navy:hover {
+            background-color: #000726;
+            border: 1.5px dashed #000726 !important;
+            color: #FFFFFF;
+        }
+
+        /* FILTROS DE CATEGORIA */
+        .filter-btn {
+            padding: 6px 14px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 1px solid #000726;
+            background-color: #FAF8F5;
+            color: #000726;
+            border-radius: 3px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #000726;
+            color: #FFFFFF;
+            border-color: #000726;
+        }
+
+        /* TOPBAR MARQUEE */
+        @keyframes topbar-marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-topbar-marquee {
+            display: inline-flex;
+            width: max-content;
+            animation: topbar-marquee 16s linear infinite;
+        }
+        .animate-topbar-marquee:hover,
+        .animate-topbar-marquee:active {
+            animation-play-state: paused;
+        }
+        @media (min-width: 768px) {
+            .animate-topbar-marquee {
+                animation: none !important;
+                transform: none !important;
+                width: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-paper-texture antialiased selection:bg-[#B91C1C] selection:text-white" id="top">
+
+    <!-- CAMADA FIXA DE TEXTURA DE AREIA / GRÃO VINTAGE IDÊNTICA À HOME -->
+    <div class="sand-grain-overlay" aria-hidden="true"></div>
+
+    <!-- 1. TOP ANNOUNCEMENT BAR COM MARQUEE & REDES SOCIAIS OFICIAIS -->
+    <aside class="bg-[#000726] text-white text-xs font-medium border-b border-white/10 relative z-50">
+        <div class="container-shell py-2 flex flex-col md:flex-row items-center justify-between gap-2">
+            <div class="flex items-center gap-3 w-full md:w-auto overflow-hidden">
+                <span class="inline-flex items-center px-2 py-0.5 bg-[#B91C1C] text-white text-[10px] font-bold uppercase tracking-wider rounded-[3px] shrink-0">
+                    Distribuidora Oficial
+                </span>
+                <div class="relative flex-1 overflow-hidden min-w-0 [mask-image:linear-gradient(to_right,transparent,black_8px,black_calc(100%-8px),transparent)]">
+                    <div class="animate-topbar-marquee text-[11px] sm:text-xs text-slate-200 gap-6 items-center">
+                        <span class="whitespace-nowrap">Desde 1994 • Três décadas equipando os campeões das pistas e o campo • Importação oficial com nota fiscal e pronta entrega</span>
+                        <span class="md:hidden text-[#B91C1C] font-bold px-1" aria-hidden="true">✦</span>
+                        <span class="md:hidden whitespace-nowrap" aria-hidden="true">Desde 1994 • Três décadas equipando os campeões das pistas e o campo • Importação oficial com nota fiscal e pronta entrega</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-5 text-[11px] text-slate-300">
+                <a href="tel:+551839951308" class="hover:text-white flex items-center gap-1.5 transition-colors">
+                    <svg class="w-3.5 h-3.5 text-[#B91C1C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <span>(18) 3995-1308</span>
+                </a>
+
+                <span class="text-white/20">|</span>
+
+                <!-- Ícones Redes Sociais Oficiais -->
+                <div class="flex items-center gap-1.5" aria-label="Redes Sociais Indiana Ranch">
+                    <a href="https://www.instagram.com/indiana.ranch/" target="_blank" rel="noopener noreferrer" title="Instagram (@indiana.ranch)"
+                        class="w-6 h-6 rounded-[3px] bg-white/10 hover:bg-[#B91C1C] text-slate-200 hover:text-white p-1 flex items-center justify-center transition-all duration-200">
+                        <svg class="w-full h-full fill-current" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/indianaranchbrasil" target="_blank" rel="noopener noreferrer" title="Facebook (indianaranchbrasil)"
+                        class="w-6 h-6 rounded-[3px] bg-white/10 hover:bg-[#B91C1C] text-slate-200 hover:text-white p-1 flex items-center justify-center transition-all duration-200">
+                        <svg class="w-full h-full fill-current" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/551839951308" target="_blank" rel="noopener noreferrer" title="WhatsApp Oficial"
+                        class="w-6 h-6 rounded-[3px] bg-white/10 hover:bg-[#B91C1C] text-slate-200 hover:text-white p-1 flex items-center justify-center transition-all duration-200">
+                        <svg class="w-full h-full fill-current" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- 2. MAIN HEADER -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all">
+        <div class="container-shell">
+            <div class="navbar px-0 py-3">
+
+                <div class="flex-1">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <img src="images/logo-indiana-ranch.png" alt="Indiana Ranch Logo" class="h-[60px] sm:h-[66px] w-auto object-contain transition-transform group-hover:scale-105" />
+                        <div class="flex flex-col">
+                            <span class="font-western text-[15px] sm:text-[16.5px] font-bold text-[#000726] leading-none group-hover:text-[#B91C1C] transition-colors">INDIANA RANCH</span>
+                            <span class="text-[10px] tracking-[0.22em] uppercase font-bold text-[#B91C1C] mt-0.5">The Western Original</span>
+                        </div>
+                    </a>
+                </div>
+
+                <nav class="hidden xl:flex items-center gap-6 text-sm font-semibold text-[#000726]" aria-label="Navegação principal">
+                    <a href="index.html" class="hover:text-[#B91C1C] transition-colors">Início</a>
+                    <a href="index.html#categorias" class="hover:text-[#B91C1C] transition-colors">Categorias</a>
+                    <a href="index.html#marcas" class="hover:text-[#B91C1C] transition-colors">Marcas</a>
+                    <a href="index.html#diferenciais" class="hover:text-[#B91C1C] transition-colors">Atacado</a>
+                    <a href="index.html#sobre" class="hover:text-[#B91C1C] transition-colors">Sobre</a>
+                    <a href="index.html#localizacao" class="hover:text-[#B91C1C] transition-colors">Localização</a>
+                    <a href="index.html#faq" class="hover:text-[#B91C1C] transition-colors">Dúvidas</a>
+                    <a href="blog.html" class="text-[#B91C1C] font-bold transition-colors">Artigos</a>
+                    <a href="contato.html" class="hover:text-[#B91C1C] transition-colors">Contato</a>
+                </nav>
+
+                <div class="flex-none flex items-center gap-2 pl-2">
+                    <a href="contato.html"
+                        class="hidden sm:inline-flex btn btn-sm btn-outline-navy px-4 font-semibold rounded-[3px]">
+                        Orçamento
+                    </a>
+                    <a href="https://wa.me/551839951308?text=Ola%2C%20gostaria%20de%20tirar%20duvidas%20sobre%20os%20artigos%20da%20Indiana%20Ranch"
+                        target="_blank" rel="noopener"
+                        class="hidden xl:inline-flex btn btn-sm btn-indiana-red px-4 gap-2 shadow-sm rounded-[3px]">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.088.072.19.014.305-.058.115-.087.187-.173.289l-.26.309c-.087.086-.179.18-.077.354.101.174.449.741.964 1.2 1.042.929 1.92 1.215 2.193 1.349.273.134.433.116.592-.067.159-.183.679-.791.86-1.062.181-.271.362-.227.607-.136.245.09 1.547.73 1.813.863.266.133.443.199.508.31.065.111.065.643-.079 1.048z" />
+                        </svg>
+                        <span>WhatsApp</span>
+                    </a>
+
+                    <!-- BOTÃO HAMBÚRGUER MOBILE -->
+                    <button id="mobile-menu-btn" 
+                        type="button" 
+                        aria-label="Abrir Menu de Navegação"
+                        class="xl:hidden p-2 rounded-[3px] bg-[#000726]/5 hover:bg-[#B91C1C] text-[#000726] hover:text-white border border-[#000726]/15 hover:border-[#B91C1C] transition-all flex items-center justify-center focus:outline-none">
+                        <svg class="w-6 h-6 fill-none stroke-current" viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- DRAWER / MENU LATERAL MOBILE OFF-CANVAS -->
+    <div id="mobile-drawer" class="fixed inset-0 z-[100] pointer-events-none transition-opacity duration-300 opacity-0" aria-hidden="true">
+        <div id="mobile-drawer-backdrop" class="absolute inset-0 bg-black/65 backdrop-blur-sm transition-opacity"></div>
+        <div id="mobile-drawer-panel" class="absolute top-0 right-0 bottom-0 w-[85%] max-w-sm bg-white shadow-2xl border-l-4 border-l-[#B91C1C] flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out overflow-y-auto">
+            
+            <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-paper-texture">
+                <div class="flex items-center gap-2.5">
+                    <img src="images/logo-indiana-ranch.png" alt="Indiana Ranch" class="h-10 w-auto object-contain" />
+                    <div class="flex flex-col">
+                        <span class="font-western text-[14px] font-bold text-[#000726] leading-none">INDIANA RANCH</span>
+                        <span class="text-[9px] tracking-[0.2em] uppercase font-bold text-[#B91C1C] mt-0.5">The Western Original</span>
+                    </div>
+                </div>
+                <button id="mobile-drawer-close" aria-label="Fechar Menu" class="w-9 h-9 rounded-[3px] bg-[#000726]/5 hover:bg-[#B91C1C] text-[#000726] hover:text-white flex items-center justify-center transition-colors">
+                    <svg class="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="p-5 space-y-1.5 flex-1">
+                <a href="index.html" class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-[3px] text-slate-700 hover:text-[#B91C1C] hover:bg-slate-50 font-medium text-sm transition-colors">
+                    <span>Início</span>
+                    <span class="text-xs text-slate-400">→</span>
+                </a>
+                <a href="index.html#categorias" class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-[3px] text-slate-700 hover:text-[#B91C1C] hover:bg-slate-50 font-medium text-sm transition-colors">
+                    <span>Categorias Western</span>
+                    <span class="text-xs text-slate-400">→</span>
+                </a>
+                <a href="index.html#marcas" class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-[3px] text-slate-700 hover:text-[#B91C1C] hover:bg-slate-50 font-medium text-sm transition-colors">
+                    <span>Marcas Importadas</span>
+                    <span class="text-xs text-slate-400">→</span>
+                </a>
+                <a href="index.html#diferenciais" class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-[3px] text-slate-700 hover:text-[#B91C1C] hover:bg-slate-50 font-medium text-sm transition-colors">
+                    <span>Atacado para Lojistas</span>
+                    <span class="text-xs text-slate-400">→</span>
+                </a>
+                <a href="index.html#sobre" class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-[3px] text-slate-700 hover:text-[#B91C1C] hover:bg-slate-50 font-medium text-sm transition-colors">
+                    <span>Sobre a Indiana Ranch</span>
+                    <span class="text-xs text-slate-400">→</span>
+                </a>
+                <a href="index.html#localizacao" class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-[3px] text-slate-700 hover:text-[#B91C1C] hover:bg-slate-50 font-medium text-sm transition-colors">
+                    <span>Centro de Distribuição</span>
+                    <span class="text-xs text-slate-400">→</span>
+                </a>
+                <a href="index.html#faq" class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-[3px] text-slate-700 hover:text-[#B91C1C] hover:bg-slate-50 font-medium text-sm transition-colors">
+                    <span>Perguntas Frequentes</span>
+                    <span class="text-xs text-slate-400">→</span>
+                </a>
+                <a href="blog.html" class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-[3px] text-[#B91C1C] font-bold bg-[#B91C1C]/10 text-sm">
+                    <span>Artigos & Dicas</span>
+                    <span class="text-xs">→</span>
+                </a>
+                <a href="contato.html" class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-[3px] text-slate-700 hover:text-[#B91C1C] hover:bg-slate-50 font-medium text-sm transition-colors">
+                    <span>Central de Contato</span>
+                    <span class="text-xs text-slate-400">→</span>
+                </a>
+            </nav>
+
+            <div class="p-5 border-t border-slate-100 bg-paper-texture space-y-3">
+                <div class="flex items-center justify-between text-[11px]">
+                    <div class="flex flex-col">
+                        <span class="font-bold text-[#000726] text-[11px]">Seg a Sex: 08h às 18h</span>
+                        <span class="text-[9.5px] text-slate-500">Atendimento Nacional</span>
+                    </div>
+                    <div class="flex items-center gap-1.5" aria-label="Redes Sociais Indiana Ranch">
+                        <a href="https://www.instagram.com/indiana.ranch/" target="_blank" rel="noopener noreferrer" title="Instagram (@indiana.ranch)" class="w-7 h-7 rounded-[3px] bg-white border border-slate-200 hover:border-[#B91C1C] hover:bg-[#B91C1C] text-slate-600 hover:text-white p-1.5 flex items-center justify-center transition-colors">
+                            <svg class="w-full h-full fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/indianaranchbrasil" target="_blank" rel="noopener noreferrer" title="Facebook (indianaranchbrasil)" class="w-7 h-7 rounded-[3px] bg-white border border-slate-200 hover:border-[#B91C1C] hover:bg-[#B91C1C] text-slate-600 hover:text-white p-1.5 flex items-center justify-center transition-colors">
+                            <svg class="w-full h-full fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://wa.me/551839951308?text=Ola%2C%20vim%20pelo%20site%20da%20Indiana%20Ranch" target="_blank" rel="noopener noreferrer" title="WhatsApp Oficial" class="w-7 h-7 rounded-[3px] bg-white border border-slate-200 hover:border-[#B91C1C] hover:bg-[#B91C1C] text-slate-600 hover:text-white p-1.5 flex items-center justify-center transition-colors">
+                            <svg class="w-full h-full fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/551839951308?text=Ola%2C%20vim%20pelo%20menu%20do%20site%20da%20Indiana%20Ranch" target="_blank" rel="noopener" class="btn btn-indiana-red w-full py-2.5 text-xs font-bold uppercase tracking-wider text-center flex items-center justify-center gap-2 rounded-[3px]">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.088.072.19.014.305-.058.115-.087.187-.173.289l-.26.309c-.087.086-.179.18-.077.354.101.174.449.741.964 1.2 1.042.929 1.92 1.215 2.193 1.349.273.134.433.116.592-.067.159-.183.679-.791.86-1.062.181-.271.362-.227.607-.136.245.09 1.547.73 1.813.863.266.133.443.199.508.31.065.111.065.643-.079 1.048z" /></svg>
+                    <span>Falar no WhatsApp</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 3. PAGE HERO (ESTILO WESTERN DARK COM ILUMINAÇÃO CINEMATOGRÁFICA) -->
+    <section class="relative bg-[#000726] text-white py-16 sm:py-20 border-b-4 border-[#B91C1C] overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#0b1961]/40 via-[#000726] to-[#000726] pointer-events-none"></div>
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#B91C1C_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
+
+        <div class="container-shell relative z-10 text-center sm:text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#B91C1C]/20 border border-[#B91C1C]/40 text-[#FCA5A5] text-[11px] sm:text-xs font-bold uppercase tracking-wider rounded-[3px] mb-4">
+                <span>✦</span>
+                <span>Central Técnica & Conhecimento de Pista</span>
+            </div>
+
+            <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+                ARTIGOS & DICAS DO CAMPO
+            </h1>
+            
+            <p class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-3xl mt-4 leading-relaxed">
+                Guias aprofundados sobre biomecânica equina, proteção ortopédica, regulagem precisa de arreios e boas práticas de gestão para o mercado country western brasileiro.
+            </p>
+
+            <!-- FILTROS DE CATEGORIA EM ESTILO CARIMBO RÚSTICO -->
+            <div class="flex flex-wrap items-center gap-2 mt-8 pt-6 border-t border-white/10">
+                <span class="text-xs uppercase font-bold text-slate-400 mr-2">Filtrar por:</span>
+                <button class="filter-btn active" data-filter="all">Todos os Artigos</button>
+                <button class="filter-btn" data-filter="ortopedia">Proteção & Dorso</button>
+                <button class="filter-btn" data-filter="embocaduras">Freios & Embocaduras</button>
+                <button class="filter-btn" data-filter="lacos">Team Roping & Cordas</button>
+                <button class="filter-btn" data-filter="selaria">Selaria & Couro</button>
+                <button class="filter-btn" data-filter="b2b">Gestão de Loja B2B</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. GRID DE ARTIGOS NO PADRÃO WANTED POSTER / CARTAZ WESTERN -->
+    <main class="py-16 sm:py-20 bg-paper-texture border-b border-divider-rustic">
+        <div class="container-shell">
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+
+                <!-- ARTIGO 1: MANTAS ORTOPÉDICAS -->
+                <article class="article-item relative pt-4 flex flex-col" data-cat="ortopedia">
+                    <!-- Tacha / Concho 3D -->
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-30 pointer-events-none drop-shadow-[0_4px_6px_rgba(0,0,0,0.45)]">
+                        <svg class="w-8 h-8" viewBox="0 0 32 32">
+                            <defs>
+                                <radialGradient id="tackBlog1" cx="35%" cy="30%" r="65%">
+                                    <stop offset="0%" stop-color="#FDE68A" />
+                                    <stop offset="35%" stop-color="#D97706" />
+                                    <stop offset="70%" stop-color="#92400E" />
+                                    <stop offset="100%" stop-color="#451A03" />
+                                </radialGradient>
+                            </defs>
+                            <circle cx="16" cy="16" r="14.5" fill="#291205" opacity="0.4" />
+                            <circle cx="16" cy="16" r="13" fill="#5C2607" stroke="#78350F" stroke-width="0.75" />
+                            <circle cx="16" cy="16" r="10.5" fill="url(#tackBlog1)" stroke="#78350F" stroke-width="0.8" />
+                            <path d="M16 9.5 L17.4 14.6 L22.5 16 L17.4 17.4 L16 22.5 L14.6 17.4 L9.5 16 L14.6 14.6 Z" fill="#3B1705" opacity="0.85" />
+                            <circle cx="16" cy="16" r="1.5" fill="#FEF3C7" />
+                            <ellipse cx="13" cy="11" rx="2.5" ry="1.2" fill="#FFFFFF" opacity="0.65" transform="rotate(-25 13 11)" />
+                        </svg>
+                    </div>
+
+                    <!-- Cartaz Pergaminho -->
+                    <div class="w-full relative bg-paper-texture border-2 border-[#000726] p-6 sm:p-7 shadow-[0_15px_35px_rgba(0,7,38,0.08)] rounded-[2px] flex-1 flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300">
+                        <div class="pointer-events-none absolute inset-2 border border-[#000726]/40 rounded-[1px] z-10"></div>
+                        <div class="pointer-events-none absolute inset-3 border border-dashed border-[#B91C1C]/35 rounded-[1px] z-10"></div>
+                        <span class="pointer-events-none absolute top-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute top-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+
+                        <div class="relative z-20">
+                            <div class="flex items-center justify-between text-[11px] mb-3 pb-2 border-b border-[#000726]/15">
+                                <span class="badge-indiana px-2 py-0.5 rounded-[3px]">Proteção & Dorso</span>
+                                <span class="text-slate-500 font-semibold">14 Set 2026</span>
+                            </div>
+
+                            <h2 class="font-western text-xl sm:text-2xl text-[#000726] leading-snug mb-3 group-hover:text-[#B91C1C] transition-colors">
+                                Como escolher a manta ortopédica ideal para proteger a cernelha do cavalo
+                            </h2>
+
+                            <p class="text-xs text-slate-700 leading-relaxed mb-4">
+                                A combinação entre feltro de lã prensada 100% virgem e camadas internas de absorção de impacto alivia picos de pressão na coluna vertebral durante provas de velocidade.
+                            </p>
+
+                            <div class="p-3 bg-white/80 border border-[#000726]/15 rounded-[3px] text-xs text-slate-700 space-y-1.5 mb-4">
+                                <strong class="text-[#000726] block text-[11px] uppercase tracking-wider">Pontos-chave do guia:</strong>
+                                <div>• Feltro 3/4" (treino) vs 1" (prova de impacto)</div>
+                                <div>• Recortes anatômicos para alívio da cernelha alta</div>
+                                <div>• Como higienizar o suor sem compactar a lã</div>
+                            </div>
+                        </div>
+
+                        <div class="relative z-20 pt-3 border-t border-[#000726]/15 flex items-center justify-between text-xs">
+                            <span class="text-slate-500 text-[11px]">Leitura: 5 min</span>
+                            <a href="https://wa.me/551839951308?text=Ola%2C%20li%20o%20artigo%20sobre%20mantas%20ortopedicas%20e%20gostaria%20de%20tirar%20duvidas" 
+                               target="_blank" rel="noopener" 
+                               class="font-bold text-[#B91C1C] hover:text-[#000726] transition-colors flex items-center gap-1">
+                                <span>Tirar Dúvida no WhatsApp</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ARTIGO 2: EMBOCADURAS & FREIOS -->
+                <article class="article-item relative pt-4 flex flex-col" data-cat="embocaduras">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-30 pointer-events-none drop-shadow-[0_4px_6px_rgba(0,0,0,0.45)]">
+                        <svg class="w-8 h-8" viewBox="0 0 32 32">
+                            <defs>
+                                <radialGradient id="tackBlog2" cx="35%" cy="30%" r="65%">
+                                    <stop offset="0%" stop-color="#FDE68A" />
+                                    <stop offset="35%" stop-color="#D97706" />
+                                    <stop offset="70%" stop-color="#92400E" />
+                                    <stop offset="100%" stop-color="#451A03" />
+                                </radialGradient>
+                            </defs>
+                            <circle cx="16" cy="16" r="14.5" fill="#291205" opacity="0.4" />
+                            <circle cx="16" cy="16" r="13" fill="#5C2607" stroke="#78350F" stroke-width="0.75" />
+                            <circle cx="16" cy="16" r="10.5" fill="url(#tackBlog2)" stroke="#78350F" stroke-width="0.8" />
+                            <path d="M16 9.5 L17.4 14.6 L22.5 16 L17.4 17.4 L16 22.5 L14.6 17.4 L9.5 16 L14.6 14.6 Z" fill="#3B1705" opacity="0.85" />
+                            <circle cx="16" cy="16" r="1.5" fill="#FEF3C7" />
+                            <ellipse cx="13" cy="11" rx="2.5" ry="1.2" fill="#FFFFFF" opacity="0.65" transform="rotate(-25 13 11)" />
+                        </svg>
+                    </div>
+
+                    <div class="w-full relative bg-paper-texture border-2 border-[#000726] p-6 sm:p-7 shadow-[0_15px_35px_rgba(0,7,38,0.08)] rounded-[2px] flex-1 flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300">
+                        <div class="pointer-events-none absolute inset-2 border border-[#000726]/40 rounded-[1px] z-10"></div>
+                        <div class="pointer-events-none absolute inset-3 border border-dashed border-[#B91C1C]/35 rounded-[1px] z-10"></div>
+                        <span class="pointer-events-none absolute top-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute top-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+
+                        <div class="relative z-20">
+                            <div class="flex items-center justify-between text-[11px] mb-3 pb-2 border-b border-[#000726]/15">
+                                <span class="badge-indiana px-2 py-0.5 rounded-[3px]">Freios & Embocaduras</span>
+                                <span class="text-slate-500 font-semibold">10 Set 2026</span>
+                            </div>
+
+                            <h2 class="font-western text-xl sm:text-2xl text-[#000726] leading-snug mb-3 group-hover:text-[#B91C1C] transition-colors">
+                                Manutenção preventiva de freios e bridões em inox e cobre
+                            </h2>
+
+                            <p class="text-xs text-slate-700 leading-relaxed mb-4">
+                                Guia completo para lavagem de bocais articulados, inspeção de queixeiras e preservação de rolletes de cobre doce para estimular salivação e contato suave.
+                            </p>
+
+                            <div class="p-3 bg-white/80 border border-[#000726]/15 rounded-[3px] text-xs text-slate-700 space-y-1.5 mb-4">
+                                <strong class="text-[#000726] block text-[11px] uppercase tracking-wider">Pontos-chave do guia:</strong>
+                                <div>• Remoção de depósitos de saliva e suplementos</div>
+                                <div>• Como verificar rebarbas que machucam a boca</div>
+                                <div>• Alinhamento correto da barbela e queixeira</div>
+                            </div>
+                        </div>
+
+                        <div class="relative z-20 pt-3 border-t border-[#000726]/15 flex items-center justify-between text-xs">
+                            <span class="text-slate-500 text-[11px]">Leitura: 4 min</span>
+                            <a href="https://wa.me/551839951308?text=Ola%2C%20li%20o%20artigo%20sobre%20freios%20e%20gostaria%20de%20tirar%20duvidas" 
+                               target="_blank" rel="noopener" 
+                               class="font-bold text-[#B91C1C] hover:text-[#000726] transition-colors flex items-center gap-1">
+                                <span>Tirar Dúvida no WhatsApp</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ARTIGO 3: LAÇOS & CALIBRAGEM -->
+                <article class="article-item relative pt-4 flex flex-col" data-cat="lacos">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-30 pointer-events-none drop-shadow-[0_4px_6px_rgba(0,0,0,0.45)]">
+                        <svg class="w-8 h-8" viewBox="0 0 32 32">
+                            <defs>
+                                <radialGradient id="tackBlog3" cx="35%" cy="30%" r="65%">
+                                    <stop offset="0%" stop-color="#FDE68A" />
+                                    <stop offset="35%" stop-color="#D97706" />
+                                    <stop offset="70%" stop-color="#92400E" />
+                                    <stop offset="100%" stop-color="#451A03" />
+                                </radialGradient>
+                            </defs>
+                            <circle cx="16" cy="16" r="14.5" fill="#291205" opacity="0.4" />
+                            <circle cx="16" cy="16" r="13" fill="#5C2607" stroke="#78350F" stroke-width="0.75" />
+                            <circle cx="16" cy="16" r="10.5" fill="url(#tackBlog3)" stroke="#78350F" stroke-width="0.8" />
+                            <path d="M16 9.5 L17.4 14.6 L22.5 16 L17.4 17.4 L16 22.5 L14.6 17.4 L9.5 16 L14.6 14.6 Z" fill="#3B1705" opacity="0.85" />
+                            <circle cx="16" cy="16" r="1.5" fill="#FEF3C7" />
+                            <ellipse cx="13" cy="11" rx="2.5" ry="1.2" fill="#FFFFFF" opacity="0.65" transform="rotate(-25 13 11)" />
+                        </svg>
+                    </div>
+
+                    <div class="w-full relative bg-paper-texture border-2 border-[#000726] p-6 sm:p-7 shadow-[0_15px_35px_rgba(0,7,38,0.08)] rounded-[2px] flex-1 flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300">
+                        <div class="pointer-events-none absolute inset-2 border border-[#000726]/40 rounded-[1px] z-10"></div>
+                        <div class="pointer-events-none absolute inset-3 border border-dashed border-[#B91C1C]/35 rounded-[1px] z-10"></div>
+                        <span class="pointer-events-none absolute top-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute top-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+
+                        <div class="relative z-20">
+                            <div class="flex items-center justify-between text-[11px] mb-3 pb-2 border-b border-[#000726]/15">
+                                <span class="badge-indiana px-2 py-0.5 rounded-[3px]">Team Roping & Cordas</span>
+                                <span class="text-slate-500 font-semibold">05 Set 2026</span>
+                            </div>
+
+                            <h2 class="font-western text-xl sm:text-2xl text-[#000726] leading-snug mb-3 group-hover:text-[#B91C1C] transition-colors">
+                                Guia de laços de poliamida: calibragem, tentos e memória de armada
+                            </h2>
+
+                            <p class="text-xs text-slate-700 leading-relaxed mb-4">
+                                Como escolher o lay ideal (XS, S, MS, M) para cabeceiro e peseiro e de que forma o clima e a temperatura influenciam na rigidez e equilíbrio da corda.
+                            </p>
+
+                            <div class="p-3 bg-white/80 border border-[#000726]/15 rounded-[3px] text-xs text-slate-700 space-y-1.5 mb-4">
+                                <strong class="text-[#000726] block text-[11px] uppercase tracking-wider">Pontos-chave do guia:</strong>
+                                <div>• 3 Tentos vs 4 Tentos: peso de ponta e velocidade</div>
+                                <div>• Como preservar a cera contra calor excessivo</div>
+                                <div>• Armazenamento ideal em bolsas térmicas</div>
+                            </div>
+                        </div>
+
+                        <div class="relative z-20 pt-3 border-t border-[#000726]/15 flex items-center justify-between text-xs">
+                            <span class="text-slate-500 text-[11px]">Leitura: 6 min</span>
+                            <a href="https://wa.me/551839951308?text=Ola%2C%20li%20o%20artigo%20sobre%20lacos%20e%20gostaria%20de%20tirar%20duvidas" 
+                               target="_blank" rel="noopener" 
+                               class="font-bold text-[#B91C1C] hover:text-[#000726] transition-colors flex items-center gap-1">
+                                <span>Tirar Dúvida no WhatsApp</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ARTIGO 4: CLOCHES E CANELEIRAS -->
+                <article class="article-item relative pt-4 flex flex-col" data-cat="ortopedia">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-30 pointer-events-none drop-shadow-[0_4px_6px_rgba(0,0,0,0.45)]">
+                        <svg class="w-8 h-8" viewBox="0 0 32 32">
+                            <defs>
+                                <radialGradient id="tackBlog4" cx="35%" cy="30%" r="65%">
+                                    <stop offset="0%" stop-color="#FDE68A" />
+                                    <stop offset="35%" stop-color="#D97706" />
+                                    <stop offset="70%" stop-color="#92400E" />
+                                    <stop offset="100%" stop-color="#451A03" />
+                                </radialGradient>
+                            </defs>
+                            <circle cx="16" cy="16" r="14.5" fill="#291205" opacity="0.4" />
+                            <circle cx="16" cy="16" r="13" fill="#5C2607" stroke="#78350F" stroke-width="0.75" />
+                            <circle cx="16" cy="16" r="10.5" fill="url(#tackBlog4)" stroke="#78350F" stroke-width="0.8" />
+                            <path d="M16 9.5 L17.4 14.6 L22.5 16 L17.4 17.4 L16 22.5 L14.6 17.4 L9.5 16 L14.6 14.6 Z" fill="#3B1705" opacity="0.85" />
+                            <circle cx="16" cy="16" r="1.5" fill="#FEF3C7" />
+                            <ellipse cx="13" cy="11" rx="2.5" ry="1.2" fill="#FFFFFF" opacity="0.65" transform="rotate(-25 13 11)" />
+                        </svg>
+                    </div>
+
+                    <div class="w-full relative bg-paper-texture border-2 border-[#000726] p-6 sm:p-7 shadow-[0_15px_35px_rgba(0,7,38,0.08)] rounded-[2px] flex-1 flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300">
+                        <div class="pointer-events-none absolute inset-2 border border-[#000726]/40 rounded-[1px] z-10"></div>
+                        <div class="pointer-events-none absolute inset-3 border border-dashed border-[#B91C1C]/35 rounded-[1px] z-10"></div>
+                        <span class="pointer-events-none absolute top-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute top-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+
+                        <div class="relative z-20">
+                            <div class="flex items-center justify-between text-[11px] mb-3 pb-2 border-b border-[#000726]/15">
+                                <span class="badge-indiana px-2 py-0.5 rounded-[3px]">Proteção & Dorso</span>
+                                <span class="text-slate-500 font-semibold">28 Ago 2026</span>
+                            </div>
+
+                            <h2 class="font-western text-xl sm:text-2xl text-[#000726] leading-snug mb-3 group-hover:text-[#B91C1C] transition-colors">
+                                Cloches e caneleiras: como evitar o superaquecimento dos tendões
+                            </h2>
+
+                            <p class="text-xs text-slate-700 leading-relaxed mb-4">
+                                Entenda a física por trás do neoprene ventilado e da cinta cruzada de sustentação do boleto, que absorve até 26% da energia de impacto no solo sem prender calor.
+                            </p>
+
+                            <div class="p-3 bg-white/80 border border-[#000726]/15 rounded-[3px] text-xs text-slate-700 space-y-1.5 mb-4">
+                                <strong class="text-[#000726] block text-[11px] uppercase tracking-wider">Pontos-chave do guia:</strong>
+                                <div>• Diferença entre caneleira de treino e de prova</div>
+                                <div>• Cloches anti-giro: proteção dos bulbos do talão</div>
+                                <div>• Tempo máximo recomendado de uso contínuo</div>
+                            </div>
+                        </div>
+
+                        <div class="relative z-20 pt-3 border-t border-[#000726]/15 flex items-center justify-between text-xs">
+                            <span class="text-slate-500 text-[11px]">Leitura: 5 min</span>
+                            <a href="https://wa.me/551839951308?text=Ola%2C%20li%20o%20artigo%20sobre%20caneleiras%20e%20gostaria%20de%20tirar%20duvidas" 
+                               target="_blank" rel="noopener" 
+                               class="font-bold text-[#B91C1C] hover:text-[#000726] transition-colors flex items-center gap-1">
+                                <span>Tirar Dúvida no WhatsApp</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ARTIGO 5: GESTÃO B2B PARA LOJISTAS -->
+                <article class="article-item relative pt-4 flex flex-col" data-cat="b2b">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-30 pointer-events-none drop-shadow-[0_4px_6px_rgba(0,0,0,0.45)]">
+                        <svg class="w-8 h-8" viewBox="0 0 32 32">
+                            <defs>
+                                <radialGradient id="tackBlog5" cx="35%" cy="30%" r="65%">
+                                    <stop offset="0%" stop-color="#FDE68A" />
+                                    <stop offset="35%" stop-color="#D97706" />
+                                    <stop offset="70%" stop-color="#92400E" />
+                                    <stop offset="100%" stop-color="#451A03" />
+                                </radialGradient>
+                            </defs>
+                            <circle cx="16" cy="16" r="14.5" fill="#291205" opacity="0.4" />
+                            <circle cx="16" cy="16" r="13" fill="#5C2607" stroke="#78350F" stroke-width="0.75" />
+                            <circle cx="16" cy="16" r="10.5" fill="url(#tackBlog5)" stroke="#78350F" stroke-width="0.8" />
+                            <path d="M16 9.5 L17.4 14.6 L22.5 16 L17.4 17.4 L16 22.5 L14.6 17.4 L9.5 16 L14.6 14.6 Z" fill="#3B1705" opacity="0.85" />
+                            <circle cx="16" cy="16" r="1.5" fill="#FEF3C7" />
+                            <ellipse cx="13" cy="11" rx="2.5" ry="1.2" fill="#FFFFFF" opacity="0.65" transform="rotate(-25 13 11)" />
+                        </svg>
+                    </div>
+
+                    <div class="w-full relative bg-paper-texture border-2 border-[#000726] p-6 sm:p-7 shadow-[0_15px_35px_rgba(0,7,38,0.08)] rounded-[2px] flex-1 flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300">
+                        <div class="pointer-events-none absolute inset-2 border border-[#000726]/40 rounded-[1px] z-10"></div>
+                        <div class="pointer-events-none absolute inset-3 border border-dashed border-[#B91C1C]/35 rounded-[1px] z-10"></div>
+                        <span class="pointer-events-none absolute top-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute top-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+
+                        <div class="relative z-20">
+                            <div class="flex items-center justify-between text-[11px] mb-3 pb-2 border-b border-[#000726]/15">
+                                <span class="badge-indiana px-2 py-0.5 rounded-[3px]">Gestão de Loja B2B</span>
+                                <span class="text-slate-500 font-semibold">20 Ago 2026</span>
+                            </div>
+
+                            <h2 class="font-western text-xl sm:text-2xl text-[#000726] leading-snug mb-3 group-hover:text-[#B91C1C] transition-colors">
+                                Mix de produtos western na agropecuária: como acelerar o giro de estoque
+                            </h2>
+
+                            <p class="text-xs text-slate-700 leading-relaxed mb-4">
+                                Dicas práticas de curadoria de marcas importadas, precificação estratégica e reposição programada para atrair competidores e haras da sua região.
+                            </p>
+
+                            <div class="p-3 bg-white/80 border border-[#000726]/15 rounded-[3px] text-xs text-slate-700 space-y-1.5 mb-4">
+                                <strong class="text-[#000726] block text-[11px] uppercase tracking-wider">Pontos-chave do guia:</strong>
+                                <div>• Os 15 itens essenciais com giro constante</div>
+                                <div>• Como a procedência original blinda a loja contra queixas</div>
+                                <div>• Vantagens do faturamento facilitado no CNPJ</div>
+                            </div>
+                        </div>
+
+                        <div class="relative z-20 pt-3 border-t border-[#000726]/15 flex items-center justify-between text-xs">
+                            <span class="text-slate-500 text-[11px]">Leitura: 7 min</span>
+                            <a href="https://wa.me/551839951308?text=Ola%2C%20li%20o%20artigo%20sobre%20gestao%20B2B%20e%20gostaria%20de%20receber%20a%20tabela%20de%20atacado" 
+                               target="_blank" rel="noopener" 
+                               class="font-bold text-[#B91C1C] hover:text-[#000726] transition-colors flex items-center gap-1">
+                                <span>Solicitar Tabela de Atacado</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ARTIGO 6: CONSERVAÇÃO DE SELARIA -->
+                <article class="article-item relative pt-4 flex flex-col" data-cat="selaria">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-30 pointer-events-none drop-shadow-[0_4px_6px_rgba(0,0,0,0.45)]">
+                        <svg class="w-8 h-8" viewBox="0 0 32 32">
+                            <defs>
+                                <radialGradient id="tackBlog6" cx="35%" cy="30%" r="65%">
+                                    <stop offset="0%" stop-color="#FDE68A" />
+                                    <stop offset="35%" stop-color="#D97706" />
+                                    <stop offset="70%" stop-color="#92400E" />
+                                    <stop offset="100%" stop-color="#451A03" />
+                                </radialGradient>
+                            </defs>
+                            <circle cx="16" cy="16" r="14.5" fill="#291205" opacity="0.4" />
+                            <circle cx="16" cy="16" r="13" fill="#5C2607" stroke="#78350F" stroke-width="0.75" />
+                            <circle cx="16" cy="16" r="10.5" fill="url(#tackBlog6)" stroke="#78350F" stroke-width="0.8" />
+                            <path d="M16 9.5 L17.4 14.6 L22.5 16 L17.4 17.4 L16 22.5 L14.6 17.4 L9.5 16 L14.6 14.6 Z" fill="#3B1705" opacity="0.85" />
+                            <circle cx="16" cy="16" r="1.5" fill="#FEF3C7" />
+                            <ellipse cx="13" cy="11" rx="2.5" ry="1.2" fill="#FFFFFF" opacity="0.65" transform="rotate(-25 13 11)" />
+                        </svg>
+                    </div>
+
+                    <div class="w-full relative bg-paper-texture border-2 border-[#000726] p-6 sm:p-7 shadow-[0_15px_35px_rgba(0,7,38,0.08)] rounded-[2px] flex-1 flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300">
+                        <div class="pointer-events-none absolute inset-2 border border-[#000726]/40 rounded-[1px] z-10"></div>
+                        <div class="pointer-events-none absolute inset-3 border border-dashed border-[#B91C1C]/35 rounded-[1px] z-10"></div>
+                        <span class="pointer-events-none absolute top-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute top-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+
+                        <div class="relative z-20">
+                            <div class="flex items-center justify-between text-[11px] mb-3 pb-2 border-b border-[#000726]/15">
+                                <span class="badge-indiana px-2 py-0.5 rounded-[3px]">Selaria & Couro</span>
+                                <span class="text-slate-500 font-semibold">12 Ago 2026</span>
+                            </div>
+
+                            <h2 class="font-western text-xl sm:text-2xl text-[#000726] leading-snug mb-3 group-hover:text-[#B91C1C] transition-colors">
+                                Cuidados no couro legítimo: como hidratar sem apodrecer as costuras
+                            </h2>
+
+                            <p class="text-xs text-slate-700 leading-relaxed mb-4">
+                                O passo a passo profissional de higienização de selas, loros e rédeas artesanais para evitar ressecamento, mofo e rupturas perigosas durante o galope.
+                            </p>
+
+                            <div class="p-3 bg-white/80 border border-[#000726]/15 rounded-[3px] text-xs text-slate-700 space-y-1.5 mb-4">
+                                <strong class="text-[#000726] block text-[11px] uppercase tracking-wider">Pontos-chave do guia:</strong>
+                                <div>• Remoção do sal do suor com sabão de glicerina</div>
+                                <div>• Óleo de mocotó: dosagem certa para não amolecer o couro</div>
+                                <div>• Armazenamento ventilado para proteção contra fungos</div>
+                            </div>
+                        </div>
+
+                        <div class="relative z-20 pt-3 border-t border-[#000726]/15 flex items-center justify-between text-xs">
+                            <span class="text-slate-500 text-[11px]">Leitura: 4 min</span>
+                            <a href="https://wa.me/551839951308?text=Ola%2C%20li%20o%20artigo%20sobre%20cuidados%20com%20selaria%20e%20gostaria%20de%20tirar%20duvidas" 
+                               target="_blank" rel="noopener" 
+                               class="font-bold text-[#B91C1C] hover:text-[#000726] transition-colors flex items-center gap-1">
+                                <span>Tirar Dúvida no WhatsApp</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- 5. BANNER HORIZONTAL B2B DE CONVERSÃO NO RODAPÉ DO BLOG -->
+            <div class="mt-16 relative pt-4">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-30 pointer-events-none drop-shadow-[0_4px_6px_rgba(0,0,0,0.45)]">
+                    <svg class="w-8 h-8" viewBox="0 0 32 32">
+                        <defs>
+                            <radialGradient id="tackBannerBlog" cx="35%" cy="30%" r="65%">
+                                <stop offset="0%" stop-color="#FDE68A" />
+                                <stop offset="35%" stop-color="#D97706" />
+                                <stop offset="70%" stop-color="#92400E" />
+                                <stop offset="100%" stop-color="#451A03" />
+                            </radialGradient>
+                        </defs>
+                        <circle cx="16" cy="16" r="14.5" fill="#291205" opacity="0.4" />
+                        <circle cx="16" cy="16" r="13" fill="#5C2607" stroke="#78350F" stroke-width="0.75" />
+                        <circle cx="16" cy="16" r="10.5" fill="url(#tackBannerBlog)" stroke="#78350F" stroke-width="0.8" />
+                        <path d="M16 9.5 L17.4 14.6 L22.5 16 L17.4 17.4 L16 22.5 L14.6 17.4 L9.5 16 L14.6 14.6 Z" fill="#3B1705" opacity="0.85" />
+                        <circle cx="16" cy="16" r="1.5" fill="#FEF3C7" />
+                        <ellipse cx="13" cy="11" rx="2.5" ry="1.2" fill="#FFFFFF" opacity="0.65" transform="rotate(-25 13 11)" />
+                    </svg>
+                </div>
+
+                <div class="w-full relative bg-paper-texture border-2 border-[#000726] p-7 sm:p-10 shadow-[0_20px_45px_rgba(0,7,38,0.12)] rounded-[2px]">
+                    <div class="pointer-events-none absolute inset-2 border border-[#000726]/40 rounded-[1px] z-10"></div>
+                    <div class="pointer-events-none absolute inset-3 border border-dashed border-[#B91C1C]/35 rounded-[1px] z-10"></div>
+                    <span class="pointer-events-none absolute top-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                    <span class="pointer-events-none absolute top-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                    <span class="pointer-events-none absolute bottom-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                    <span class="pointer-events-none absolute bottom-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+
+                    <div class="relative z-20 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+                        <div class="max-w-2xl">
+                            <span class="badge-indiana px-3 py-1 inline-block mb-2 rounded-[3px]">
+                                Estoque Próprio & Pronta Entrega
+                            </span>
+                            <h3 class="font-western text-2xl sm:text-3xl text-[#000726] tracking-wide leading-tight">
+                                Precisa abastecer sua loja ou equipe com os produtos citados?
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-700 mt-2 leading-relaxed">
+                                A Indiana Ranch é distribuidora direta das principais marcas americanas. Fornecemos para lojistas, haras e competidores com faturamento no CNPJ e apoio técnico na escolha dos modelos.
+                            </p>
+                        </div>
+                        <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full lg:w-auto">
+                            <a href="contato.html" class="btn btn-outline-navy w-full sm:w-auto px-6 py-3 text-xs sm:text-sm uppercase font-western tracking-wider rounded-[3px]">
+                                Solicitar Tabela B2B
+                            </a>
+                            <a href="https://wa.me/551839951308?text=Ola%2C%20quero%20cotar%20produtos%20vistos%20no%20blog" target="_blank" rel="noopener" class="btn btn-indiana-red w-full sm:w-auto px-6 py-3 text-xs sm:text-sm uppercase font-western tracking-wider rounded-[3px] shadow-sm">
+                                Falar com Especialista →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 6. ADVANCED FOOTER (IGUAL À HOME PAGE) -->
+        <!-- 11. ADVANCED FOOTER (ESTILO WESTERN VINTAGE PERFEITAMENTE FORMATADO) -->
+        <!-- 11. ADVANCED FOOTER (COM RESPIRO LATERAL EXATAMENTE ALINHADO AO CONTEÚDO DO HERO) -->
+    <footer class="bg-paper-texture text-[#000726] pt-16 pb-28 sm:pb-24 md:pb-14 border-t-4 border-[#B91C1C] relative">
+        <div class="container-shell px-8 sm:px-12 md:px-16 lg:px-32 xl:px-44 2xl:px-52 relative z-10 w-full">
+
+            <!-- GRID PRINCIPAL (2 COLUNAS NO TABLET/LAPTOP E 4 COLUNAS HARMONIOSAS NO DESKTOP) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 xl:gap-8 pb-12 border-b border-[#000726]/15">
+
+                <!-- COLUNA 1: IDENTIDADE & REDES -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <img src="/images/logo-indiana-ranch.png" alt="Indiana Ranch Logo" loading="lazy" decoding="async" class="h-[60px] sm:h-[66px] w-auto object-contain" />
+                        <div class="flex flex-col">
+                            <span class="font-western text-[17px] sm:text-[19px] font-bold text-[#000726] leading-none">INDIANA RANCH</span>
+                            <span class="text-[10.5px] sm:text-[11px] tracking-[0.20em] uppercase font-bold text-[#B91C1C] mt-1">The Western Original</span>
+                        </div>
+                    </div>
+                    <p class="text-[13px] sm:text-[13.5px] text-slate-700 leading-relaxed">
+                        Importadora e distribuidora country western oficial desde 1994. Tradição, resistência e procedência garantida.
+                    </p>
+
+                    <div class="pt-1">
+                        <span class="text-[11px] sm:text-[11.5px] uppercase font-bold tracking-widest text-[#000726]/80 block mb-2">Redes Oficiais</span>
+                        <div class="flex items-center gap-2">
+                            <a href="https://www.instagram.com/indiana.ranch/" target="_blank" rel="noopener noreferrer" title="Instagram (@indiana.ranch)"
+                                class="w-7 h-7 rounded-[3px] bg-[#000726]/5 border border-[#000726]/15 hover:bg-[#B91C1C] hover:border-[#B91C1C] text-[#000726] hover:text-white flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5" aria-label="Instagram">
+                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.facebook.com/indianaranchbrasil" target="_blank" rel="noopener noreferrer" title="Facebook (indianaranchbrasil)"
+                                class="w-7 h-7 rounded-[3px] bg-[#000726]/5 border border-[#000726]/15 hover:bg-[#B91C1C] hover:border-[#B91C1C] text-[#000726] hover:text-white flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5" aria-label="Facebook">
+                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="https://wa.me/551839951308" target="_blank" rel="noopener noreferrer" title="WhatsApp Oficial"
+                                class="w-7 h-7 rounded-[3px] bg-[#000726]/5 border border-[#000726]/15 hover:bg-[#B91C1C] hover:border-[#B91C1C] text-[#000726] hover:text-white flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5" aria-label="WhatsApp">
+                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUNA 2: LINHAS & MARCAS -->
+                <div class="space-y-4">
+                    <h4 class="font-display text-[15px] sm:text-[15.5px] font-bold uppercase tracking-wider text-[#000726] border-b border-[#000726]/10 pb-2">Linhas & Marcas</h4>
+                    <ul class="space-y-2.5 text-[13px] sm:text-[13.5px] text-slate-700">
+                        <li class="flex items-start gap-2 group/link">
+                            <span class="text-[#B91C1C] text-[11px] mt-0.5 shrink-0 group-hover/link:translate-x-0.5 transition-transform">✦</span>
+                            <a href="/#marcas" class="hover:text-[#B91C1C] transition-colors leading-snug">Marcas Importadas (Classic Equine, Cactus)</a>
+                        </li>
+                        <li class="flex items-start gap-2 group/link">
+                            <span class="text-[#B91C1C] text-[11px] mt-0.5 shrink-0 group-hover/link:translate-x-0.5 transition-transform">✦</span>
+                            <a href="/categorias" class="hover:text-[#B91C1C] transition-colors leading-snug">Selaria & Arreios de Alta Performance</a>
+                        </li>
+                        <li class="flex items-start gap-2 group/link">
+                            <span class="text-[#B91C1C] text-[11px] mt-0.5 shrink-0 group-hover/link:translate-x-0.5 transition-transform">✦</span>
+                            <a href="/categorias" class="hover:text-[#B91C1C] transition-colors leading-snug">Proteção Equina & Boletos</a>
+                        </li>
+                        <li class="flex items-start gap-2 group/link">
+                            <span class="text-[#B91C1C] text-[11px] mt-0.5 shrink-0 group-hover/link:translate-x-0.5 transition-transform">✦</span>
+                            <a href="/categorias" class="hover:text-[#B91C1C] transition-colors leading-snug">Cabrestos & Laços Calibrados</a>
+                        </li>
+                        <li class="flex items-start gap-2 group/link">
+                            <span class="text-[#B91C1C] text-[11px] mt-0.5 shrink-0 group-hover/link:translate-x-0.5 transition-transform">✦</span>
+                            <a href="/#atletas" class="hover:text-[#B91C1C] transition-colors leading-snug">Team Atletas Indiana Ranch</a>
+                        </li>
+                        <li class="flex items-start gap-2 group/link">
+                            <span class="text-[#B91C1C] text-[11px] mt-0.5 shrink-0 group-hover/link:translate-x-0.5 transition-transform">✦</span>
+                            <a href="/blog" class="hover:text-[#B91C1C] transition-colors leading-snug">Artigos Técnicos & Dicas</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- COLUNA 3: INSTITUCIONAL -->
+                <div class="space-y-4">
+                    <h4 class="font-display text-[15px] sm:text-[15.5px] font-bold uppercase tracking-wider text-[#000726] border-b border-[#000726]/10 pb-2">Institucional</h4>
+                    <ul class="space-y-2.5 text-[13px] sm:text-[13.5px] text-slate-700">
+                        <li class="flex items-start gap-2 group/link">
+                            <span class="text-[#B91C1C] text-[11px] mt-0.5 shrink-0 group-hover/link:translate-x-0.5 transition-transform">✦</span>
+                            <a href="/" class="hover:text-[#B91C1C] transition-colors leading-snug">Página Inicial</a>
+                        </li>
+                        <li class="flex items-start gap-2 group/link">
+                            <span class="text-[#B91C1C] text-[11px] mt-0.5 shrink-0 group-hover/link:translate-x-0.5 transition-transform">✦</span>
+                            <a href="/sobre" class="hover:text-[#B91C1C] transition-colors leading-snug">Sobre a Indiana Ranch (30 Anos)</a>
+                        </li>
+                        <li class="flex items-start gap-2 group/link">
+                            <span class="text-[#B91C1C] text-[11px] mt-0.5 shrink-0 group-hover/link:translate-x-0.5 transition-transform">✦</span>
+                            <a href="/categorias" class="hover:text-[#B91C1C] transition-colors leading-snug">Linhas de Produtos & Catálogo</a>
+                        </li>
+                        <li class="flex items-start gap-2 group/link">
+                            <span class="text-[#B91C1C] text-[11px] mt-0.5 shrink-0 group-hover/link:translate-x-0.5 transition-transform">✦</span>
+                            <a href="/como-comprar" class="hover:text-[#B91C1C] transition-colors leading-snug">Guia Como Comprar (B2B / B2C)</a>
+                        </li>
+                        <li class="flex items-start gap-2 group/link">
+                            <span class="text-[#B91C1C] text-[11px] mt-0.5 shrink-0 group-hover/link:translate-x-0.5 transition-transform">✦</span>
+                            <a href="/faq" class="hover:text-[#B91C1C] transition-colors leading-snug">Dúvidas Frequentes (FAQ)</a>
+                        </li>
+                        <li class="flex items-start gap-2 group/link">
+                            <span class="text-[#B91C1C] text-[11px] mt-0.5 shrink-0 group-hover/link:translate-x-0.5 transition-transform">✦</span>
+                            <a href="/contato" class="hover:text-[#B91C1C] font-semibold transition-colors leading-snug">Central de Contato & Cotações</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- COLUNA 4: ATENDIMENTO -->
+                <div class="space-y-4">
+                    <h4 class="font-display text-[15px] sm:text-[15.5px] font-bold uppercase tracking-wider text-[#000726] border-b border-[#000726]/10 pb-2">Atendimento</h4>
+                    <div class="space-y-3.5 text-[13px] sm:text-[13.5px] text-slate-700">
+
+                        <!-- Telefone -->
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-7 h-7 rounded-[3px] bg-[#B91C1C]/10 border border-[#B91C1C]/25 flex items-center justify-center text-[#B91C1C] shrink-0">
+                                <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </span>
+                            <div class="flex flex-col min-w-0">
+                                <span class="text-[10.5px] uppercase font-bold text-slate-500 leading-none">Telefone Matriz</span>
+                                <a href="tel:+551839951308" class="font-bold text-[#000726] hover:text-[#B91C1C] transition-colors leading-snug mt-0.5 whitespace-nowrap text-[14px]">+55 (18) 3995-1308</a>
+                            </div>
+                        </div>
+
+                        <!-- E-mail -->
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-7 h-7 rounded-[3px] bg-[#B91C1C]/10 border border-[#B91C1C]/25 flex items-center justify-center text-[#B91C1C] shrink-0">
+                                <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </span>
+                            <div class="flex flex-col min-w-0">
+                                <span class="text-[10.5px] uppercase font-bold text-slate-500 leading-none">E-mail Corporativo</span>
+                                <a href="mailto:atendimento@indianaranch.com.br" class="hover:text-[#B91C1C] transition-colors font-medium text-[13px] leading-snug break-all mt-0.5">atendimento@<wbr>indianaranch.com.br</a>
+                            </div>
+                        </div>
+
+                        <!-- Endereço -->
+                        <div class="flex items-start gap-2.5">
+                            <span class="w-7 h-7 rounded-[3px] bg-[#B91C1C]/10 border border-[#B91C1C]/25 flex items-center justify-center text-[#B91C1C] shrink-0 mt-0.5">
+                                <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </span>
+                            <div class="flex flex-col min-w-0">
+                                <span class="text-[10.5px] uppercase font-bold text-slate-500 leading-none">Sede & Distribuição</span>
+                                <span class="text-slate-700 leading-tight text-[12.5px] sm:text-[13px] mt-0.5">Estância Indiana, S/N — Indiana / SP</span>
+                            </div>
+                        </div>
+
+                        <!-- WhatsApp Action -->
+                        <div class="pt-1">
+                            <a href="https://wa.me/551839951308" target="_blank" rel="noopener"
+                                class="inline-flex items-center gap-1.5 text-[13.5px] font-bold text-[#B91C1C] hover:text-[#000726] transition-colors">
+                                <svg class="w-4 h-4 fill-current text-[#25D366]" viewBox="0 0 24 24">
+                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                                </svg>
+                                <span>Falar no WhatsApp &rarr;</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RODAPÉ INFERIOR / COPYRIGHT & RETORNO AO TOPO -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12.5px] sm:text-[13px] text-slate-600">
+                <p class="text-center sm:text-left leading-relaxed">
+                    © 2026 Indiana Ranch — Importadora e Distribuidora Country Western. CNPJ 00.123.456/0001-78. Todos os direitos reservados.
+                </p>
+                <div class="flex items-center gap-5 sm:gap-6 md:pr-36 lg:pr-44 shrink-0">
+                    <sanbernarda-badge data-source="indiana-ranch"></sanbernarda-badge>
+                    <a href="#top" class="font-semibold text-[#000726] hover:text-[#B91C1C] transition-colors flex items-center gap-1.5 py-1 px-2 hover:bg-black/5 rounded-[3px]">
+                        <span>Voltar ao topo</span>
+                        <span>↑</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- BARRA FIXA INFERIOR MOBILE -->
+    <nav aria-label="Menu de Ação Rápida Mobile"
+        class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-[#000726] border-t-2 border-[#B91C1C] shadow-[0_-8px_25px_rgba(0,0,0,0.5)] px-2.5 py-2 pb-[calc(0.6rem+env(safe-area-inset-bottom))]">
+        <div class="grid grid-cols-3 gap-2">
+            <a href="https://wa.me/551839951308?text=Ola%2C%20gostaria%20de%20falar%20com%20um%20consultor%20Indiana%20Ranch"
+                target="_blank" rel="noopener"
+                class="flex flex-col items-center justify-center py-2 px-1 rounded-[3px] bg-[#25D366] text-white active:scale-95 transition-transform shadow-sm">
+                <svg class="w-5 h-5 fill-current mb-0.5" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                <span class="text-[11px] font-bold tracking-wide uppercase leading-none">WhatsApp</span>
+            </a>
+            <a href="https://www.google.com/maps?cid=11987966496231276786"
+                target="_blank" rel="noopener"
+                class="flex flex-col items-center justify-center py-2 px-1 rounded-[3px] bg-white/10 hover:bg-white/15 text-white active:scale-95 transition-transform border border-white/10 shadow-sm">
+                <svg class="w-5 h-5 fill-none stroke-current mb-0.5 text-amber-400" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span class="text-[11px] font-bold tracking-wide uppercase leading-none">Como Chegar</span>
+            </a>
+            <a href="tel:+551839951308"
+                class="flex flex-col items-center justify-center py-2 px-1 rounded-[3px] bg-[#B91C1C] text-white active:scale-95 transition-transform shadow-sm">
+                <svg class="w-5 h-5 fill-none stroke-current mb-0.5" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span class="text-[11px] font-bold tracking-wide uppercase leading-none">Ligar Agora</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- WIDGET FLUTUANTE WHATSAPP DESKTOP -->
+    <aside id="desktop-whatsapp-widget" 
+        aria-label="Atendimento via WhatsApp"
+        style="position: fixed; bottom: 40px; right: 28px; z-index: 9999;"
+        class="hidden md:flex items-center gap-3">
+        
+        <div id="whatsapp-balao-chamada" 
+            class="bg-white border-2 border-[#000726] shadow-[0_12px_30px_rgba(0,7,38,0.25)] rounded-[3px] px-3.5 py-2 flex items-center gap-2.5 transition-all duration-300 transform opacity-100 translate-x-0">
+            <span class="flex h-2.5 w-2.5 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#25D366]"></span>
+            </span>
+            <div class="flex flex-col">
+                <span class="text-[11px] font-bold text-[#000726] leading-tight">Dúvidas sobre Artigos?</span>
+                <span class="text-[9.5px] text-slate-500 leading-tight">Fale com um consultor técnico</span>
+            </div>
+            <button onclick="document.getElementById('whatsapp-balao-chamada').style.display='none'" 
+                aria-label="Fechar balão" 
+                class="text-slate-400 hover:text-[#B91C1C] text-xs font-bold ml-1">×</button>
+        </div>
+
+        <a href="https://wa.me/551839951308?text=Ola%2C%20estou%20no%20blog%20da%20Indiana%20Ranch%20e%20gostaria%20de%20tirar%20duvidas%20tecnicas" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Iniciar conversa no WhatsApp com consultor da Indiana Ranch"
+            class="relative group w-14 h-14 rounded-[3px] bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center shadow-[0_8px_25px_rgba(37,211,102,0.45)] border border-white/20 transition-all duration-300 hover:scale-105 active:scale-95">
+            <svg class="w-7 h-7 fill-current drop-shadow-sm transition-transform group-hover:scale-110" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+        </a>
+    </aside>
+
+    <!-- SCRIPTS -->
+    <script>
+        // CONTROLE DO DRAWER MOBILE
+        (function initMobileDrawer() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const drawer = document.getElementById('mobile-drawer');
+            const backdrop = document.getElementById('mobile-drawer-backdrop');
+            const panel = document.getElementById('mobile-drawer-panel');
+            const closeBtn = document.getElementById('mobile-drawer-close');
+            const links = document.querySelectorAll('.mobile-nav-link');
+
+            if (!btn || !drawer || !panel) return;
+
+            function openDrawer() {
+                drawer.classList.remove('pointer-events-none', 'opacity-0');
+                drawer.classList.add('opacity-100');
+                panel.classList.remove('translate-x-full');
+                panel.classList.add('translate-x-0');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeDrawer() {
+                panel.classList.remove('translate-x-0');
+                panel.classList.add('translate-x-full');
+                drawer.classList.remove('opacity-100');
+                drawer.classList.add('opacity-0');
+                setTimeout(() => {
+                    drawer.classList.add('pointer-events-none');
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+
+            btn.addEventListener('click', openDrawer);
+            if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+            if (backdrop) backdrop.addEventListener('click', closeDrawer);
+            links.forEach(l => l.addEventListener('click', closeDrawer));
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeDrawer();
+            });
+        })();
+
+        // FILTRO DE ARTIGOS POR CATEGORIA
+        (function initBlogFilter() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const articles = document.querySelectorAll('.article-item');
+
+            if (!filterBtns.length || !articles.length) return;
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const cat = btn.getAttribute('data-filter');
+
+                    articles.forEach(art => {
+                        if (cat === 'all' || art.getAttribute('data-cat') === cat) {
+                            art.style.display = 'flex';
+                        } else {
+                            art.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        })();
+    </script>
+
+    <!-- GERADOR DE TEXTURA DE AREIA / GRÃO VINTAGE UNIVERSAL (100% IDÊNTICO À HOME) -->
+    <script>
+        (function() {
+            try {
+                var canvas = document.createElement('canvas');
+                canvas.width = 150;
+                canvas.height = 150;
+                var ctx = canvas.getContext('2d');
+                var imgData = ctx.createImageData(150, 150);
+                var data = imgData.data;
+                
+                // Gerar grãos finos de areia orgânica
+                for (var i = 0; i < data.length; i += 4) {
+                    var isGrain = Math.random() > 0.45;
+                    if (isGrain) {
+                        var gray = Math.floor(Math.random() * 60); // grãos escuros de areia
+                        data[i] = gray;     // R
+                        data[i+1] = gray;   // G
+                        data[i+2] = gray;   // B
+                        data[i+3] = Math.floor(Math.random() * 18 + 8); // opacidade sutil (8 a 26)
+                    } else {
+                        data[i+3] = 0; // transparente
+                    }
+                }
+                ctx.putImageData(imgData, 0, 0);
+                var grainUrl = canvas.toDataURL('image/png');
+                
+                var overlay = document.querySelector('.sand-grain-overlay');
+                if (overlay) {
+                    overlay.style.backgroundImage = 'url(' + grainUrl + ')';
+                    overlay.style.backgroundRepeat = 'repeat';
+                }
+                
+                var paperSections = document.querySelectorAll('.bg-paper-texture');
+                paperSections.forEach(function(el) {
+                    el.style.backgroundImage = 'url(' + grainUrl + ')';
+                    el.style.backgroundRepeat = 'repeat';
+                });
+            } catch(e) {
+                console.error("Erro ao gerar textura de areia:", e);
+            }
+        })();
+    </script>
+    <script src="/widgets/sanbernarda-badge.js" async defer></script>
+</body>
+
+</html>

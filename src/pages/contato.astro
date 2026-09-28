@@ -1,0 +1,479 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WesternDecor from '../components/WesternDecor.astro';
+---
+
+<Layout 
+    title="Central de Atendimento & Cotações B2B — Indiana Ranch"
+    description="Entre em contato com a Indiana Ranch. Central de distribuição nacional, televendas direto da matriz e aviso de cotação para lojistas e haras."
+    currentPath="/contato"
+>
+<main class="py-16 sm:py-20 bg-paper-texture border-b border-divider-rustic relative overflow-hidden">
+        <!-- ELEMENTOS TRACEJADOS SADDLECRAFT / SHERIDAN NO FUNDO -->
+        <WesternDecor type="sheridan-corner" class="absolute top-2 left-2 w-40 h-40 sm:w-52 sm:h-52" opacity="opacity-30" />
+        <WesternDecor type="oak-acorn" flip="both" class="absolute bottom-4 right-4 w-36 h-36" opacity="opacity-30" />
+        <WesternDecor type="concho-rosette" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-96 sm:h-96" opacity="opacity-20" />
+
+        <div class="container-shell">
+            <!-- BREADCRUMB -->
+            <nav aria-label="Navegação estrutural" class="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-6 uppercase tracking-wider">
+                <a href="/" class="hover:text-[#B91C1C] transition-colors">Início</a>
+                <span class="text-slate-300">/</span>
+                <span class="text-[#B91C1C] font-bold">Central de Contato</span>
+            </nav>
+
+            <div class="max-w-3xl mb-12">
+                <span class="badge-indiana px-3.5 py-1.5 inline-block mb-3 rounded-[3px]">Atendimento Oficial</span>
+                <h1 class="font-western text-3xl sm:text-5xl lg:text-6xl text-[#000726] tracking-tight leading-tight">
+                    CENTRAL DE ATENDIMENTO & COTAÇÕES
+                </h1>
+                <p class="text-slate-700 text-sm sm:text-base lg:text-lg mt-4 leading-relaxed font-sans">
+                    Entre em contato com a equipe da Estância Indiana para cotações corporativas no atacado (CNPJ), compras no varejo ou consultoria sobre equipamentos.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-10 items-start">
+
+                <!-- COLUNA ESQUERDA (5 COLS): CENTRAL DA MATRIZ ESTÂNCIA INDIANA COM TACHA 3D -->
+                <div class="lg:col-span-5 relative pt-4">
+                    
+                    <!-- TACHA / CONCHO METÁLICO DE LATÃO 3D COM SOMBRA REALISTA -->
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none flex flex-col items-center">
+                        <svg class="relative w-8 h-8 drop-shadow-xs" viewBox="0 0 32 32" fill="none">
+                            <defs>
+                                <linearGradient id="tackMatrizRim" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#FDE68A" />
+                                    <stop offset="30%" stop-color="#D97706" />
+                                    <stop offset="70%" stop-color="#78350F" />
+                                    <stop offset="100%" stop-color="#3B1705" />
+                                </linearGradient>
+                                <radialGradient id="tackMatrizDome" cx="35%" cy="30%" r="65%">
+                                    <stop offset="0%" stop-color="#FFFBEB" />
+                                    <stop offset="25%" stop-color="#FCD34D" />
+                                    <stop offset="60%" stop-color="#B45309" />
+                                    <stop offset="90%" stop-color="#78350F" />
+                                    <stop offset="100%" stop-color="#291104" />
+                                </radialGradient>
+                            </defs>
+                            <circle cx="16" cy="16" r="14" fill="#291104" />
+                            <circle cx="16" cy="16" r="13" fill="url(#tackMatrizRim)" />
+                            <circle cx="16" cy="16" r="10.5" fill="url(#tackMatrizDome)" stroke="#78350F" stroke-width="0.8" />
+                            <path d="M16 9.5 L17.4 14.6 L22.5 16 L17.4 17.4 L16 22.5 L14.6 17.4 L9.5 16 L14.6 14.6 Z" fill="#3B1705" opacity="0.85" />
+                            <circle cx="16" cy="16" r="1.5" fill="#FEF3C7" />
+                            <ellipse cx="13" cy="11" rx="2.5" ry="1.2" fill="#FFFFFF" opacity="0.65" transform="rotate(-25 13 11)" />
+                        </svg>
+                    </div>
+
+                    <!-- FOLHA ESTILO CARTAZ WESTERN -->
+                    <div class="w-full relative bg-paper-texture border-2 border-[#000726] p-5 sm:p-7 rounded-[2px] transition-all">
+                        
+                        <!-- Moldura dupla de imprensa tipográfica -->
+                        <div class="pointer-events-none absolute inset-2 border border-[#000726]/40 rounded-[1px] z-10"></div>
+                        <div class="pointer-events-none absolute inset-3 border border-dashed border-[#B91C1C]/35 rounded-[1px] z-10"></div>
+
+                        <!-- Florões dos 4 cantos -->
+                        <span class="pointer-events-none absolute top-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute top-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+
+                        <div class="relative z-20">
+                            <div class="text-center pb-4 border-b-2 border-[#000726]/20 mb-5">
+                                <span class="text-[9px] sm:text-[10px] uppercase font-bold tracking-[0.22em] text-[#000726]/75 block mb-1">
+                                    ★ ESTÂNCIA INDIANA • SEDE PRÓPRIA ★
+                                </span>
+                                <h2 class="font-western text-2xl sm:text-3xl text-[#000726] tracking-wide leading-tight">
+                                    MATRIZ & EXPEDIÇÃO
+                                </h2>
+                                <div class="inline-block px-2.5 py-0.5 bg-[#000726] text-white font-western text-[11px] tracking-wider uppercase rounded-[2px] mt-1.5">
+                                    Centro de Distribuição Nacional
+                                </div>
+                            </div>
+
+                            <!-- BLOCOS DE CONTATO DIRETO -->
+                            <div class="space-y-3.5 text-xs">
+                                
+                                <!-- TELEVENDAS & ATENDIMENTO COM OS 2 ÍCONES GRANDES -->
+                                <div class="p-3.5 bg-white border border-[#E2DBD0] hover:border-[#B91C1C] transition-all rounded-[3px] shadow-2xs flex items-stretch gap-3">
+                                    <div class="flex items-stretch gap-2 shrink-0">
+                                        <!-- WhatsApp Verde Grande -->
+                                        <a href="https://wa.me/5518996652244?text=Ola%2C%20gostaria%20de%20falar%20com%20um%20consultor%20Indiana%20Ranch" 
+                                           target="_blank" rel="noopener"
+                                           title="Falar no WhatsApp"
+                                           class="w-12 rounded-[3px] bg-[#0D7E3A] hover:bg-[#0A6B31] text-white flex items-center justify-center shadow-md transition-all hover:scale-105"
+                                           aria-label="WhatsApp">
+                                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                                            </svg>
+                                        </a>
+
+                                        <!-- Telefone Vermelho Grande -->
+                                        <a href="tel:+551839951308"
+                                           title="Ligar no Fixo"
+                                           class="w-12 rounded-[3px] bg-[#B91C1C] hover:bg-[#991b1b] text-white flex items-center justify-center shadow-md transition-all hover:scale-105"
+                                           aria-label="Telefone">
+                                            <svg class="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+
+                                    <div class="flex-1 min-w-0 flex flex-col justify-between py-0.5">
+                                        <div class="flex items-center justify-between gap-1">
+                                            <span class="text-[10px] uppercase font-bold tracking-wider text-slate-500 truncate">Central de Despacho</span>
+                                            <span class="text-[8.5px] uppercase font-bold px-1.5 py-0.5 bg-green-100 text-green-800 rounded-[2px] shrink-0">Ativa</span>
+                                        </div>
+                                        <a href="https://wa.me/5518996652244" target="_blank" class="font-display text-base sm:text-lg font-bold text-[#0D7E3A] hover:text-[#0A6B31] transition-colors tracking-wide leading-none my-0.5 block">WhatsApp: (18) 99665-2244</a><a href="tel:+551839951308" class="font-display text-xs font-bold text-[#000726] hover:text-[#B91C1C] transition-colors tracking-wide leading-none block mt-1">Fixo: (18) 3995-1308</a>
+                                        <div class="flex items-center gap-1 text-[10.5px] text-slate-600 truncate">
+                                            <span class="text-[#B91C1C] shrink-0">■</span>
+                                            <span class="truncate">Estância Indiana — Indiana / SP</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SEGUNDA LINHA TELEFÔNICA -->
+                                <div class="p-3 bg-white border border-[#E2DBD0] hover:border-[#B91C1C] transition-all rounded-[3px] shadow-2xs flex items-center justify-between">
+                                    <span class="font-bold text-[#000726] text-[11px] uppercase tracking-wider">Telefone Matriz (Ramal):</span>
+                                    <a href="tel:+551839951326" class="font-bold text-[#000726] hover:text-[#B91C1C] text-sm">(18) 3995-1326</a>
+                                </div>
+
+                                <!-- E-MAIL CORPORATIVO -->
+                                <div class="p-3 bg-white border border-[#E2DBD0] hover:border-[#B91C1C] transition-all rounded-[3px] shadow-2xs">
+                                    <span class="text-[9.5px] uppercase font-bold tracking-wider text-slate-500 flex items-center gap-1.5">
+                                        <svg class="w-3 h-3 text-[#B91C1C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                        </svg>
+                                        E-mail Corporativo & Cotações B2B
+                                    </span>
+                                    <a href="mailto:atendimento@indianaranch.com.br" class="text-xs sm:text-sm font-bold text-[#000726] mt-0.5 block hover:text-[#B91C1C] transition-colors break-all">
+                                        atendimento@indianaranch.com.br
+                                    </a>
+                                </div>
+
+                                <!-- ENDEREÇO FÍSICO -->
+                                <div class="p-3.5 bg-[#000726] text-white rounded-[3px] shadow-xs">
+                                    <span class="text-[10px] uppercase font-bold text-[#B91C1C] tracking-wider block mb-1">
+                                        📍 Sede Própria & Retirada de Cargas:
+                                    </span>
+                                    <p class="text-xs text-slate-200 leading-relaxed">
+                                        <strong>Estância Indiana, S/N — Zona Rural</strong><br />
+                                        Indiana — SP | CEP 19560-000<br />
+                                        <span class="text-[11px] text-slate-400">Próximo a Presidente Prudente / SP</span>
+                                    </p>
+
+                                    <div class="mt-3 pt-2.5 border-t border-white/15 flex items-center justify-between text-[11px]">
+                                        <span class="text-slate-300">Seg a Sex: 08h às 18h</span>
+                                        <a href="https://www.google.com/maps?cid=11987966496231276786" target="_blank" rel="noopener" class="text-amber-400 font-bold hover:underline">
+                                            Como Chegar →
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- BOTÕES DE ROTA RÁPIDA -->
+                            <div class="grid grid-cols-2 gap-2 mt-4">
+                                <a href="https://www.google.com/maps?cid=11987966496231276786" target="_blank" rel="noopener" 
+                                   class="btn btn-sm btn-outline-navy text-[11px] uppercase font-bold py-2 text-center rounded-[3px]">
+                                    Google Maps
+                                </a>
+                                <a href="https://waze.com/ul?q=Indiana%20Ranch%20Indiana%20SP" target="_blank" rel="noopener" 
+                                   class="btn btn-sm btn-outline-navy text-[11px] uppercase font-bold py-2 text-center rounded-[3px]">
+                                    Waze GPS
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUNA DIREITA (7 COLS): O FORMULÁRIO TRANSFORMADO EXATAMENTE NO CARD PROCURADO -->
+                <div class="lg:col-span-7 relative pt-4">
+                    
+                    <!-- TACHA 3D COM RELEVO EM LATÃO ENVELHECIDO E ESTRELA FORJADA (IDÊNTICA À HERO DA HOME) -->
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none flex flex-col items-center">
+                        <svg class="relative w-8 h-8 drop-shadow-xs" viewBox="0 0 32 32" fill="none">
+                            <defs>
+                                <linearGradient id="westernTackRimForm" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#FDE68A" />
+                                    <stop offset="30%" stop-color="#D97706" />
+                                    <stop offset="70%" stop-color="#78350F" />
+                                    <stop offset="100%" stop-color="#3B1705" />
+                                </linearGradient>
+                                <radialGradient id="westernTackDomeForm" cx="35%" cy="30%" r="65%">
+                                    <stop offset="0%" stop-color="#FFFBEB" />
+                                    <stop offset="25%" stop-color="#FCD34D" />
+                                    <stop offset="60%" stop-color="#B45309" />
+                                    <stop offset="90%" stop-color="#78350F" />
+                                    <stop offset="100%" stop-color="#291104" />
+                                </radialGradient>
+                            </defs>
+                            <circle cx="16" cy="16" r="14" fill="#291104" />
+                            <circle cx="16" cy="16" r="13" fill="url(#westernTackRimForm)" />
+                            <circle cx="16" cy="16" r="10.5" fill="url(#westernTackDomeForm)" stroke="#78350F" stroke-width="0.8" />
+                            <path d="M16 9.5 L17.4 14.6 L22.5 16 L17.4 17.4 L16 22.5 L14.6 17.4 L9.5 16 L14.6 14.6 Z" fill="#3B1705" opacity="0.85" />
+                            <circle cx="16" cy="16" r="1.5" fill="#FEF3C7" />
+                            <ellipse cx="13" cy="11" rx="2.5" ry="1.2" fill="#FFFFFF" opacity="0.65" transform="rotate(-25 13 11)" />
+                        </svg>
+                    </div>
+
+                    <!-- FOLHA DO CARTAZ 'PROCURA-SE' (COM FUNDO KRAFT GRANULADO BG-PAPER-TEXTURE) -->
+                    <div class="w-full relative bg-paper-texture border-2 border-[#000726] p-5 sm:p-8 rounded-[2px] transition-all duration-300 mx-auto">
+                        
+                        <!-- MOLDURA INTERNA DUPLA DE IMPRENSA TIPOGRÁFICA FAROESTE -->
+                        <div class="pointer-events-none absolute inset-2 border border-[#000726]/40 rounded-[1px] z-10"></div>
+                        <div class="pointer-events-none absolute inset-3 border border-dashed border-[#B91C1C]/35 rounded-[1px] z-10"></div>
+
+                        <!-- 4 CANTOS DE IMPRENSA TIPOGRÁFICA (FLORÕES DE CARTAZ VINTAGE) -->
+                        <span class="pointer-events-none absolute top-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute top-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+
+                        <!-- CABEÇALHO CLÁSSICO 'PROCURA-SE' -->
+                        <div class="relative z-20 text-center pb-4 border-b-2 border-[#000726]/20 mb-6">
+                            <div class="flex items-center justify-center gap-1.5 mb-1">
+                                <span class="text-[9px] sm:text-[10px] uppercase font-bold tracking-[0.25em] text-[#000726]/70">
+                                    ★ AVISO OFICIAL DE COTAÇÃO & ATENDIMENTO ★
+                                </span>
+                            </div>
+                            <h2 class="font-western text-3xl sm:text-4xl text-[#000726] tracking-wider leading-none">
+                                PROCURA-SE
+                            </h2>
+                            <div class="inline-block px-3 py-0.5 bg-[#B91C1C] text-white font-western text-xs sm:text-sm tracking-widest uppercase rounded-[2px] shadow-xs mt-1.5">
+                                LOJISTAS, HARAS & COMPETIDORES
+                            </div>
+                            <p class="text-[11px] sm:text-xs text-[#000726]/80 italic mt-2 leading-relaxed max-w-md mx-auto">
+                                Preencha os dados abaixo para receber nossa tabela oficial com condições de atacado, faturamento CNPJ ou consultoria de pista.
+                            </p>
+                        </div>
+
+                        <!-- FORMULÁRIO FORMATADO DENTRO DO CARTAZ PROCURA-SE -->
+                        <form class="relative z-20 space-y-4" id="contact-quote-form" action="/api/contato" method="POST">
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="form-control">
+                                    <label for="contact-name" class="label py-1">
+                                        <span class="label-text font-bold text-xs text-[#000726] uppercase tracking-wider">Seu Nome / Razão Social *</span>
+                                    </label>
+                                    <input id="contact-name" name="name" type="text" required autocomplete="name" placeholder="Ex: Haras Bela Vista ou Carlos Silva"
+                                        class="input input-bordered w-full text-sm bg-white border-[#000726]/30 focus:border-[#B91C1C] rounded-[3px] shadow-2xs" />
+                                </div>
+                                <div class="form-control">
+                                    <label for="contact-whatsapp" class="label py-1">
+                                        <span class="label-text font-bold text-xs text-[#000726] uppercase tracking-wider">WhatsApp com DDD *</span>
+                                    </label>
+                                    <input id="contact-whatsapp" name="whatsapp" type="tel" required autocomplete="tel" placeholder="(18) 99999-9999"
+                                        class="input input-bordered w-full text-sm bg-white border-[#000726]/30 focus:border-[#B91C1C] rounded-[3px] shadow-2xs" />
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="form-control">
+                                    <label for="contact-email" class="label py-1">
+                                        <span class="label-text font-bold text-xs text-[#000726] uppercase tracking-wider">E-mail Corporativo *</span>
+                                    </label>
+                                    <input id="contact-email" name="email" type="email" required autocomplete="email" placeholder="contato@empresa.com.br"
+                                        class="input input-bordered w-full text-sm bg-white border-[#000726]/30 focus:border-[#B91C1C] rounded-[3px] shadow-2xs" />
+                                </div>
+                                <div class="form-control">
+                                    <label for="contact-profile" class="label py-1">
+                                        <span class="label-text font-bold text-xs text-[#000726] uppercase tracking-wider">Perfil de Atendimento *</span>
+                                    </label>
+                                    <select id="contact-profile" name="profile" class="select select-bordered w-full text-sm font-semibold bg-white border-[#000726]/30 focus:border-[#B91C1C] rounded-[3px] shadow-2xs">
+                                        <option value="lojista">Lojista / Revenda Agropecuária (Atacado)</option>
+                                        <option value="haras">Haras / Centro de Treinamento</option>
+                                        <option value="competidor">Competidor / Atleta de Prova</option>
+                                        <option value="veterinario">Veterinário / Ferrador</option>
+                                        <option value="consumidor">Consumidor Final / Proprietário</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-control">
+                                <label for="contact-interest" class="label py-1">
+                                    <span class="label-text font-bold text-xs text-[#000726] uppercase tracking-wider">Marcas ou Produtos de Interesse</span>
+                                </label>
+                                <input id="contact-interest" name="interest" type="text" placeholder="Ex: Mantas Classic Equine, Laços Cactus, Caneleiras Legacy, Selaria..."
+                                    class="input input-bordered w-full text-sm bg-white border-[#000726]/30 focus:border-[#B91C1C] rounded-[3px] shadow-2xs" />
+                            </div>
+
+                            <div class="form-control">
+                                <label for="contact-message" class="label py-1">
+                                    <span class="label-text font-bold text-xs text-[#000726] uppercase tracking-wider">Mensagem / Volumes / Dúvidas</span>
+                                </label>
+                                <textarea id="contact-message" name="message" class="textarea textarea-bordered h-28 text-sm bg-white border-[#000726]/30 focus:border-[#B91C1C] rounded-[3px] shadow-2xs"
+                                    placeholder="Descreva sua demanda comercial ou dúvida com detalhes..."></textarea>
+                            </div>
+
+                            <!-- NOTA LGPD -->
+                            <div class="flex items-start gap-2 pt-1 text-[11px] text-[#000726]/75">
+                                <svg class="w-4 h-4 text-[#B91C1C] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                <span>Seus dados são protegidos conforme a LGPD e usados exclusivamente para retorno da nossa equipe comercial. Sem spam.</span>
+                            </div>
+
+                            <!-- HONEYPOT ANTI-SPAM (INVISÍVEL) -->
+                            <input type="text" name="website_url" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+                            <!-- CAIXA DE STATUS DE ENVIO -->
+                            <div id="form-status-box" class="hidden rounded-[3px] p-4 text-xs font-semibold" role="alert"></div>
+
+                            <!-- BOTÃO DE AÇÃO NO RODAPÉ DO CARTAZ PROCURA-SE -->
+                            <div class="pt-3">
+                                <button type="submit" id="submit-btn"
+                                    class="btn btn-indiana-red w-full font-bold uppercase tracking-wider text-xs sm:text-sm py-4 rounded-[3px] shadow-md flex items-center justify-center gap-2 transition-all">
+                                    <span id="btn-text">Enviar Solicitação de Cotação</span> <span aria-hidden="true">&rarr;</span>
+                                </button>
+                            </div>
+
+                        </form>
+
+                        <!-- BENEFÍCIOS DO CARTAZ DE RECOMPENSA -->
+                        <div class="relative z-20 grid grid-cols-3 gap-2.5 mt-6 pt-5 border-t-2 border-[#000726]/20 text-center">
+                            <div class="p-2.5 bg-white/85 border border-[#000726]/15 rounded-[2px] shadow-2xs">
+                                <div class="font-western text-base sm:text-lg font-bold text-[#B91C1C]">⚡ 2 Horas</div>
+                                <div class="text-[9px] text-[#000726]/80 font-bold uppercase tracking-wider">Retorno Comercial</div>
+                            </div>
+                            <div class="p-2.5 bg-white/85 border border-[#000726]/15 rounded-[2px] shadow-2xs">
+                                <div class="font-western text-base sm:text-lg font-bold text-[#000726]">📄 CNPJ</div>
+                                <div class="text-[9px] text-[#000726]/80 font-bold uppercase tracking-wider">Faturado Direto</div>
+                            </div>
+                            <div class="p-2.5 bg-white/85 border border-[#000726]/15 rounded-[2px] shadow-2xs">
+                                <div class="font-western text-base sm:text-lg font-bold text-[#B91C1C]">100%</div>
+                                <div class="text-[9px] text-[#000726]/80 font-bold uppercase tracking-wider">Original Country</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FAIXA INFERIOR DE APOIO RÁPIDO AO CLIENTE -->
+            <div class="mt-14 p-6 sm:p-8 bg-white border-2 border-[#000726] rounded-[2px] flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-[3px] bg-[#B91C1C]/10 border border-[#B91C1C]/25 text-[#B91C1C] flex items-center justify-center shrink-0">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-western text-lg text-[#000726] tracking-wide">Precisa de suporte urgente ou cotação imediata?</h3>
+                        <p class="text-xs sm:text-sm text-slate-600">Fale em tempo real com nossa equipe de consultores no WhatsApp e receba fotos do estoque.</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/5518996652244?text=Ola%2C%20preciso%20de%20atendimento%20urgente%20Indiana%20Ranch" 
+                   target="_blank" rel="noopener" 
+                   class="btn btn-indiana-red px-6 py-3 text-xs sm:text-sm uppercase tracking-wider font-western whitespace-nowrap shadow-sm">
+                    Chamar no WhatsApp →
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+
+<script is:inline>
+(function() {
+    const form = document.getElementById('contact-quote-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const statusBox = document.getElementById('form-status-box');
+    const phoneInput = document.getElementById('contact-whatsapp');
+
+    // Máscara automática de WhatsApp / Telefone
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            let val = e.target.value.replace(/\D/g, '');
+            if (val.length > 11) val = val.substring(0, 11);
+            if (val.length > 10) {
+                e.target.value = val.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+            } else if (val.length > 6) {
+                e.target.value = val.replace(/^(\d{2})(\d{4})(\d{0,4})$/, '($1) $2-$3');
+            } else if (val.length > 2) {
+                e.target.value = val.replace(/^(\d{2})(\d{0,5})$/, '($1) $2');
+            } else {
+                e.target.value = val;
+            }
+        });
+    }
+
+    if (!form || !submitBtn) return;
+
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Limpa estado anterior
+        statusBox.classList.add('hidden');
+        statusBox.className = 'hidden rounded-[3px] p-4 text-xs font-semibold';
+        statusBox.innerHTML = '';
+
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+
+        // Validação mínima no cliente
+        if (!payload.name || payload.name.trim().length < 2) {
+            showStatus('Por favor, informe seu nome ou razão social completo.', 'error');
+            return;
+        }
+        if (!payload.whatsapp || payload.whatsapp.trim().length < 10) {
+            showStatus('Por favor, informe seu WhatsApp completo com DDD.', 'error');
+            return;
+        }
+
+        // Estado de carregamento
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
+        btnText.innerHTML = '<span class="inline-block animate-spin mr-2">⟳</span> Enviando para atendimento@indianaranch.com.br...';
+
+        try {
+            const response = await fetch('/api/contato', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const result = await response.json().catch(() => ({}));
+
+            if (response.ok && result.success) {
+                showStatus(
+                    '★ SOLICITAÇÃO RECEBIDA COM SUCESSO! ★<br/><span class="font-normal mt-1 block">Sua mensagem foi entregue para nossa equipe comercial (<strong>atendimento@indianaranch.com.br</strong>). Retornaremos seu contato em breve via WhatsApp e e-mail oficial.</span>',
+                    'success'
+                );
+                form.reset();
+            } else {
+                const errorMsg = result.error || 'Não foi possível enviar agora. Entre em contato diretamente pelo WhatsApp oficial.';
+                showStatus(errorMsg, 'error');
+            }
+        } catch (err) {
+            showStatus(
+                'Falha temporária de rede ao enviar o formulário. Por favor, utilize o botão abaixo para falar diretamente via WhatsApp.',
+                'error'
+            );
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+            btnText.textContent = 'Enviar Solicitação de Cotação';
+        }
+    });
+
+    function showStatus(message, type) {
+        statusBox.classList.remove('hidden');
+        if (type === 'success') {
+            statusBox.className = 'rounded-[3px] p-4 text-xs font-semibold bg-emerald-50 border-2 border-emerald-600 text-emerald-900 shadow-sm leading-relaxed';
+            statusBox.innerHTML = message;
+        } else {
+            statusBox.className = 'rounded-[3px] p-4 text-xs font-semibold bg-red-50 border-2 border-[#B91C1C] text-red-900 shadow-sm leading-relaxed';
+            statusBox.innerHTML = '⚠️ ' + message + ' <br/><a href="https://wa.me/5518996652244" target="_blank" class="underline font-bold text-[#B91C1C] mt-2 inline-block">Clique aqui para falar agora pelo WhatsApp &rarr;</a>';
+        }
+        statusBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+})();
+</script>
+
+</Layout>

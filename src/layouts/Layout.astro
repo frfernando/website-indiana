@@ -1,0 +1,578 @@
+---
+import '../styles/global.css';
+import Topbar from '../components/Topbar.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileDrawer from '../components/MobileDrawer.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+
+interface Props {
+    title?: string;
+    description?: string;
+    currentPath?: string;
+    ogImage?: string;
+    faqItems?: Array<{ pergunta?: string; name?: string; resposta?: string; text?: string }>;
+}
+
+const {
+    title = 'Indiana Ranch — Artigos para Cavalo, Montaria e Country Western',
+    description = 'Indiana Ranch: Importadora e distribuidora country oficial desde 1994. Artigos para cavalo, montaria, selaria, proteção equina, atletas parceiros e marcas importadas.',
+    currentPath = '/',
+    ogImage = '/images/logo-indiana-ranch.png',
+    faqItems
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site || 'https://indianaranch.com.br').href;
+const fullOgImage = new URL(ogImage, Astro.site || 'https://indianaranch.com.br').href;
+
+// Breadcrumb dynamic generator for rich Google snippets
+const breadcrumbItems: Array<{ "@type": string; position: number; name: string; item: string }> = [
+    {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://indianaranch.com.br"
+    }
+];
+
+if (currentPath === '/contato') {
+    breadcrumbItems.push({
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contato & Cotação B2B",
+        "item": "https://indianaranch.com.br/contato"
+    });
+} else if (currentPath === '/blog') {
+    breadcrumbItems.push({
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog & Artigos Técnicos",
+        "item": "https://indianaranch.com.br/blog"
+    });
+} else if (currentPath === '/sobre') {
+    breadcrumbItems.push({
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Sobre a Estância Indiana",
+        "item": "https://indianaranch.com.br/sobre"
+    });
+} else if (currentPath === '/categorias') {
+    breadcrumbItems.push({
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Categorias de Produtos",
+        "item": "https://indianaranch.com.br/categorias"
+    });
+} else if (currentPath === '/como-comprar') {
+    breadcrumbItems.push({
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Como Comprar no Atacado",
+        "item": "https://indianaranch.com.br/como-comprar"
+    });
+} else if (currentPath === '/faq') {
+    breadcrumbItems.push({
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Perguntas Frequentes",
+        "item": "https://indianaranch.com.br/faq"
+    });
+}
+
+// Fallback wholesale FAQs for Schema.org FAQPage
+const defaultFaqEntities = [
+    {
+        "@type": "Question",
+        "name": "Quem pode comprar no atacado da Indiana Ranch e qual é o valor do pedido mínimo?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Atendemos pessoas jurídicas com CNPJ ativo (inclusive MEI) de agropecuárias, selarias, lojas country/western, haras e centros de treinamento equestre. O pedido mínimo de abertura de cadastro é a partir de R$ 1.500,00, com valores reduzidos para pedidos recorrentes de reposição de estoque."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "O lojista é obrigado a comprar grade fechada de produtos?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não há exigência de grade fechada. Em artigos de selaria, mantas ortopédicas de feltro virgem, embocaduras e caneleiras, você pode mesclar modelos, espessuras, cores e tamanhos unitariamente de acordo com a demanda real do seu balcão."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "Como funciona o faturamento a prazo no boleto bancário para CNPJ?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A primeira compra é feita à vista no Pix com desconto de atacado ou cartão de crédito corporativo em até 6x. A partir do envio dos dados cadastrais e rápida análise comercial de crédito, liberamos faturamento programado por boleto bancário a prazo (28, 30 ou 30/60 dias)."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "Os produtos importados possuem Nota Fiscal Eletrônica (NF-e) com garantia oficial?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, 100% dos produtos importados (Classic Equine, Weaver Leather, Cactus Ropes, Fast Back, Willard, Heel-O-Matic) e nacionais próprios (Top Equine, Austin Western) são expedidos com Nota Fiscal Eletrônica com CFOP de revenda, lote rastreável e desembaraço alfandegário oficial."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "Qual é a margem de lucro (markup) média e como a Indiana Ranch combate o leilão predatório na internet?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nossos lojistas operam com margens brutas médias entre 40% e 65% (markup de 1.8x a 2.3x), superando 70% em ferragens e acessórios. Mantemos uma política ativa de Preço Mínimo Sugerido (PMR) no Brasil para inibir guerras desleais de preços na internet e proteger a loja física."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "De onde saem as mercadorias, qual o prazo de expedição e como funciona o frete?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Todo o estoque já está nacionalizado e disponível a pronta entrega em nosso Centro de Distribuição em Indiana/SP. Pedidos faturados são despachados em até 24 a 48 horas úteis via transportadoras parceiras e Correios com rastreamento ativo."
+        }
+    }
+];
+
+const activeFaqEntities = (faqItems && faqItems.length > 0)
+    ? faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.pergunta || item.name || '',
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.resposta || item.text || ''
+        }
+    }))
+    : defaultFaqEntities;
+
+// Page-specific Schema graph item
+let pageSchemaNode: Record<string, any>;
+if (currentPath === '/contato') {
+    pageSchemaNode = {
+        "@type": "ContactPage",
+        "@id": `${canonicalUrl}#webpage`,
+        "url": canonicalUrl,
+        "name": title,
+        "description": description,
+        "isPartOf": { "@id": "https://indianaranch.com.br/#website" },
+        "about": { "@id": "https://indianaranch.com.br/#organization" },
+        "inLanguage": "pt-BR"
+    };
+} else if (currentPath === '/sobre') {
+    pageSchemaNode = {
+        "@type": "AboutPage",
+        "@id": `${canonicalUrl}#webpage`,
+        "url": canonicalUrl,
+        "name": title,
+        "description": description,
+        "isPartOf": { "@id": "https://indianaranch.com.br/#website" },
+        "about": { "@id": "https://indianaranch.com.br/#organization" },
+        "inLanguage": "pt-BR"
+    };
+} else if (currentPath === '/categorias') {
+    pageSchemaNode = {
+        "@type": "CollectionPage",
+        "@id": `${canonicalUrl}#webpage`,
+        "url": canonicalUrl,
+        "name": title,
+        "description": description,
+        "isPartOf": { "@id": "https://indianaranch.com.br/#website" },
+        "about": { "@id": "https://indianaranch.com.br/#organization" },
+        "inLanguage": "pt-BR"
+    };
+} else if (currentPath === '/blog') {
+    pageSchemaNode = {
+        "@type": "Blog",
+        "@id": `${canonicalUrl}#blog`,
+        "url": canonicalUrl,
+        "name": title,
+        "description": description,
+        "isPartOf": { "@id": "https://indianaranch.com.br/#website" },
+        "publisher": { "@id": "https://indianaranch.com.br/#organization" },
+        "inLanguage": "pt-BR"
+    };
+} else if (currentPath === '/como-comprar') {
+    pageSchemaNode = {
+        "@type": "HowTo",
+        "@id": `${canonicalUrl}#howto`,
+        "url": canonicalUrl,
+        "name": title,
+        "description": description,
+        "isPartOf": { "@id": "https://indianaranch.com.br/#website" },
+        "about": { "@id": "https://indianaranch.com.br/#organization" },
+        "inLanguage": "pt-BR"
+    };
+} else {
+    pageSchemaNode = {
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}#webpage`,
+        "url": canonicalUrl,
+        "name": title,
+        "description": description,
+        "isPartOf": { "@id": "https://indianaranch.com.br/#website" },
+        "about": { "@id": "https://indianaranch.com.br/#organization" },
+        "inLanguage": "pt-BR",
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", "h2", ".badge-indiana"]
+        }
+    };
+}
+
+// Multi-Layer Schema.org JSON-LD (Search Engines, Local SEO & AI Knowledge Graph)
+const schemaOrg = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://indianaranch.com.br/#organization",
+            "name": "Indiana Ranch",
+            "legalName": "Indiana Ranch Comércio e Importação Ltda",
+            "url": "https://indianaranch.com.br",
+            "logo": fullOgImage,
+            "foundingDate": "1994",
+            "description": description,
+            "slogan": "O Padrão Original Western desde 1994",
+            "knowsLanguage": ["pt-BR", "en"],
+            "knowsAbout": [
+                "Proteção ortopédica para cavalos",
+                "Mantas ortopédicas de feltro de lã virgem",
+                "Selaria e arreios western",
+                "Laços para Team Roping",
+                "Caneleiras e cloches equinos",
+                "Distribuição atacadista country"
+            ],
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Estância Indiana, S/N - Zona Rural",
+                "addressLocality": "Indiana",
+                "addressRegion": "SP",
+                "postalCode": "19560-000",
+                "addressCountry": "BR"
+            },
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+55-18-3995-1308",
+                    "contactType": "customer service",
+                    "areaServed": "BR",
+                    "availableLanguage": ["Portuguese"]
+                },
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+55-18-3995-1308",
+                    "contactType": "sales",
+                    "areaServed": "BR",
+                    "availableLanguage": ["Portuguese"]
+                },
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+55-18-99665-2244",
+                    "contactType": "WhatsApp B2B",
+                    "areaServed": "BR",
+                    "availableLanguage": ["Portuguese"]
+                }
+            ],
+            "sameAs": [
+                "https://www.instagram.com/indiana.ranch/",
+                "https://www.facebook.com/indianaranchbrasil",
+                "https://wa.me/5518996652244"
+            ]
+        },
+        {
+            "@type": "WholesaleStore",
+            "@id": "https://indianaranch.com.br/#store",
+            "name": "Indiana Ranch — Matriz & Expedição",
+            "url": "https://indianaranch.com.br",
+            "logo": fullOgImage,
+            "image": fullOgImage,
+            "telephone": "+55-18-3995-1308",
+            "priceRange": "$$$",
+            "currenciesAccepted": "BRL",
+            "paymentAccepted": "Pix, Boleto Bancário, Cartão de Crédito",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Estância Indiana, S/N - Zona Rural",
+                "addressLocality": "Indiana",
+                "addressRegion": "SP",
+                "postalCode": "19560-000",
+                "addressCountry": "BR"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -22.1583,
+                "longitude": -51.2483
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "08:00",
+                    "closes": "18:00"
+                }
+            ],
+            "hasMap": "https://maps.google.com/?q=Indiana+SP"
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://indianaranch.com.br/#website",
+            "name": "Indiana Ranch",
+            "description": description,
+            "publisher": {
+                "@id": "https://indianaranch.com.br/#organization"
+            },
+            "inLanguage": "pt-BR",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://indianaranch.com.br/blog?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": `${canonicalUrl}#breadcrumb`,
+            "itemListElement": breadcrumbItems
+        },
+        pageSchemaNode,
+        {
+            "@type": "FAQPage",
+            "@id": `${canonicalUrl}#faq`,
+            "mainEntity": activeFaqEntities
+        }
+    ]
+};
+---
+
+<!doctype html>
+<html lang="pt-BR" data-theme="light" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+
+        <!-- DIRECTIVAS DE INDEXAÇÃO E RECORTE PARA MOTORES DE BUSCA E IA -->
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="author" content="Indiana Ranch" />
+
+        <!-- GEO-TAGGING REGIONAL (LOCAL SEO GOOGLE MAPS) -->
+        <meta name="geo.region" content="BR-SP" />
+        <meta name="geo.placename" content="Indiana" />
+        <meta name="geo.position" content="-22.1583;-51.2483" />
+        <meta name="ICBM" content="-22.1583, -51.2483" />
+
+        <meta name="theme-color" content="#000726" />
+        <link rel="canonical" href={canonicalUrl} />
+
+        <!-- PWA MANIFEST & ICONS -->
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="icon" type="image/png" href="/images/logo-indiana-ranch.png" />
+        <link rel="apple-touch-icon" href="/images/logo-indiana-ranch.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+        <!-- CRITICAL RESOURCE HINTS & PRECONNECT (SUB-SECOND DELIVERY) -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+
+        <!-- PRELOAD HIGH PRIORITY CRITICAL ASSETS -->
+        <link rel="preload" as="image" href="/images/logo-indiana-ranch.avif" fetchpriority="high" type="image/avif" />
+        <link rel="preload" as="script" href="https://cdn.tailwindcss.com" />
+        <link rel="preload" as="style" href="/styles/daisyui.min.css" />
+
+        <!-- LLM / AI-SEO SPECIFICATION LINK (LLMSTXT.ORG) -->
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Knowledge Base (llmstxt.org)" />
+
+        <!-- RSS FEED PARA GOOGLE NEWS E AGREGADORES -->
+        <link rel="alternate" type="application/rss+xml" title="Indiana Ranch Blog RSS" href="/rss.xml" />
+
+        <!-- OPEN GRAPH / FACEBOOK / WHATSAPP / LINKEDIN -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={fullOgImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:alt" content="Indiana Ranch — O Padrão Original Western desde 1994" />
+        <meta property="og:site_name" content="Indiana Ranch" />
+        <meta property="og:locale" content="pt_BR" />
+
+        <!-- TWITTER CARDS -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={fullOgImage} />
+        <meta name="twitter:image:alt" content="Indiana Ranch — O Padrão Original Western desde 1994" />
+
+        <!-- MULTI-LAYER SCHEMA.ORG JSON-LD (ORGANIZATION + WHOLESALE STORE + WEBSITE + BREADCRUMBS + PAGE + FAQPAGE) -->
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+
+        <!-- Google Fonts (Display & Body - Non-blocking swap) -->
+        <link
+            rel="preload"
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Rye&family=Oswald:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rye&family=Oswald:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+            media="print"
+            onload="this.media='all'"
+        />
+        <noscript>
+            <link
+                href="https://fonts.googleapis.com/css2?family=Rye&family=Oswald:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+                rel="stylesheet"
+            />
+        </noscript>
+
+        <!-- Tailwind CSS CDN (v3 Engine - 100% fiel ao protótipo e design original) -->
+        <script is:inline src="https://cdn.tailwindcss.com"></script>
+        <script is:inline>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        borderRadius: {
+                            DEFAULT: '3px',
+                            sm: '3px',
+                            md: '3px',
+                            lg: '3px',
+                            xl: '3px',
+                            '2xl': '3px',
+                            '3xl': '3px',
+                            full: '3px',
+                        },
+                        fontFamily: {
+                            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                            display: ['"Rye"', 'serif'],
+                        },
+                        colors: {
+                            indiana: {
+                                navy: '#000726',
+                                'navy-dark': '#000726',
+                                'navy-light': '#0b1961',
+                                red: '#B91C1C',
+                                'red-hover': '#991B1B',
+                                'red-subtle': '#FFF0F0',
+                                white: '#FFFFFF',
+                                slate: '#F1F5F9',
+                                border: '#E2E8F0',
+                            }
+                        }
+                    }
+                }
+            };
+        </script>
+
+        <!-- DaisyUI (v4.12.2 - 100% fiel ao protótipo com cache imutável na borda Cloudflare) -->
+        <link href="/styles/daisyui.min.css" rel="stylesheet" type="text/css" />
+
+        <meta name="generator" content={Astro.generator} />
+        <!-- UMAMI ANALYTICS (TELEMETRIA DE PRIVACIDADE SEM COOKIES) -->
+        <script
+            is:inline
+            defer
+            src="https://analytics.sanbernarda.com/script.js"
+            data-website-id="bc26c699-e7fe-448f-a51e-f62903070425"
+        ></script>
+    </head>
+    <body class="bg-paper-texture antialiased selection:bg-indiana-red selection:text-white">
+        <!-- NANO-INDICADOR DE PROGRESSO DE ROLAGEM (TELEMETRIA 120HZ / ALTO TICKET 2026) -->
+        <div id="viewport-progress-bar" class="fixed top-0 left-0 w-0 h-[3px] bg-gradient-to-r from-[#B91C1C] via-[#D97706] to-[#B91C1C] z-[100] pointer-events-none shadow-[0_0_10px_rgba(185,28,28,0.85),0_0_4px_rgba(217,119,6,0.95)] origin-left will-change-[width]" aria-hidden="true"></div>
+
+        <!-- TEXTURA GLOBAL DE GRÃO DE AREIA SOBRE TODAS AS SEÇÕES E DIVISORES -->
+        <div class="sand-grain-overlay" aria-hidden="true"></div>
+
+        <!-- SKIP LINK DE ACESSIBILIDADE WCAG 2.2 AA -->
+        <a href="#conteudo-principal" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-indiana-red focus:text-white focus:font-bold focus:shadow-lg focus:rounded-[3px]">
+            Pular para o conteúdo principal
+        </a>
+
+        <!-- 1. TOP ANNOUNCEMENT BAR COM REDES SOCIAIS -->
+        <Topbar />
+
+        <!-- 2. MAIN HEADER -->
+        <Header currentPath={currentPath} />
+
+        <div id="conteudo-principal">
+            <slot />
+        </div>
+
+        <!-- FOOTER COM CONTEÚDO CORPORATIVO & MAPA -->
+        <Footer />
+
+        <!-- WHATSAPP FLOATING WIDGET -->
+        <WhatsAppWidget />
+
+        <!-- MOBILE DRAWER -->
+        <MobileDrawer />
+
+        <!-- SCRIPT DO PROGRESS BAR E SCROLL OBSERVER (ACCELERATED 120HZ) -->
+        <script is:inline>
+            (function() {
+                const bar = document.getElementById('viewport-progress-bar');
+                if (!bar) return;
+                let ticking = false;
+                window.addEventListener('scroll', function() {
+                    if (!ticking) {
+                        window.requestAnimationFrame(function() {
+                            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                            const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+                            bar.style.width = scrolled + '%';
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                }, { passive: true });
+            })();
+        </script>
+
+        <!-- GERADOR DE TEXTURA DE AREIA / GRÃO VINTAGE UNIVERSAL (100% IDÊNTICO AO PROTÓTIPO) -->
+        <script is:inline>
+            (function() {
+                try {
+                    var canvas = document.createElement('canvas');
+                    canvas.width = 150;
+                    canvas.height = 150;
+                    var ctx = canvas.getContext('2d');
+                    var imgData = ctx.createImageData(150, 150);
+                    var data = imgData.data;
+
+                    for (var i = 0; i < data.length; i += 4) {
+                        var isGrain = Math.random() > 0.45;
+                        if (isGrain) {
+                            var gray = Math.floor(Math.random() * 60);
+                            data[i] = gray;
+                            data[i+1] = gray;
+                            data[i+2] = gray;
+                            data[i+3] = Math.floor(Math.random() * 18 + 8);
+                        } else {
+                            data[i+3] = 0;
+                        }
+                    }
+                    ctx.putImageData(imgData, 0, 0);
+                    var grainUrl = canvas.toDataURL('image/png');
+
+                    var overlay = document.querySelector('.sand-grain-overlay');
+                    if (overlay) {
+                        overlay.style.backgroundImage = 'url(' + grainUrl + ')';
+                        overlay.style.backgroundRepeat = 'repeat';
+                    }
+
+                    var paperSections = document.querySelectorAll('.bg-paper-texture');
+                    paperSections.forEach(function(el) {
+                        el.style.backgroundImage = 'url(' + grainUrl + ')';
+                        el.style.backgroundRepeat = 'repeat';
+                    });
+                } catch(e) {}
+            })();
+        </script>
+        <!-- SELO & DOSSIÊ SANBERNARDA (100% SHADOW DOM) -->
+        <script is:inline src="/widgets/sanbernarda-badge.js" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" fill="none">
+  <rect width="300" height="120" rx="3" fill="#FFFFFF"/>
+  <ellipse cx="150" cy="60" rx="125" ry="46" fill="none" stroke="#B91C1C" stroke-width="3" stroke-dasharray="8 4"/>
+  <text x="50%" y="54" text-anchor="middle" font-family="'Oswald', sans-serif" font-weight="900" font-size="34" fill="#B91C1C" font-style="italic" letter-spacing="2">
+    WILLARD
+  </text>
+  <text x="50%" y="78" text-anchor="middle" font-family="'Oswald', sans-serif" font-weight="700" font-size="22" fill="#000726" letter-spacing="3">
+    ROPE CO.
+  </text>
+  <text x="50%" y="95" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="9" fill="#64748B" letter-spacing="3">
+    ROCKDALE, TEXAS
+  </text>
+</svg>

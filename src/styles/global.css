@@ -1,0 +1,722 @@
+:root {
+    --color-navy: #000726;
+    --color-red: #B91C1C;
+    --color-white: #FFFFFF;
+    --rounded-btn: 3px;
+    --rounded-badge: 3px;
+    --rounded-box: 3px;
+}
+
+.btn,
+.card,
+.badge,
+.input,
+.select,
+.textarea,
+.collapse,
+.navbar,
+article,
+section>div,
+iframe,
+img,
+.rounded-3px,
+.rounded-5px {
+    border-radius: 3px !important;
+}
+
+.card-premium,
+.badge-indiana,
+.hero-texture div[class*="border"],
+.navbar a,
+form input,
+form select,
+form textarea,
+form button {
+    border-radius: 3px !important;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #F8FAFC;
+    color: #000726;
+    overflow-x: hidden;
+}
+
+.font-display {
+    font-family: 'Rye', serif;
+    letter-spacing: 0.03em;
+}
+
+.container-shell {
+    width: min(100% - 3.5rem, 1260px);
+    margin-inline: auto;
+}
+
+@media (min-width: 1024px) {
+    .container-shell {
+        width: min(100% - 5rem, 1260px);
+    }
+}
+
+.hero-texture {
+    background-color: #000726;
+    background-image:
+        radial-gradient(circle at 15% 25%, rgba(248, 26, 26, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(11, 25, 97, 0.6) 0%, transparent 55%),
+        linear-gradient(180deg, #000726 0%, #000726 100%);
+}
+
+.card-premium {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 3px !important;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -6px rgba(1, 12, 66, 0.12);
+    border-color: #B91C1C;
+}
+
+.badge-indiana {
+    background-color: rgba(248, 26, 26, 0.1);
+    color: #B91C1C;
+    border: 1px solid rgba(248, 26, 26, 0.25);
+    border-radius: 3px !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+}
+
+/* BOTÃO PRIMÁRIO COM BRILHO NATURAL, SUAVE E ORGÂNICO */
+.btn-indiana-red {
+    position: relative;
+    overflow: hidden;
+    background-color: #B91C1C;
+    color: #FFFFFF;
+    border: 1px solid #991B1B;
+    border-radius: 3px !important;
+    font-weight: 600;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+}
+
+.btn-indiana-red::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -150%;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(115deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.02) 25%,
+            rgba(255, 255, 255, 0.28) 50%,
+            rgba(255, 255, 255, 0.02) 75%,
+            transparent 100%);
+    transform: rotate(20deg);
+    pointer-events: none;
+    animation: btnShimmerNatural 5.5s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes btnShimmerNatural {
+
+    0%,
+    65% {
+        left: -150%;
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    85% {
+        left: 180%;
+        opacity: 1;
+    }
+
+    90%,
+    100% {
+        left: 180%;
+        opacity: 0;
+    }
+}
+
+.btn-indiana-red:hover {
+    background-color: #991B1B;
+    border-color: #B50D0D;
+    color: #FFFFFF;
+    box-shadow: 0 8px 24px -3px rgba(185, 28, 28, 0.45);
+    transform: translateY(-1.5px);
+}
+
+.btn-outline-navy {
+    border: 1.5px dashed #000726 !important;
+    color: #000726;
+    background: transparent;
+    border-radius: 3px !important;
+    font-weight: 600;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-outline-navy:hover {
+    background-color: #000726;
+    border: 1.5px dashed #000726 !important;
+    color: #FFFFFF;
+    box-shadow: 0 6px 18px -2px rgba(0, 7, 38, 0.25);
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    border: 1.5px dashed rgba(255, 255, 255, 0.55) !important;
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px !important;
+    font-weight: 600;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-outline:hover {
+    border: 1.5px dashed #FFFFFF !important;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+}
+
+.social-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-icon-btn:hover {
+    background: #B91C1C;
+    border-color: #B91C1C;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(185, 28, 28, 0.4);
+}
+
+@keyframes marqueeLinear {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.marquee-container::before,
+.marquee-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.25;
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, #FFFFFF 15%, rgba(255, 255, 255, 0) 100%);
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, #FFFFFF 15%, rgba(255, 255, 255, 0) 100%);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 1.25rem;
+    animation: marqueeLinear 30s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+.brand-marquee-card {
+    flex: 0 0 325px;
+    width: 325px;
+}
+
+.font-western {
+    font-family: 'Rye', serif;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    -webkit-text-stroke: 0.15px currentColor;
+}
+
+/* Título Hero Extra Bold Ultra Robusto */
+.hero-title-bold {
+    font-family: 'Rye', serif !important;
+    font-weight: 900 !important;
+    -webkit-text-stroke: 1.2px currentColor;
+    paint-order: stroke fill;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.85);
+}
+
+.hero-title-bold .hero-highlight {
+    display: block;
+    margin-top: 0.35rem;
+    color: #B91C1C !important;
+    -webkit-text-stroke: 1px #B91C1C !important;
+    paint-order: stroke fill;
+    text-shadow: none !important;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.6));
+    letter-spacing: 0.06em;
+}
+
+/* ========================================================= */
+/* IDENTIDADE WESTERN: COSTURA DE COURO (PESPONTO & REBITES) */
+/* ========================================================= */
+.card-leather,
+.card-premium {
+    position: relative;
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 3px !important;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Pesponto tracejado interno imitando costura de arreio */
+.card-leather::before,
+.card-premium::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1px dashed rgba(1, 12, 66, 0.18);
+    border-radius: 2px;
+    pointer-events: none;
+    transition: border-color 0.28s ease;
+    z-index: 10;
+}
+
+.card-leather:hover::before,
+.card-premium:hover::before {
+    border-color: rgba(185, 28, 28, 0.5);
+}
+
+.card-leather:hover,
+.card-premium:hover {
+    transform: translateY(-2.5px);
+    box-shadow: 0 16px 32px -8px rgba(1, 12, 66, 0.14);
+    border-color: #B91C1C;
+}
+
+/* 4 Rebites metálicos nos cantos do pesponto */
+.card-leather::after,
+.card-premium::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background-image:
+        radial-gradient(circle, #f8fafc 20%, #94a3b8 55%, #475569 100%),
+        radial-gradient(circle, #f8fafc 20%, #94a3b8 55%, #475569 100%),
+        radial-gradient(circle, #f8fafc 20%, #94a3b8 55%, #475569 100%),
+        radial-gradient(circle, #f8fafc 20%, #94a3b8 55%, #475569 100%);
+    background-position: 2px 2px, calc(100% - 2px) 2px, 2px calc(100% - 2px), calc(100% - 2px) calc(100% - 2px);
+    background-size: 5px 5px, 5px 5px, 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* ========================================================= */
+/* ABAS WESTERN INTERATIVAS (CATEGORIAS DE PRODUTOS) */
+/* ========================================================= */
+.cat-tab-btn {
+    background: #FFFFFF;
+    color: #000726;
+    border: 1.5px dashed #CBD5E1;
+    border-radius: 3px !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.cat-tab-btn .cat-tab-num {
+    background: #F1F5F9;
+    color: #000726;
+    transition: all 0.25s ease;
+}
+
+.cat-tab-btn:hover {
+    border-color: #000726;
+    background: #F8FAFC;
+    transform: translateY(-1px);
+}
+
+.cat-tab-btn.active {
+    background: #000726 !important;
+    color: #FFFFFF !important;
+    border: 1.5px solid #000726 !important;
+    box-shadow: 0 6px 18px -2px rgba(1, 12, 66, 0.3);
+    transform: translateY(-1px);
+}
+
+.cat-tab-btn.active .cat-tab-num {
+    background: #FFFFFF !important;
+    color: #000726 !important;
+    font-weight: 800 !important;
+}
+
+.cat-panel {
+    display: none;
+    opacity: 0;
+    transform: translateY(8px) scale(0.998);
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cat-panel.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* ========================================================= */
+/* MARQUEE INFINITO DE ATLETAS */
+/* ========================================================= */
+.athletes-marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.athletes-marquee-container::before,
+.athletes-marquee-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 16px;
+    z-index: 20;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.athletes-marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(250, 246, 240, 0.6) 0%, rgba(250, 246, 240, 0) 100%);
+}
+
+.athletes-marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(250, 246, 240, 0.6) 0%, rgba(250, 246, 240, 0) 100%);
+}
+
+.athletes-marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 1.25rem;
+    animation: athletesMarquee 35s linear infinite;
+}
+
+.athletes-marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes athletesMarquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ========================================================= */
+/* PONTOS PISCANDO SUTILMENTE EM ÁREAS ALEATÓRIAS (TWINKLE) */
+/* ========================================================= */
+@keyframes random-twinkle {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    40%,
+    60% {
+        opacity: 0.75;
+        transform: scale(1.3);
+    }
+}
+
+.twinkle-dot {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 6px 1px rgba(255, 255, 255, 0.8), 0 0 10px 2px rgba(185, 28, 28, 0.4);
+    pointer-events: none;
+    opacity: 0;
+    animation: random-twinkle var(--twinkle-dur, 4s) ease-in-out infinite;
+    animation-delay: var(--twinkle-del, 0s);
+    z-index: 2;
+}
+
+/* GRADIENTE CINEMATOGRÁFICO DO HERO: AZUL MEIA-NOITE & COBALTO NA ESQUERDA -> LUZ BRANCA LUMINOSA NA DIREITA */
+.hero-smooth-blend {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 85% 25%, rgba(255, 255, 255, 0.25) 0%, transparent 55%),
+        radial-gradient(circle at 15% 75%, rgba(13, 91, 166, 0.32) 0%, transparent 55%),
+        linear-gradient(135deg, rgba(0, 7, 38, 0.88) 0%, rgba(8, 14, 51, 0.75) 45%, rgba(10, 20, 60, 0.50) 80%, rgba(255, 255, 255, 0.15) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ========================================================= */
+/* TEXTURA DE PAPEL PERGAMINHO VINTAGE RRL (GRÃO DE AREIA)   */
+/* ========================================================= */
+.bg-paper-texture {
+    background-color: #FAF6F0 !important;
+    background-image: url("/images/sand-grain.png") !important;
+    background-repeat: repeat !important;
+}
+
+.sand-grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: multiply;
+    opacity: 0.85;
+    background-image: url("/images/sand-grain.png");
+    background-repeat: repeat;
+}
+
+/* Divisores de seção rústicos perfeitamente integrados ao grão */
+.border-divider-rustic {
+    border-color: #EAE3D7 !important;
+}
+
+/* Cartões brancos nítidos sobre o papel pergaminho */
+.card-on-paper {
+    background-color: #FFFFFF !important;
+    border-color: #E7E2D8 !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 7, 38, 0.05), 0 1px 2px -1px rgba(0, 7, 38, 0.05);
+}
+
+/* CARD LEATHER DARK (FUNDO ESCURO INSTITUCIONAL COM PROFUNDIDADE) */
+.card-leather-dark {
+    background: linear-gradient(145deg, #02092B 0%, #000726 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    border-radius: 3px;
+    box-shadow: 0 15px 35px -5px rgba(0, 7, 38, 0.5);
+    position: relative;
+}
+
+/* MARQUEE DO TOPBAR MOBILE (LINHA ÚNICA SEM PERDER CONTEÚDO) */
+@keyframes topbar-marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-topbar-marquee {
+    display: inline-flex;
+    width: max-content;
+    animation: topbar-marquee 16s linear infinite;
+}
+
+.animate-topbar-marquee:hover,
+.animate-topbar-marquee:active {
+    animation-play-state: paused;
+}
+
+@media (min-width: 768px) {
+    .animate-topbar-marquee {
+        animation: none !important;
+        transform: none !important;
+        width: auto !important;
+    }
+}
+
+/* ========================================================= */
+/* CAMADAS DE EMBELEZAMENTO ALTO TICKET (SANBERNARDA 2026)   */
+/* ========================================================= */
+
+/* 1. VARREDURA METÁLICA DE LUZ CONTÍNUA (SHIMMER 120HZ) */
+.shimmer-sweep {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-sweep::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -150%;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(115deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.03) 20%,
+            rgba(255, 255, 255, 0.38) 50%,
+            rgba(255, 255, 255, 0.03) 80%,
+            transparent 100%);
+    transform: rotate(25deg);
+    pointer-events: none;
+    animation: shimmerSweepLoop 4.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    z-index: 5;
+}
+
+@keyframes shimmerSweepLoop {
+
+    0%,
+    60% {
+        left: -150%;
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 1;
+    }
+
+    82% {
+        left: 180%;
+        opacity: 1;
+    }
+
+    88%,
+    100% {
+        left: 180%;
+        opacity: 0;
+    }
+}
+
+/* 2. PROFUNDIDADE TÁTIL COM OCLUSÃO DE AMBIENTE MULTICAMADAS */
+.tactile-shadow {
+    box-shadow:
+        0 1px 2px rgba(0, 7, 38, 0.04),
+        0 8px 20px -4px rgba(0, 7, 38, 0.07),
+        0 20px 40px -10px rgba(0, 7, 38, 0.10);
+}
+
+.tactile-shadow-hover {
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tactile-shadow-hover:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 2px 6px rgba(0, 7, 38, 0.06),
+        0 14px 30px -4px rgba(0, 7, 38, 0.12),
+        0 32px 64px -12px rgba(0, 7, 38, 0.16);
+}
+
+/* 3. FILETE ESPECULAR DOURADO DE TOPO (HAIRLINE GOLD ACCENT) */
+.gold-specular-edge {
+    position: relative;
+}
+
+.gold-specular-edge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 8%;
+    right: 8%;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.75), transparent);
+    pointer-events: none;
+    z-index: 20;
+}
+
+/* 4. INDICADOR MAGNÉTICO DE NAVEGAÇÃO */
+.nav-link-elite {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-link-elite::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #B91C1C, #D97706);
+    transition: width 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 1px;
+}
+
+.nav-link-elite:hover::after,
+.nav-link-elite.active::after {
+    width: 100%;
+}
+
+/* 5. CONCHO / TACHA WESTERN COM ELEVAÇÃO 3D */
+.concho-3d {
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.30)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.20));
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.concho-3d:hover {
+    transform: scale(1.08) rotate(4deg);
+}
+
+/* 6. STATUS BEACON COM PULSO RADIAL */
+.beacon-pulse {
+    position: relative;
+}
+
+.beacon-pulse::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 9999px;
+    background-color: currentColor;
+    opacity: 0.75;
+    animation: beaconPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes beaconPing {
+
+    75%,
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+/* OCULTAR CLOSED CAPTIONS / LEGENDAS SOBREPOSTAS NOS VÍDEOS DE BACKGROUND */
+video::cue {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    background: transparent !important;
+    color: transparent !important;
+    text-shadow: none !important;
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" fill="none">
+  <rect width="300" height="120" rx="3" fill="#FFFFFF"/>
+  <polygon points="30,70 120,35 90,55 240,55 90,62 120,80" fill="#F97316"/>
+  <text x="175" y="70" text-anchor="middle" font-family="'Oswald', sans-serif" font-weight="900" font-size="32" fill="#010c42" font-style="italic" letter-spacing="1">
+    Fast Back
+  </text>
+  <text x="175" y="90" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="9" fill="#64748B" letter-spacing="3">
+    ROPES & TACK
+  </text>
+</svg>

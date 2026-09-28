@@ -1,0 +1,74 @@
+# =========================================================================
+# CLOUDFLARE EDGE CONFIGURATION & ULTRA-FAST RESPONSE HEADERS (2026)
+# =========================================================================
+
+/*
+  # Seguranca Maxima (Grau A+ SecurityHeaders)
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=()
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-DNS-Prefetch-Control: on
+  Timing-Allow-Origin: *
+
+  # Content Security Policy (Compativel com Google Fonts, Tailwind, DaisyUI e Umami Analytics)
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://analytics.sanbernarda.com https://cdn.sanbernarda.com https://static.elfsight.com https://*.elfsight.com https://*.elf.site https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://*.elfsight.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; media-src 'self' data: blob:; frame-src 'self' https://www.google.com https://maps.google.com https://*.elfsight.com https://*.elf.site; connect-src 'self' https://analytics.sanbernarda.com https://cdn.sanbernarda.com https://*.elfsight.com https://*.elf.site https://core.service.elfsight.com https://cloudflareinsights.com; base-uri 'self'; form-action 'self'
+
+  # Early Hints 103 HTTP/3 Preload para Carregamento em Milissegundos
+  Link: </styles/daisyui.min.css>; rel=preload; as=style
+  Link: </images/logo-indiana-ranch.avif>; rel=preload; as=image; fetchpriority=high
+  Link: </images/sand-grain.png>; rel=preload; as=image
+  Link: <https://fonts.googleapis.com>; rel=preconnect; crossorigin
+  Link: <https://fonts.gstatic.com>; rel=preconnect; crossorigin
+
+  # HTML: Frescor imediato com validacao em borda
+  Cache-Control: public, max-age=0, must-revalidate
+
+# REGRAS DE CACHE IMUTAVEL (SUB-SECOND STATIC ASSET DELIVERY NA BORDA CLOUDFLARE)
+/styles/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/scripts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/videos/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/atletas/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/marcas/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/widgets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon.*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/site.webmanifest
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+
+/llms*.txt
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+  Content-Type: text/plain; charset=utf-8
+
+/robots.txt
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+  Content-Type: text/plain; charset=utf-8
+
+/sitemap.xml
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+  Content-Type: application/xml; charset=utf-8
+
+/rss.xml
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+  Content-Type: application/rss+xml; charset=utf-8

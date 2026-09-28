@@ -1,0 +1,221 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import WesternDecor from '../../components/WesternDecor.astro';
+import { blogPosts, type BlogPost } from '../../data/blogPosts';
+
+export function getStaticPaths() {
+    return blogPosts.map((post) => ({
+        params: { slug: post.slug },
+        props: { post },
+    }));
+}
+
+interface Props {
+    post: BlogPost;
+}
+
+const { post } = Astro.props;
+
+// Schema.org com Artigo + FAQPage + Breadcrumbs
+const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Article",
+            "headline": post.title,
+            "description": post.description,
+            "image": `https://indianaranch.com.br${post.image}`,
+            "author": {
+                "@type": "Organization",
+                "name": post.author,
+                "url": "https://indianaranch.com.br"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Indiana Ranch",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://indianaranch.com.br/images/logo-indiana-ranch.png"
+                }
+            },
+            "datePublished": "2026-09-01T08:00:00+00:00",
+            "mainEntityOfPage": `https://indianaranch.com.br/blog/${post.slug}`
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": post.faq.map((f) => ({
+                "@type": "Question",
+                "name": f.question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": f.answer
+                }
+            }))
+        }
+    ]
+};
+---
+
+<Layout
+    title={`${post.title} — Blog Indiana Ranch`}
+    description={post.description}
+    currentPath={`/blog/${post.slug}`}
+    ogImage={post.image}
+>
+    <main class="py-14 sm:py-20 bg-paper-texture border-b border-divider-rustic relative overflow-hidden">
+        <!-- Detalhes ornamentais Western -->
+        <WesternDecor type="oak-acorn" class="absolute top-4 left-4 w-36 h-36 sm:w-52 sm:h-52" opacity="opacity-25" />
+        <WesternDecor type="sheridan-corner" flip="both" class="absolute bottom-6 right-6 w-44 h-44 sm:w-60 sm:h-60" opacity="opacity-25" />
+
+        <div class="container-shell max-w-4xl mx-auto relative z-10 px-4 sm:px-6">
+
+            <!-- BREADCRUMB NAVEGAÇÃO -->
+            <nav aria-label="Navegação estrutural" class="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-8 uppercase tracking-wider flex-wrap">
+                <a href="/" class="hover:text-[#B91C1C] transition-colors">Início</a>
+                <span class="text-slate-300">/</span>
+                <a href="/blog" class="hover:text-[#B91C1C] transition-colors">Artigos & Dicas</a>
+                <span class="text-slate-300">/</span>
+                <span class="text-[#B91C1C] font-bold truncate max-w-xs">{post.category}</span>
+            </nav>
+
+            <!-- CABEÇALHO DO ARTIGO -->
+            <header class="mb-10 text-left">
+                <div class="flex items-center gap-3 mb-4 flex-wrap">
+                    <span class="badge-indiana px-3 py-1 rounded-[3px] text-xs font-bold">{post.badge}</span>
+                    <span class="text-xs text-slate-500 font-medium">• {post.date}</span>
+                    <span class="text-xs text-slate-500 font-medium">• Leitura de {post.readTime}</span>
+                </div>
+
+                <h1 class="font-western text-2xl sm:text-4xl lg:text-5xl text-[#000726] leading-tight mb-6">
+                    {post.title}
+                </h1>
+
+                <p class="text-base sm:text-lg text-slate-700 leading-relaxed font-sans border-l-4 border-[#B91C1C] pl-4 py-1 bg-white/40 rounded-r-[3px]">
+                    {post.description}
+                </p>
+            </header>
+
+            <!-- IMAGEM DESTAQUE DO ARTIGO -->
+            <div class="mb-12 rounded-[4px] overflow-hidden border-2 border-[#000726]/20 shadow-lg relative max-h-[420px]">
+                <img
+                    src={post.image}
+                    alt={post.title}
+                    width="900"
+                    height="450"
+                    fetchpriority="high"
+                    loading="eager"
+                    decoding="async"
+                    class="w-full h-full object-cover"
+                />
+                <div class="pointer-events-none absolute inset-2.5 border border-dotted border-white/70 rounded-[2px]"></div>
+            </div>
+
+            <!-- CORPO DO CONTEÚDO (DESIGN WESTERN REFINADO) -->
+            <article class="bg-white/95 border-2 border-[#000726] p-6 sm:p-10 rounded-[3px] shadow-sm relative mb-12">
+                <div class="pointer-events-none absolute inset-2 border border-[#000726]/20 rounded-[2px]"></div>
+
+                <!-- Introdução -->
+                <p class="text-base sm:text-lg text-slate-800 leading-relaxed mb-8 font-sans">
+                    {post.content.intro}
+                </p>
+
+                <!-- Seções Técnicas -->
+                {post.content.sections.map((section) => (
+                    <section class="mb-10">
+                        <h2 class="font-western text-xl sm:text-2xl text-[#000726] mb-4 pb-2 border-b border-[#000726]/15 flex items-center gap-2">
+                            <span class="text-[#B91C1C] text-sm">✦</span>
+                            <span>{section.heading}</span>
+                        </h2>
+
+                        <div class="space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed">
+                            {section.text.map((paragraph) => (
+                                <p>{paragraph}</p>
+                            ))}
+                        </div>
+
+                        {section.tip && (
+                            <div class="mt-5 p-4 bg-amber-50/80 border-l-4 border-amber-600 rounded-r-[3px] text-xs sm:text-sm text-amber-950 font-medium leading-relaxed">
+                                {section.tip}
+                            </div>
+                        )}
+                    </section>
+                ))}
+
+                <!-- Conclusão -->
+                <div class="p-5 bg-paper-texture border border-[#000726]/20 rounded-[3px] text-sm sm:text-base text-slate-800 leading-relaxed font-sans mb-8">
+                    <strong class="font-western text-[#000726] block text-base sm:text-lg mb-1">Palavra de Mestre Selreiro:</strong>
+                    {post.content.conclusion}
+                </div>
+
+                <!-- BOX DE CONVERSÃO / WHATSAPP DIRETO -->
+                <div class="p-6 bg-[#000726] text-white rounded-[3px] border-2 border-[#B91C1C] shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div>
+                        <span class="text-[11px] font-bold uppercase tracking-widest text-[#B91C1C] block mb-1">Atendimento Técnico & Cotações B2B</span>
+                        <h3 class="font-western text-lg sm:text-xl leading-tight">Dúvidas sobre o equipamento ideal?</h3>
+                        <p class="text-xs text-slate-300 mt-1">Fale diretamente com os nossos consultores especializados em hipismo western.</p>
+                    </div>
+                    <a
+                        href={`https://wa.me/5518996652244?text=Ola%2C%20li%20o%20artigo%20'${encodeURIComponent(post.title)}'%20no%20blog%20e%20gostaria%20de%20tirar%20duvidas`}
+                        target="_blank"
+                        rel="noopener"
+                        class="btn btn-indiana-red shimmer-sweep px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-[3px] flex items-center gap-2 shrink-0 shadow-sm"
+                    >
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                        </svg>
+                        <span>Falar no WhatsApp</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- SEÇÃO DE FAQ ESTRUTURADA (SCHEMA GOOGLE) -->
+            {post.faq.length > 0 && (
+                <section class="mb-12 bg-white/70 border border-[#000726]/15 rounded-[3px] p-6 sm:p-8">
+                    <h2 class="font-western text-xl sm:text-2xl text-[#000726] mb-6 flex items-center gap-2">
+                        <span>Dúvidas Frequentes sobre o Tema</span>
+                    </h2>
+
+                    <div class="space-y-4">
+                        {post.faq.map((faqItem) => (
+                            <div class="border-b border-[#000726]/10 pb-4 last:border-b-0 last:pb-0">
+                                <h3 class="font-bold text-sm sm:text-base text-[#000726] mb-1.5 flex items-start gap-2">
+                                    <span class="text-[#B91C1C] text-xs mt-1">▶</span>
+                                    <span>{faqItem.question}</span>
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-700 leading-relaxed pl-5">
+                                    {faqItem.answer}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            )}
+
+            <!-- CARD DE PRODUTOS RELACIONADOS -->
+            <div class="p-6 bg-paper-texture border-2 border-[#000726] rounded-[3px] shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div>
+                    <span class="badge-indiana px-2.5 py-0.5 rounded-[2px] text-[10px] uppercase font-bold mb-2 inline-block">Catálogo Indiana Ranch</span>
+                    <h3 class="font-western text-lg text-[#000726]">{post.relatedCategory.title}</h3>
+                    <p class="text-xs text-slate-600 mt-1 max-w-lg">{post.relatedCategory.desc}</p>
+                </div>
+                <a
+                    href={post.relatedCategory.href}
+                    class="btn btn-outline-navy px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-[3px] shrink-0"
+                >
+                    Ver Linha Completa &rarr;
+                </a>
+            </div>
+
+            <!-- VOLTAR AO BLOG -->
+            <div class="mt-10 text-center">
+                <a href="/blog" class="inline-flex items-center gap-2 text-xs font-bold text-[#B91C1C] hover:text-[#000726] transition-colors uppercase tracking-wider">
+                    <span>&larr; Voltar para todos os artigos do Blog</span>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- SCHEMA JSON-LD PARA GOOGLE -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+</Layout>

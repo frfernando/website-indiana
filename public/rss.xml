@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Indiana Ranch — Artigos Técnicos e Dicas Western</title>
+    <link>https://indianaranch.com.br/blog</link>
+    <description>Artigos especializados em saúde do dorso equino, biomecânica, proteção ortopédica e selaria profissional pela Indiana Ranch.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Tue, 15 Sep 2026 18:00:00 -0300</lastBuildDate>
+    <atom:link href="https://indianaranch.com.br/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Como escolher a manta ortopédica ideal para proteger a cernelha do cavalo</title>
+      <link>https://indianaranch.com.br/blog#manta-ortopedica</link>
+      <guid>https://indianaranch.com.br/blog#manta-ortopedica</guid>
+      <pubDate>Tue, 15 Sep 2026 12:00:00 -0300</pubDate>
+      <description>Guia prático sobre espessuras de 3/4 e 1 polegada em feltro de lã virgem e como evitar pontos de pressão e atrofia muscular no dorso equino.</description>
+    </item>
+
+    <item>
+      <title>Manutenção preventiva de freios e bridões em inox e cobre</title>
+      <link>https://indianaranch.com.br/blog#manutencao-freios</link>
+      <guid>https://indianaranch.com.br/blog#manutencao-freios</guid>
+      <pubDate>Mon, 14 Sep 2026 10:00:00 -0300</pubDate>
+      <description>Procedimentos corretos para desinfecção, conservação de embocaduras de cobre e prevenção de desgaste nas barras e comissuras do animal.</description>
+    </item>
+
+    <item>
+      <title>Guia de laços de poliamida: calibragem, tentos e memória de armada</title>
+      <link>https://indianaranch.com.br/blog#guia-lacos</link>
+      <guid>https://indianaranch.com.br/blog#guia-lacos</guid>
+      <pubDate>Fri, 11 Sep 2026 15:00:00 -0300</pubDate>
+      <description>Entenda as diferenças de tentos (3 vs 4 tentos), rigidez (soft, medium, hard) e como manter a memória de laçada mesmo sob o calor das pistas brasileiras.</description>
+    </item>
+
+    <item>
+      <title>Cloches e caneleiras: como evitar o superaquecimento dos tendões</title>
+      <link>https://indianaranch.com.br/blog#cloches-caneleiras</link>
+      <guid>https://indianaranch.com.br/blog#cloches-caneleiras</guid>
+      <pubDate>Wed, 09 Sep 2026 09:00:00 -0300</pubDate>
+      <description>Como as tecnologias respiráveis de neoprene perfurado e absorção não-newtoniana protegem os tendões flexores sem acumular calor prejudicial.</description>
+    </item>
+
+    <item>
+      <title>Mix de produtos western na agropecuária: como acelerar o giro de estoque</title>
+      <link>https://indianaranch.com.br/blog#mix-produtos</link>
+      <guid>https://indianaranch.com.br/blog#mix-produtos</guid>
+      <pubDate>Mon, 07 Sep 2026 14:00:00 -0300</pubDate>
+      <description>Orientações comerciais para lojistas country e revendas agropecuárias comporem grades atrativas de alta rotatividade com marcas importadas.</description>
+    </item>
+
+    <item>
+      <title>Cuidados no couro legítimo: como hidratar sem apodrecer as costuras</title>
+      <link>https://indianaranch.com.br/blog#cuidados-couro</link>
+      <guid>https://indianaranch.com.br/blog#cuidados-couro</guid>
+      <pubDate>Thu, 03 Sep 2026 11:00:00 -0300</pubDate>
+      <description>A química correta dos óleos de mocotó e ceras vegetais para manter a maleabilidade do arreio sem comprometer o fio de costura encerado.</description>
+    </item>
+  </channel>
+</rss>

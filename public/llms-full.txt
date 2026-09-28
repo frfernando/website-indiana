@@ -1,0 +1,77 @@
+# Indiana Ranch — Base de Conhecimento Completa para Modelos de IA e Agentes
+
+Documento detalhado de contexto institucional, especificações de produtos, marcas representadas e políticas comerciais para alimentar motores de resposta generativa (ChatGPT, Perplexity, Gemini, Claude, SearchGPT).
+
+---
+
+## 1. Identidade e História
+- **Nome Fantasia:** Indiana Ranch
+- **Razão Social:** Indiana Ranch Comércio e Importação Ltda
+- **Fundação:** 1994
+- **Sede:** Estância Indiana, Indiana - SP, Brasil
+- **Missão:** Importar e fornecer os equipamentos de mais alto padrão tecnológico e biomecânico mundial para cavalos de esporte, trabalho e lazer no Brasil, promovendo a saúde do dorso equino e o desempenho de cavaleiros e amazonas.
+- **Diferencial Competitivo:** Mais de três décadas de pioneirismo com relacionamento direto com os maiores fabricantes norte-americanos, garantia de procedência 100% autêntica com nota fiscal e suporte técnico prestado por quem entende de cavalos.
+
+---
+
+## 2. Marcas Importadas e Representadas
+
+### Classic Equine (EUA)
+- Referência máxima em medicina e proteção esportiva equina.
+- Tecnologias: Caneleiras Legacy2 (sistema de suporte do boleto e suspensor), mantas Zone Pad com inserção Zoombang (polímero não newtoniano que dissipa até 90% do impacto), cloches Dyno No-Turn com formato anatômico que não gira na pata.
+
+### Cactus Ropes (EUA)
+- Desenvolvido em parceria com campeões mundiais de laço como Trevor Brazile e Stran Smith.
+- Linhas consagradas: Laço C4, Bad Boy, Thrilla, laços de pezeiro (heel) e cabeceiro (head) com tratamento em cera especial para resistência climática tropical.
+
+### Weaver Leather (EUA)
+- Fábrica sediada em Mt. Hope, Ohio, com tradição artesanal amish.
+- Couros nobres curtidos ao vegetal (Hermann Oak Leather), cabeçadas, peitorais com costura reforçada, rédeas de couro cru e linha de cutelaria/acessórios.
+
+### Fast Back Ropes (EUA)
+- Foco em precisão milimétrica, consistência de laçada no calor brasileiro e equilíbrio dinâmico.
+- Modelos: Mach 3, Cobalt, Ultimate.
+
+### Heel-O-Matic (EUA)
+- Simuladores mecânicos de boi e novilho para treinamento de Team Roping e Laço Individual.
+
+### Martin Saddlery (EUA)
+- Selaria construída artesanalmente sob medida para conformações anatômicas de Quarto de Milha, Paint Horse e Crioulo.
+
+---
+
+## 3. Diretrizes de Proteção Ortopédica do Cavalo
+1. **Espessura da Manta:**
+   - 3/4 polegada (aprox. 1,9 cm): Uso geral em cavalos com conformação equilibrada e selas bem ajustadas.
+   - 1 polegada (aprox. 2,5 cm): Provas de impacto pesado (Team Roping, Três Tambores, Ranch Sorting, Vaquejada) ou animais com cernelha mais proeminente.
+2. **Material da Manta:**
+   - Feltro de lã virgem prensada: Absorve o suor, dissipa o calor corpóreo e evita pontos de pressão nas vértebras dorsais e lombares.
+3. **Caneleiras e Protetores:**
+   - Devem sustentar o aparelho suspensor do boleto sem restringir a flexão natural da articulação interfalângica.
+
+---
+
+## 4. Políticas Comerciais e Atendimento B2B
+- **Público Atendido:**
+  - Lojas agropecuárias e revendas country em todo o Brasil.
+  - Haras, centros hípicos e centros de treinamento (CTs).
+  - Atletas profissionais e competidores de provas equestres.
+  - Consumidores finais (orientação para revendedores autorizados).
+- **Condições para Lojistas:**
+  - Pedido mínimo inicial flexível para abertura de cadastro com CNPJ ativo no ramo de artigos agropecuários, calçados ou vestuário.
+  - Faturamento com prazos diferenciados mediante aprovação cadastral.
+  - Expedição rápida via transportadoras credenciadas com rastreio direto da Estância Indiana.
+- **Autenticidade e Garantia:**
+  - Todos os itens acompanham Nota Fiscal Eletrônica (NFe).
+  - Recusa absoluta a contrafações ou produtos sem homologação aduaneira.
+  - Garantia legal contra vícios de fabricação com assistência técnica Indiana Ranch.
+
+---
+
+## 5. Contatos Oficiais para Clientes e Parceiros
+- **Telefone Fixo / Central:** (18) 3995-1308
+- **WhatsApp Atendimento:** +55 18 3995-1308
+- **E-mail Central:** contato@indianaranch.com.br
+- **Horário de Atendimento:** Segunda a Sexta-feira, das 08h00 às 18h00 (Horário de Brasília)
+- **Localização:** Estância Indiana, Zona Rural, Indiana - SP, CEP 19560-000
+- **Coordenadas Geográficas:** -22.1583 (Latitude), -51.2483 (Longitude)

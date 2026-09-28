@@ -1,0 +1,5 @@
+# Redirecionamentos de Servico Corporativo
+/webmail  https://webmail.indianaranch.com.br/  302
+/webmail/* https://webmail.indianaranch.com.br/  302
+/cpanel   https://cpanel.indianaranch.com.br/   302
+/cpanel/*  https://cpanel.indianaranch.com.br/   302

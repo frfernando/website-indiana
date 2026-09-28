@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" fill="none">
+  <rect width="300" height="120" rx="3" fill="#FFFFFF"/>
+  <path d="M 80 40 C 100 25, 140 28, 170 38 C 200 48, 220 40, 230 48 C 210 55, 180 52, 160 55 C 130 60, 100 55, 80 40 Z" fill="#000726"/>
+  <path d="M 160 55 C 190 55, 230 52, 235 62 C 220 68, 180 65, 150 64 Z" fill="#000726"/>
+  <text x="50%" y="86" text-anchor="middle" font-family="'Oswald', sans-serif" font-weight="900" font-size="28" fill="#000726" letter-spacing="4">
+    PARTRADE
+  </text>
+  <text x="50%" y="102" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="9" fill="#64748B" letter-spacing="2">
+    TRADING COMPANY, LLC
+  </text>
+</svg>

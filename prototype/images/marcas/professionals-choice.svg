@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" fill="none">
+  <rect width="300" height="120" rx="3" fill="#FFFFFF"/>
+  <path d="M 130 35 C 145 22, 160 25, 175 30 C 160 38, 145 42, 130 35 Z" fill="#1D4ED8"/>
+  <text x="50%" y="65" text-anchor="middle" font-family="'Oswald', sans-serif" font-weight="900" font-size="24" fill="#DC2626" font-style="italic" letter-spacing="1">
+    Professional's Choice
+  </text>
+  <text x="50%" y="82" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="8" fill="#1E293B" letter-spacing="1">
+    Sports Medicine Products, Inc.
+  </text>
+  <text x="50%" y="102" text-anchor="middle" font-size="12" fill="#1D4ED8" letter-spacing="4">
+    ★ ★ ★ ★ ★
+  </text>
+</svg>

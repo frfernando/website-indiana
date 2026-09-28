@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WesternDecor from '../components/WesternDecor.astro';
+
+const faqs = [
+    {
+        num: "1",
+        categoria: "Cadastro & Acesso B2B",
+        pergunta: "Quem tem direito à tabela de atacado e quais os requisitos para cadastro de CNPJ?",
+        resposta: "Atendemos pessoas jurídicas com CNPJ ativo nos ramos agropecuário, selarias, agrocomerciais, lojas country e western, pet shops, cooperativas rurais, haras e centros de treinamento equestre (inclusive MEI com atividade comercial). Para liberação da tabela atacadista e condições B2B, basta informar o número do CNPJ, Inscrição Estadual (quando aplicável) e dados de contato dos responsáveis de compras."
+    },
+    {
+        num: "2",
+        categoria: "Investimento & Giro",
+        pergunta: "Qual é o valor do pedido mínimo para abertura de cadastro e para reposições de estoque?",
+        resposta: "Para o primeiro pedido de abertura de cadastro, o valor mínimo é acessível — a partir de R$ 1.500,00 —, pensado especificamente para que sua loja monte um mix inicial de alta demanda sem imobilizar grande volume de capital. Nas compras subsequentes de reposição, o piso mínimo é flexibilizado para que você mantenha sua vitrine sempre abastecida e com giro rápido."
+    },
+    {
+        num: "3",
+        categoria: "Flexibilidade de Grade",
+        pergunta: "Sou obrigado a comprar grade fechada ou posso fracionar modelos, cores e tamanhos?",
+        resposta: "Você não tem obrigação de adquirir grades ou caixas fechadas. Em toda a linha de proteção equina, selaria, mantas ortopédicas de feltro virgem, embocaduras e laços de pista, você tem total autonomia para fracionar e mesclar os itens conforme a preferência dos cavaleiros e criadores da sua cidade, evitando peças encalhadas no balcão."
+    },
+    {
+        num: "4",
+        categoria: "Faturamento & Crédito",
+        pergunta: "Como funciona a análise de crédito e o faturamento via boleto bancário a prazo?",
+        resposta: "O primeiro pedido geralmente é liquidado à vista via Pix com desconto financeiro comercial ou no cartão de crédito corporativo em até 6x. A partir do preenchimento da ficha cadastral com referências comerciais e aprovação pelo nosso setor de crédito, liberamos faturamento programado por Boleto Bancário (prazos usuais de 28, 30 ou 30/60 dias), possibilitando que sua loja gire as vendas antes do pagamento da fatura."
+    },
+    {
+        num: "5",
+        categoria: "Segurança Fiscal & Procedência",
+        pergunta: "Todos os produtos importados possuem Nota Fiscal Eletrônica (NF-e) e desembaraço alfandegário oficial?",
+        resposta: "Sim, com 100% de conformidade fiscal e jurídica. Todas as marcas internacionais que importamos (Classic Equine, Weaver Leather, Cactus Ropes, Fast Back Ropes, Willard, Heel-O-Matic) e nossas manufaturas nacionais próprias (Top Equine e Austin Western) são faturadas com Nota Fiscal Eletrônica com CFOP de revenda, lote rastreável e desembaraço aduaneiro regularizado. Sua empresa comercializa itens de procedência atestada, livre de riscos fiscais."
+    },
+    {
+        num: "6",
+        categoria: "Rentabilidade & Proteção",
+        pergunta: "Qual é a margem de lucro (markup) média e como a Indiana Ranch protege o lojista contra leilão na internet?",
+        resposta: "Nossos lojistas parceiros praticam margens brutas médias entre 40% e 65% (markups entre 1.8x e 2.3x sobre o valor do custo no atacado), superando 70% em acessórios country e ferragens de lida. Adicionalmente, praticamos uma política firme de Preço Mínimo Sugerido (PMR) no território nacional para inibir concorrência predatória em marketplaces, protegendo o esforço de venda e a rentabilidade da sua loja física."
+    },
+    {
+        num: "7",
+        categoria: "Logística & Despacho",
+        pergunta: "Qual o prazo de expedição das mercadorias, formas de envio e como funciona o frete (FOB/CIF)?",
+        resposta: "Todo o portfólio catalogado está disponível a pronta entrega em nosso Centro de Distribuição em Indiana/SP. Pedidos com faturamento aprovado são despachados em até 24 a 48 horas úteis através de coletas diárias com as melhores transportadoras do país e Correios. Operamos na modalidade FOB, cotando a rota mais econômica e ágil para o seu CEP ou entregando na transportadora de sua preferência, com condições de frete compartilhado para pedidos por volume."
+    },
+    {
+        num: "8",
+        categoria: "Garantia & Assistência",
+        pergunta: "Como funciona a política de trocas e garantia contra defeitos de fabricação para o lojista?",
+        resposta: "Caso algum equipamento apresente defeito estrutural ou vício de fabricação (em costuras nobres, feltros, couros ou ferragens) dentro da cobertura de garantia legal, a Indiana Ranch efetua a substituição rápida diretamente com o lojista, sem intermediários ou burocracias desgastantes, garantindo que você preste um atendimento exemplar ao seu cliente final."
+    },
+    {
+        num: "9",
+        categoria: "Marketing & Balcão",
+        pergunta: "A Indiana Ranch disponibiliza fotos em alta resolução, descrições técnicas e treinamento para meus vendedores?",
+        resposta: "Sim. Nossos clientes B2B têm acesso a um drive exclusivo com acervo de fotos profissionais em alta resolução, tabelas dimensionais e especificações técnicas de cada produto para divulgar no WhatsApp, Instagram e site da loja. Nossa equipe comercial também permanece disponível para esclarecer dúvidas técnicas de balcão diretamente com seus atendentes durante o expediente."
+    },
+    {
+        num: "10",
+        categoria: "Retirada na Matriz",
+        pergunta: "É possível retirar pedidos presencialmente ou visitar o Centro de Distribuição em Indiana/SP?",
+        resposta: "Com certeza. Lojistas e representantes comerciais são bem-vindos para retirar pedidos faturados diretamente em nossa sede e Centro de Expedição na Estância Indiana, no oeste paulista. Basta alinhar previamente com seu consultor de vendas para que a expedição deixe seu lote separado e conferido para carregamento."
+    }
+];
+---
+
+<Layout
+    title="Dúvidas Frequentes & Condições B2B — FAQ Indiana Ranch"
+    description="Respostas completas para lojistas e revendedores country sobre pedido mínimo, faturamento no CNPJ, margens de lucro, despacho em 24h e garantias da Indiana Ranch."
+    currentPath="/faq"
+    faqItems={faqs}
+>
+    <!-- ========================================================= -->
+    <!-- HERO DO FAQ B2B -->
+    <!-- ========================================================= -->
+    <section class="py-14 sm:py-20 bg-paper-texture border-b border-divider-rustic relative overflow-hidden">
+        <WesternDecor type="oak-acorn" class="absolute top-2 left-2 w-36 h-36 sm:w-48 sm:h-48" opacity="opacity-30" />
+        <WesternDecor type="sheridan-corner" flip="both" class="absolute bottom-4 right-4 w-40 h-40 sm:w-52 sm:h-52" opacity="opacity-30" />
+
+        <div class="container-shell relative z-10">
+            <!-- BREADCRUMB -->
+            <nav aria-label="Navegação estrutural" class="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-6 uppercase tracking-wider">
+                <a href="/" class="hover:text-[#B91C1C] transition-colors">Início</a>
+                <span class="text-slate-300">/</span>
+                <span class="text-[#B91C1C] font-bold">Dúvidas Frequentes B2B</span>
+            </nav>
+
+            <div class="max-w-3xl">
+                <span class="badge-indiana px-3.5 py-1.5 inline-block mb-3 rounded-[3px]">Distribuição Atacadista • Parceria Comercial</span>
+                <h1 class="font-western text-3xl sm:text-5xl lg:text-6xl text-[#000726] tracking-tight leading-tight">
+                    DÚVIDAS FREQUENTES DE LOJISTAS & HARAS
+                </h1>
+                <p class="text-slate-700 text-sm sm:text-base lg:text-lg mt-4 leading-relaxed font-sans">
+                    Tudo o que sua loja country, agropecuária ou haras precisa saber para abastecer o balcão com as marcas líderes mundiais: pedido mínimo fracionado, faturamento no CNPJ, margens de lucro, logística ágil e segurança fiscal.
+                </p>
+                <div class="flex flex-wrap gap-4 mt-6 text-xs text-slate-600 font-medium">
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-[#B91C1C] font-bold">✓</span>
+                        <span>Faturamento facilitado no CNPJ</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-[#B91C1C] font-bold">✓</span>
+                        <span>Sem exigência de grade fechada</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-[#B91C1C] font-bold">✓</span>
+                        <span>Despacho rápido de SP em 24/48h</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- LISTAGEM DE ACCORDIONS DO FAQ B2B -->
+    <!-- ========================================================= -->
+    <section class="py-16 sm:py-20 bg-white border-b border-divider-rustic relative">
+        <div class="container-shell max-w-4xl mx-auto">
+            <div class="space-y-4">
+                {faqs.map((faq) => (
+                    <details class="group bg-paper-texture border-2 border-[#E2DBD0] hover:border-[#B91C1C] rounded-[3px] p-5 sm:p-6 transition-all duration-200 open:border-[#000726] open:shadow-md">
+                        <summary class="flex items-center justify-between font-bold text-sm sm:text-base text-[#000726] cursor-pointer select-none list-none">
+                            <div class="flex items-center gap-3.5 pr-3">
+                                <span class="w-7 h-7 rounded-[2px] bg-[#000726] text-white flex items-center justify-center font-western text-xs shrink-0 group-open:bg-[#B91C1C] transition-colors">
+                                    {faq.num}
+                                </span>
+                                <div>
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-[#B91C1C] block mb-0.5">
+                                        {faq.categoria}
+                                    </span>
+                                    <span class="font-sans leading-snug text-[#000726]">{faq.pergunta}</span>
+                                </div>
+                            </div>
+                            <span class="text-[#B91C1C] text-lg font-bold group-open:rotate-180 transition-transform duration-200 shrink-0 ml-2">
+                                &darr;
+                            </span>
+                        </summary>
+                        <div class="mt-4 pt-4 border-t border-slate-200/80 text-xs sm:text-sm text-slate-600 leading-relaxed pl-10 sm:pl-11">
+                            {faq.resposta}
+                        </div>
+                    </details>
+                ))}
+            </div>
+
+            <!-- BOX DE DÚVIDA ADICIONAL B2B -->
+            <div class="mt-12 p-8 bg-paper-texture border-2 border-[#000726] rounded-[3px] text-center space-y-3 relative shadow-sm">
+                <div class="pointer-events-none absolute inset-2 border border-dashed border-[#B91C1C]/35 rounded-[2px]"></div>
+                <div class="relative z-10">
+                    <span class="badge-indiana px-3 py-1 inline-block mb-2 rounded-[3px] text-[11px]">Atendimento Exclusivo para Lojas</span>
+                    <h2 class="font-western text-2xl text-[#000726]">Deseja cadastrar sua empresa ou solicitar tabela de atacado?</h2>
+                    <p class="text-xs sm:text-sm text-slate-600 max-w-lg mx-auto mt-1">
+                        Nosso time de consultores comerciais atende de segunda a sexta, das 08h00 às 18h00, pronto para montar uma proposta comercial personalizada para a demanda da sua região.
+                    </p>
+                    <div class="pt-4 flex flex-wrap justify-center gap-3">
+                        <a href="https://wa.me/5518996652244?text=Ola%2C%20gostaria%20de%20cadastrar%20minha%20loja%20e%20receber%20a%20tabela%20de%20atacado%20da%20Indiana%20Ranch"
+                           target="_blank" rel="noopener"
+                           class="btn btn-indiana-red px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded-[3px] shadow-sm">
+                            Solicitar Tabela no WhatsApp &rarr;
+                        </a>
+                        <a href="/contato"
+                           class="btn btn-outline-navy px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded-[3px]">
+                            Formulário de Cadastro CNPJ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

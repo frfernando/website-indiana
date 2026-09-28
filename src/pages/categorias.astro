@@ -1,0 +1,261 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WesternDecor from '../components/WesternDecor.astro';
+
+const categorias = [
+    {
+        num: "01",
+        tag: "Alta Performance & Pista",
+        titulo: "Selaria de Elite, Mantas Ortopédicas & Arreios",
+        imagem: "/images/categorias/cat-01-selaria.avif",
+        video: "/videos/video-selaria-equipamentos.mp4",
+        descricao: "Mantas confeccionadas em feltro 100% lã ortopédica e tear Navajo legítimo. Distribuição homogênea de pressão sobre a cernelha e coluna do animal.",
+        itens: [
+            "Mantas Navajo Tecidas à Mão com Lã Virgem",
+            "Mantas Ortopédicas de Feltro com Alívio de Cernelha",
+            "Látegos, Contra-Látegos e Barrigueiras em Neoprene",
+            "Peitorais em Couro Bovino Entalhado (Sheridan Floral)",
+            "Chapas de Estribo e Assentos Anatômicos em Gel"
+        ],
+        msgWhatsapp: "Quero%20consultar%20modelos%20de%20Selaria%20e%20Mantas"
+    },
+    {
+        num: "02",
+        tag: "Proteção de Impacto",
+        titulo: "Proteção Equina, Caneleiras & Cloches Antitorção",
+        imagem: "/images/categorias/cat-02-protecao.avif",
+        descricao: "Equipamentos desenhados por veterinários ortopédicos para provas de alta velocidade. Absorção de impacto no boleto e contenção ligamentar.",
+        itens: [
+            "Caneleiras Ortopédicas SMB (Sports Medicine Boots)",
+            "Cloches Balísticos com Botão Antitorção 360°",
+            "Jogos de Eslalão e Joelheiras para Provas de Tambor",
+            "Protetores de Jarrete e Boleteiras Anatômicas",
+            "Gelos Terapêuticos e Caneleiras Térmicas de Descanso"
+        ],
+        msgWhatsapp: "Quero%20consultar%20linha%20de%20Protecao%20Equina"
+    },
+    {
+        num: "03",
+        tag: "Precisão em Laço",
+        titulo: "Cordas, Laços & Cabrestos Calibrados",
+        imagem: "/images/categorias/cat-03-cordas.avif",
+        descricao: "Cordas calibradas fio a fio para Team Roping (Cabeça e Pé), Laço Individual e Bezerro. Equilíbrio de peso, memória elástica e durabilidade.",
+        itens: [
+            "Laços de Cabeça (Head Ropes) — Maciez e Agilidade",
+            "Laços de Pé (Heel Ropes) — Rigidez e Abertura Precisa",
+            "Cordas 100% Nylon e Poliéster com Núcleo Balanceado",
+            "Borrachas de Pito Antideslizantes e Dally Wraps",
+            "Cabrestos de Fita Reforçada e Corda Náutica com Guia"
+        ],
+        msgWhatsapp: "Quero%20consultar%20Lacos%20e%20Cabrestos"
+    },
+    {
+        num: "04",
+        tag: "Comunicação Sutil",
+        titulo: "Freios, Embocaduras & Rédeas Artesanais",
+        imagem: "/images/categorias/cat-04-freios.avif",
+        descricao: "Engenharia mecânica a favor da boca do cavalo. Articulações anatômicas em aço inox e roletes de cobre para salivação constante.",
+        itens: [
+            "Freios de Perna Média e Longa em Inox Forjado",
+            "Bridões Argola e D-Ring em Cobre com Salivação Suave",
+            "Embocaduras Articuladas com Bocal Corretor / Correction Bit",
+            "Rédeas de Couro de Búfalo e Crina Aberta Balanceadas",
+            "Cabeçadas Artesanais com Fivelas Prateadas Cinzeladas"
+        ],
+        msgWhatsapp: "Quero%20consultar%20Freios%20e%20Embocaduras"
+    },
+    {
+        num: "05",
+        tag: "Estilo & Conforto",
+        titulo: "Moda Country, Vestuário & Cintos Artesanais",
+        imagem: "/images/categorias/cat-05-moda.avif",
+        descricao: "A força e a autenticidade da vida no campo no seu vestuário. Camisaria Austin Western de corte técnico e peças de resistência.",
+        itens: [
+            "Camisas com Botão de Pressão (Pearl Snap) Austin Western",
+            "Cintos em Couro Legítimo com Entalhes Basketweave",
+            "Fivelas Western Trophy Banhadas em Prata e Ouro Envelhecido",
+            "Óculos BEX Eyewear com Lentes Polarizadas de Alta Claridade",
+            "Polos Premium, Bonés Trucker e Acessórios Country"
+        ],
+        msgWhatsapp: "Quero%20consultar%20Moda%20Country"
+    },
+    {
+        num: "06",
+        tag: "Sanidade & Estábulo",
+        titulo: "Estábulo, Baias, Cocheira & Higiene Top Equine",
+        imagem: "/images/categorias/cat-06-estabulo.avif",
+        descricao: "Insumos profissionais para manter a cocheira impecável e o bem-estar do seu plantel. Linha completa de formulação veterinária Top Equine.",
+        itens: [
+            "Shampoos Hidratantes, Clareadores e Condicionadores de Crina",
+            "Pomadas Cicatrizantes, Óleos para Casco e Desinfetantes de Baia",
+            "Escovas de Madeira Nobre, Rasqueadeiras e Raspadeiras",
+            "Comedouros, Bebedouros Automáticos e Porta-Feno em Aço",
+            "Capas Térmicas de Baia e Telas Repelentes Antimosca"
+        ],
+        msgWhatsapp: "Quero%20consultar%20Equipamentos%20de%20Estabulo"
+    }
+];
+---
+
+<Layout
+    title="Linhas de Produtos & Departamentos Western — Indiana Ranch"
+    description="Catálogo completo de equipamentos para cavalo, montaria, selaria, proteção equina, laços e moda country da Indiana Ranch. Atendimento B2B e varejo."
+    currentPath="/categorias"
+>
+    <!-- ========================================================= -->
+    <!-- HERO DA PÁGINA DE CATEGORIAS -->
+    <!-- ========================================================= -->
+    <section class="py-14 sm:py-20 bg-paper-texture border-b border-divider-rustic relative overflow-hidden">
+        <WesternDecor type="oak-acorn" class="absolute top-2 left-2 w-36 h-36 sm:w-48 sm:h-48" opacity="opacity-30" />
+        <WesternDecor type="sheridan-corner" flip="both" class="absolute bottom-4 right-4 w-40 h-40 sm:w-52 sm:h-52" opacity="opacity-30" />
+
+        <div class="container-shell relative z-10">
+            <!-- BREADCRUMB -->
+            <nav aria-label="Navegação estrutural" class="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-6 uppercase tracking-wider">
+                <a href="/" class="hover:text-[#B91C1C] transition-colors">Início</a>
+                <span class="text-slate-300">/</span>
+                <span class="text-[#B91C1C] font-bold">Categorias de Produtos</span>
+            </nav>
+
+            <div class="max-w-3xl">
+                <span class="badge-indiana px-3.5 py-1.5 inline-block mb-3 rounded-[3px]">6 Departamentos de Elite</span>
+                <h1 class="font-western text-3xl sm:text-5xl lg:text-6xl text-[#000726] tracking-tight leading-tight">
+                    CATÁLOGO COMPLETO DE EQUIPAMENTOS WESTERN
+                </h1>
+                <p class="text-slate-700 text-sm sm:text-base lg:text-lg mt-4 leading-relaxed font-sans">
+                    Nossa seleção de produtos foi rigorosamente testada em arenas e centros de treinamento para entregar o máximo em durabilidade, segurança anatômica para o animal e precisão técnica para o cavaleiro.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- GRID DAS 6 CATEGORIAS EM CARDS DETALHADOS -->
+    <!-- ========================================================= -->
+    <section class="py-16 sm:py-20 bg-white border-b border-divider-rustic relative">
+        <div class="container-shell">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {categorias.map((cat) => (
+                    <article class="relative bg-paper-texture border-2 border-[#000726] p-6 sm:p-7 rounded-[3px] shadow-[0_15px_35px_rgba(0,7,38,0.08)] flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300">
+                        <!-- TACHA CONCHO SUPERIOR -->
+                        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 z-30 pointer-events-none drop-shadow-md">
+                            <svg class="w-7 h-7" viewBox="0 0 32 32">
+                                <circle cx="16" cy="16" r="14" fill="#291104" />
+                                <circle cx="16" cy="16" r="10.5" fill="#D97706" stroke="#78350F" stroke-width="0.8" />
+                                <circle cx="16" cy="16" r="1.5" fill="#FEF3C7" />
+                            </svg>
+                        </div>
+
+                        <!-- MOLDURA INTERNA DUPLA DE IMPRENSA -->
+                        <div class="pointer-events-none absolute inset-2 border border-[#000726]/40 rounded-[1px] z-10"></div>
+                        <div class="pointer-events-none absolute inset-3.5 border border-dashed border-[#B91C1C]/35 rounded-[1px] z-10"></div>
+
+                        <!-- 4 CANTOS DE IMPRENSA TIPOGRÁFICA -->
+                        <span class="pointer-events-none absolute top-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute top-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 left-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+                        <span class="pointer-events-none absolute bottom-2 right-2 text-[#000726]/60 font-western text-xs z-20">✦</span>
+
+                        <div class="space-y-4 relative z-10">
+                            <!-- FOTO OU VÍDEO COM MOLDURA DUPLA PONTILHADA BRANCA -->
+                            <div class="card-leather relative h-[220px] w-full overflow-hidden rounded-[2px] shadow-sm">
+                                {cat.video ? (
+                                    <video
+                                        autoplay
+                                        loop
+                                        muted
+                                        playsinline
+                                        preload="auto"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    >
+                                        <source src={cat.video} type="video/mp4" />
+                                        <track kind="captions" src="/videos/captions-pt.vtt" srclang="pt" label="Português" />
+                                    </video>
+                                ) : (
+                                    <img
+                                        src={cat.imagem}
+                                        alt={cat.titulo}
+                                        width="600"
+                                        height="400"
+                                        loading="lazy"
+                                        decoding="async"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                )}
+                                <div class="pointer-events-none absolute inset-2 border border-dotted border-white/75 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] rounded-[2px] z-20" aria-hidden="true"></div>
+                                <div class="pointer-events-none absolute inset-3.5 border-2 border-dotted border-white/95 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] rounded-[2px] z-20" aria-hidden="true"></div>
+
+                                <div class="absolute top-2.5 left-2.5 z-20 flex items-center gap-1.5">
+                                    <span class="w-7 h-7 bg-[#000726]/95 text-white flex items-center justify-center font-display font-black text-xs border-b border-[#B91C1C] rounded-[2px]">
+                                        {cat.num}
+                                    </span>
+                                    <span class="text-[10px] font-bold uppercase tracking-wider bg-white/95 text-[#000726] px-2 py-0.5 rounded-[2px] shadow-xs">
+                                        {cat.tag}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h2 class="font-western text-xl text-[#000726] group-hover:text-[#B91C1C] transition-colors leading-snug">
+                                    {cat.titulo}
+                                </h2>
+                                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                    {cat.descricao}
+                                </p>
+                            </div>
+
+                            <!-- ITENS EM DESTAQUE -->
+                            <div class="pt-2 border-t border-slate-200/80">
+                                <span class="text-[10px] uppercase font-bold tracking-wider text-[#B91C1C] block mb-2">Principais Equipamentos:</span>
+                                <ul class="space-y-1.5 text-xs text-slate-700">
+                                    {cat.itens.map((item) => (
+                                        <li class="flex items-start gap-1.5">
+                                            <span class="text-[#B91C1C] text-[10px] mt-0.5 shrink-0">✦</span>
+                                            <span class="leading-tight text-[11.5px]">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- AÇÕES DO CARD -->
+                        <div class="relative z-10 pt-5 mt-5 border-t border-slate-200/80 space-y-2">
+                            <a href={`https://wa.me/5518996652244?text=${cat.msgWhatsapp}`}
+                               target="_blank" rel="noopener"
+                               class="btn btn-indiana-red w-full text-xs font-bold uppercase tracking-wider py-2.5 rounded-[3px] flex items-center justify-center gap-2">
+                                <span>Consultar no WhatsApp</span> &rarr;
+                            </a>
+                        </div>
+                    </article>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- BANNER DE SUPORTE CONSULTIVO & ATACADO B2B -->
+    <!-- ========================================================= -->
+    <section class="py-16 bg-paper-texture relative">
+        <div class="container-shell">
+            <div class="bg-[#000726] text-white rounded-[3px] p-8 sm:p-12 text-center max-w-4xl mx-auto shadow-xl border-t-4 border-[#B91C1C] relative overflow-hidden">
+                <div class="relative z-10 space-y-4">
+                    <span class="text-[11px] font-bold uppercase tracking-widest text-[#B91C1C] block">Atendimento Técnico & Comercial</span>
+                    <h2 class="font-western text-2xl sm:text-4xl text-white">PRECISA DE UMA COTAÇÃO ESPECÍFICA OU CONDIÇÃO PARA CNPJ?</h2>
+                    <p class="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+                        Nossos consultores montam e conhecem a anatomia equina e a rotina do campo. Envie as necessidades do seu haras ou loja agropecuária e receba fotos detalhadas do estoque e propostas personalizadas.
+                    </p>
+                    <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+                        <a href="https://wa.me/5518996652244?text=Ola%2C%20gostaria%20de%20uma%20cotacao%20de%20produtos%20Indiana%20Ranch"
+                           target="_blank" rel="noopener"
+                           class="btn btn-indiana-red px-6 py-3 text-xs uppercase font-bold tracking-wider rounded-[3px]">
+                            Chamar Consultor no WhatsApp &rarr;
+                        </a>
+                        <a href="/contato" class="btn btn-outline border-white/40 text-white hover:bg-white/10 px-6 py-3 text-xs uppercase font-bold tracking-wider rounded-[3px]">
+                            Preencher Formulário B2B
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

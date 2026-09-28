@@ -1,0 +1,87 @@
+---
+interface Props {
+    currentPath?: string;
+}
+const { currentPath = '/' } = Astro.props;
+void currentPath;
+---
+
+<!-- 2. MAIN HEADER (FUNDO NATURAL PERGAMINHO BG-PAPER-TEXTURE) -->
+<header class="sticky top-0 z-40 bg-paper-texture border-b border-divider-rustic transition-all">
+    <div class="container-shell">
+        <div class="navbar px-0 py-3">
+
+            <div class="flex-1">
+                <a href="/" class="flex items-center gap-3 group" title="Indiana Ranch — Início">
+                    <div class="relative overflow-hidden rounded-[3px] p-0.5">
+                        <img
+                            src="/images/logo-indiana-ranch.avif"
+                            alt="Indiana Ranch Logo"
+                            width="220"
+                            height="68"
+                            fetchpriority="high"
+                            loading="eager"
+                            decoding="async"
+                            class="h-[60px] sm:h-[66px] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                        />
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-2">
+                            <span class="font-western text-[15px] sm:text-[16.5px] font-bold text-[#000726] leading-none group-hover:text-[#B91C1C] transition-colors">INDIANA RANCH</span>
+                            <span class="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded-[2px] bg-[#000726]/5 text-[#000726] text-[9px] font-bold uppercase tracking-wider border border-[#000726]/10">1994</span>
+                        </div>
+                        <span class="text-[10px] tracking-[0.22em] uppercase font-bold text-[#B91C1C] mt-0.5">The Western Original</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="hidden xl:flex items-center gap-6 text-sm font-semibold text-[#000726]"
+                aria-label="Navegação principal">
+                <a href="/" class={`nav-link-elite transition-colors ${currentPath === '/' ? 'text-[#B91C1C] font-bold active' : 'hover:text-[#B91C1C]'}`}>Início</a>
+                <a href="/#categorias" class="nav-link-elite hover:text-[#B91C1C] transition-colors">Categorias</a>
+                <a href="/#diferenciais" class="nav-link-elite hover:text-[#B91C1C] transition-colors inline-flex items-center gap-1">
+                    <span>Atacado</span>
+                    <span class="px-1 py-0.5 rounded-[2px] bg-[#B91C1C]/10 text-[#B91C1C] text-[9px] font-bold leading-none">B2B</span>
+                </a>
+                <a href="/#sobre" class="nav-link-elite hover:text-[#B91C1C] transition-colors">Sobre</a>
+                <a href="/#localizacao" class="nav-link-elite hover:text-[#B91C1C] transition-colors">Localização</a>
+                <a href="/#faq" class="nav-link-elite hover:text-[#B91C1C] transition-colors">Dúvidas</a>
+                <a href="/blog" class={`nav-link-elite transition-colors ${currentPath.startsWith('/blog') ? 'text-[#B91C1C] font-bold active' : 'hover:text-[#B91C1C]'}`}>Artigos</a>
+                <a href="/contato" class={`nav-link-elite transition-colors ${currentPath.startsWith('/contato') ? 'text-[#B91C1C] font-bold active' : 'hover:text-[#B91C1C]'}`}>Contato</a>
+            </nav>
+
+            <div class="flex-none flex items-center gap-2.5 pl-2">
+                <!-- BOTÃO ORÇAMENTO NO DESKTOP -->
+                <a href="/contato"
+                    class="hidden sm:inline-flex btn btn-sm btn-outline-navy px-4 font-semibold rounded-[3px] shadow-sm">
+                    Orçamento B2B
+                </a>
+                <!-- WHATSAPP NO DESKTOP COM SHIMMER -->
+                <a href="https://wa.me/5518996652244?text=Ola%2C%20gostaria%20de%20ver%20o%20catalogo%20da%20Indiana%20Ranch"
+                    target="_blank" rel="noopener"
+                    class="hidden xl:inline-flex btn btn-sm btn-indiana-red shimmer-sweep px-4 gap-2 shadow-sm rounded-[3px]">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.088.072.19.014.305-.058.115-.087.187-.173.289l-.26.309c-.087.086-.179.18-.077.354.101.174.449.741.964 1.2 1.042.929 1.92 1.215 2.193 1.349.273.134.433.116.592-.067.159-.183.679-.791.86-1.062.181-.271.362-.227.607-.136.245.09 1.547.73 1.813.863.266.133.443.199.508.31.065.111.065.643-.079 1.048z" />
+                    </svg>
+                    <span>WhatsApp</span>
+                </a>
+
+                <!-- BOTÃO MENU HAMBÚRGUER MOBILE / TABLET (xl:hidden) -->
+                <button id="mobile-menu-btn"
+                    type="button"
+                    aria-label="Abrir Menu de Navegação"
+                    aria-expanded="false"
+                    aria-controls="mobile-drawer"
+                    class="xl:hidden min-w-[48px] min-h-[48px] w-12 h-12 p-2 rounded-[3px] bg-[#000726]/5 hover:bg-[#B91C1C] text-[#000726] hover:text-white border border-[#000726]/15 hover:border-[#B91C1C] transition-all flex items-center justify-center focus:outline-none cursor-pointer">
+                    <svg class="w-6 h-6 fill-none stroke-current" viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</header>

@@ -1,0 +1,229 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WesternDecor from '../components/WesternDecor.astro';
+---
+
+<Layout
+    title="Guia de Compra & Atacado — Como Comprar na Indiana Ranch"
+    description="Passo a passo transparente para adquirir equipamentos western na Indiana Ranch. Condições especiais para lojistas (CNPJ) e consultoria técnica individual para criadores e cavaleiros."
+    currentPath="/como-comprar"
+>
+    <!-- ========================================================= -->
+    <!-- HERO DA PÁGINA COMO COMPRAR -->
+    <!-- ========================================================= -->
+    <section class="py-14 sm:py-20 bg-paper-texture border-b border-divider-rustic relative overflow-hidden">
+        <WesternDecor type="oak-acorn" class="absolute top-2 left-2 w-36 h-36 sm:w-48 sm:h-48" opacity="opacity-30" />
+        <WesternDecor type="sheridan-corner" flip="both" class="absolute bottom-4 right-4 w-40 h-40 sm:w-52 sm:h-52" opacity="opacity-30" />
+
+        <div class="container-shell relative z-10">
+            <!-- BREADCRUMB -->
+            <nav aria-label="Navegação estrutural" class="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-6 uppercase tracking-wider">
+                <a href="/" class="hover:text-[#B91C1C] transition-colors">Início</a>
+                <span class="text-slate-300">/</span>
+                <span class="text-[#B91C1C] font-bold">Como Comprar</span>
+            </nav>
+
+            <div class="max-w-3xl">
+                <span class="badge-indiana px-3.5 py-1.5 inline-block mb-3 rounded-[3px]">Atendimento Consultivo & Seguro</span>
+                <h1 class="font-western text-3xl sm:text-5xl lg:text-6xl text-[#000726] tracking-tight leading-tight">
+                    COMO COMPRAR NA INDIANA RANCH
+                </h1>
+                <p class="text-slate-700 text-sm sm:text-base lg:text-lg mt-4 leading-relaxed font-sans">
+                    Criamos um modelo de atendimento ágil e humanizado que alia a conveniência digital à segurança da consultoria técnica por quem realmente entende de cavalos, arreamentos e pistas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- OS DOIS CANAIS DE COMPRA: VAREJO VS ATACADO -->
+    <!-- ========================================================= -->
+    <section class="py-16 sm:py-20 bg-white border-b border-divider-rustic relative">
+        <div class="container-shell space-y-16">
+
+            <!-- CANAL 1: PARA CRIADORES, CAVALEIROS & ATLETAS (VAREJO) -->
+            <div>
+                <div class="border-b border-slate-200 pb-4 mb-8">
+                    <span class="text-[11px] font-bold uppercase tracking-widest text-[#B91C1C] block">Canal 01 • Varejo Especializado</span>
+                    <h2 class="font-western text-2xl sm:text-3xl text-[#000726] mt-1">Para Criadores, Atletas & Cavaleiros</h2>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-1">Atendimento individualizado focado na anatomia do seu cavalo e modalidade de prova.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Passo 1 -->
+                    <div class="relative bg-paper-texture border border-[#000726]/30 p-6 rounded-[3px] flex flex-col justify-between shadow-xs group hover:border-[#B91C1C] transition-colors">
+                        <div class="pointer-events-none absolute inset-1.5 border border-dashed border-[#000726]/20 rounded-[2px]"></div>
+                        <div class="relative z-10 space-y-3">
+                            <span class="w-8 h-8 rounded-[2px] bg-[#000726] text-white flex items-center justify-center font-western text-sm">1</span>
+                            <h3 class="font-bold text-sm text-[#000726] uppercase tracking-wide">Escolha & Consultoria</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Navegue pelo nosso catálogo ou envie fotos do dorso do animal e descreva sua modalidade (Team Roping, Tambor, Rédeas ou Trabalho).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Passo 2 -->
+                    <div class="relative bg-paper-texture border border-[#000726]/30 p-6 rounded-[3px] flex flex-col justify-between shadow-xs group hover:border-[#B91C1C] transition-colors">
+                        <div class="pointer-events-none absolute inset-1.5 border border-dashed border-[#000726]/20 rounded-[2px]"></div>
+                        <div class="relative z-10 space-y-3">
+                            <span class="w-8 h-8 rounded-[2px] bg-[#000726] text-white flex items-center justify-center font-western text-sm">2</span>
+                            <h3 class="font-bold text-sm text-[#000726] uppercase tracking-wide">Fotos Reais do Estoque</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Pelo WhatsApp, nossa equipe envia fotos em alta definição do item em estoque, confirma medidas e calcula o frete mais rápido.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Passo 3 -->
+                    <div class="relative bg-paper-texture border border-[#000726]/30 p-6 rounded-[3px] flex flex-col justify-between shadow-xs group hover:border-[#B91C1C] transition-colors">
+                        <div class="pointer-events-none absolute inset-1.5 border border-dashed border-[#000726]/20 rounded-[2px]"></div>
+                        <div class="relative z-10 space-y-3">
+                            <span class="w-8 h-8 rounded-[2px] bg-[#000726] text-white flex items-center justify-center font-western text-sm">3</span>
+                            <h3 class="font-bold text-sm text-[#000726] uppercase tracking-wide">Pagamento Seguro</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Pagamento via PIX com desconto à vista ou parcelado no cartão de crédito. Emissão automática de Nota Fiscal Eletrônica.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Passo 4 -->
+                    <div class="relative bg-paper-texture border border-[#000726]/30 p-6 rounded-[3px] flex flex-col justify-between shadow-xs group hover:border-[#B91C1C] transition-colors">
+                        <div class="pointer-events-none absolute inset-1.5 border border-dashed border-[#000726]/20 rounded-[2px]"></div>
+                        <div class="relative z-10 space-y-3">
+                            <span class="w-8 h-8 rounded-[2px] bg-[#B91C1C] text-white flex items-center justify-center font-western text-sm">4</span>
+                            <h3 class="font-bold text-sm text-[#000726] uppercase tracking-wide">Expedição & Rastreio</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Despacho imediato a partir do nosso Centro de Distribuição em Indiana/SP, com código de rastreamento enviado via WhatsApp.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CANAL 2: PARA LOJISTAS, AGROPECUÁRIAS & HARAS (ATACADO B2B) -->
+            <div class="pt-8 border-t border-slate-200">
+                <div class="border-b border-slate-200 pb-4 mb-8">
+                    <span class="text-[11px] font-bold uppercase tracking-widest text-[#B91C1C] block">Canal 02 • Atacado Corporativo (CNPJ)</span>
+                    <h2 class="font-western text-2xl sm:text-3xl text-[#000726] mt-1">Para Lojas Agropecuárias, Haras & Centros Hípicos</h2>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-1">Condições comerciais estruturadas com margens atrativas e entrega programada.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- B2B Passo 1 -->
+                    <div class="relative bg-white border-2 border-[#000726] p-6 rounded-[3px] flex flex-col justify-between shadow-sm group hover:-translate-y-0.5 transition-all">
+                        <div class="pointer-events-none absolute inset-1.5 border border-dashed border-[#B91C1C]/35 rounded-[2px]"></div>
+                        <div class="relative z-10 space-y-3">
+                            <span class="w-8 h-8 rounded-[2px] bg-[#000726] text-white flex items-center justify-center font-western text-sm">A</span>
+                            <h3 class="font-bold text-sm text-[#000726] uppercase tracking-wide">Cadastro de CNPJ</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Envie a razão social, CNPJ e inscrição estadual da sua agropecuária ou haras pelo formulário ou WhatsApp comercial.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- B2B Passo 2 -->
+                    <div class="relative bg-white border-2 border-[#000726] p-6 rounded-[3px] flex flex-col justify-between shadow-sm group hover:-translate-y-0.5 transition-all">
+                        <div class="pointer-events-none absolute inset-1.5 border border-dashed border-[#B91C1C]/35 rounded-[2px]"></div>
+                        <div class="relative z-10 space-y-3">
+                            <span class="w-8 h-8 rounded-[2px] bg-[#000726] text-white flex items-center justify-center font-western text-sm">B</span>
+                            <h3 class="font-bold text-sm text-[#000726] uppercase tracking-wide">Tabela com Margens B2B</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Tenha acesso à tabela de atacado com descontos progressivos por volume e margens calculadas para excelente rentabilidade de revenda.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- B2B Passo 3 -->
+                    <div class="relative bg-white border-2 border-[#000726] p-6 rounded-[3px] flex flex-col justify-between shadow-sm group hover:-translate-y-0.5 transition-all">
+                        <div class="pointer-events-none absolute inset-1.5 border border-dashed border-[#B91C1C]/35 rounded-[2px]"></div>
+                        <div class="relative z-10 space-y-3">
+                            <span class="w-8 h-8 rounded-[2px] bg-[#000726] text-white flex items-center justify-center font-western text-sm">C</span>
+                            <h3 class="font-bold text-sm text-[#000726] uppercase tracking-wide">Faturamento & Crédito</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Opções de faturamento programado via boleto bancário para parceiros recorrentes, após análise cadastral rápida.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- B2B Passo 4 -->
+                    <div class="relative bg-white border-2 border-[#000726] p-6 rounded-[3px] flex flex-col justify-between shadow-sm group hover:-translate-y-0.5 transition-all">
+                        <div class="pointer-events-none absolute inset-1.5 border border-dashed border-[#B91C1C]/35 rounded-[2px]"></div>
+                        <div class="relative z-10 space-y-3">
+                            <span class="w-8 h-8 rounded-[2px] bg-[#B91C1C] text-white flex items-center justify-center font-western text-sm">D</span>
+                            <h3 class="font-bold text-sm text-[#000726] uppercase tracking-wide">Logística Fracionada</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Coletas diárias de transportadoras homologadas com seguro de carga ou opção de retirada direta em nosso Centro de Distribuição.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SELO DE GARANTIAS INDIANA RANCH -->
+    <!-- ========================================================= -->
+    <section class="py-16 sm:py-20 bg-paper-texture border-b border-divider-rustic relative">
+        <div class="container-shell">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="badge-indiana px-3 py-1 inline-block mb-2 rounded-[3px]">Segurança & Compromisso</span>
+                <h2 class="font-western text-3xl sm:text-4xl text-[#000726]">AS 3 GARANTIAS INVIOLÁVEIS</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Garantia 1 -->
+                <div class="p-6 bg-white border-2 border-[#000726] rounded-[3px] shadow-sm text-center space-y-3">
+                    <span class="text-3xl block">🛡️</span>
+                    <h3 class="font-bold text-sm text-[#000726] uppercase">Garantia de Encaixe Anatômico</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Se a manta, freio ou sela não se adaptar perfeitamente ao dorso ou boca do animal, orientamos a troca em até 7 dias após o recebimento.
+                    </p>
+                </div>
+
+                <!-- Garantia 2 -->
+                <div class="p-6 bg-white border-2 border-[#000726] rounded-[3px] shadow-sm text-center space-y-3">
+                    <span class="text-3xl block">⚖️</span>
+                    <h3 class="font-bold text-sm text-[#000726] uppercase">Procedência 100% Legalizada</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Todos os produtos importados possuem desembaraço aduaneiro e são comercializados com Nota Fiscal Eletrônica e garantia de fábrica.
+                    </p>
+                </div>
+
+                <!-- Garantia 3 -->
+                <div class="p-6 bg-white border-2 border-[#000726] rounded-[3px] shadow-sm text-center space-y-3">
+                    <span class="text-3xl block">🐎</span>
+                    <h3 class="font-bold text-sm text-[#000726] uppercase">Consultoria por Praticantes</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Você não é atendido por robôs ou atendentes genéricos: nossa equipe conhece a rotina das baias, pistas de laço e treino de tambor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- CTA FINAL DE COMPRA -->
+    <!-- ========================================================= -->
+    <section class="py-16 bg-white relative">
+        <div class="container-shell">
+            <div class="bg-[#000726] text-white rounded-[3px] p-8 sm:p-12 text-center max-w-4xl mx-auto shadow-xl border-t-4 border-[#B91C1C]">
+                <h2 class="font-western text-2xl sm:text-4xl text-white">PRONTO PARA MONTAR SEU PEDIDO?</h2>
+                <p class="text-slate-300 text-xs sm:text-sm max-w-xl mx-auto mt-3 leading-relaxed">
+                    Fale agora com nosso time de especialistas. Tire dúvidas técnicas ou solicite a tabela corporativa de atacado para o seu CNPJ.
+                </p>
+                <div class="pt-6 flex flex-wrap items-center justify-center gap-4">
+                    <a href="https://wa.me/5518996652244?text=Ola%2C%20quero%20fazer%20um%20pedido%20na%20Indiana%20Ranch"
+                       target="_blank" rel="noopener"
+                       class="btn btn-indiana-red px-7 py-3 text-xs uppercase font-bold tracking-wider rounded-[3px]">
+                        Iniciar Pedido no WhatsApp &rarr;
+                    </a>
+                    <a href="/contato" class="btn btn-outline border-white/40 text-white hover:bg-white/10 px-7 py-3 text-xs uppercase font-bold tracking-wider rounded-[3px]">
+                        Enviar Cadastro de Lojista
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

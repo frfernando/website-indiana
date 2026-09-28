@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" fill="none">
+  <rect width="300" height="120" rx="3" fill="#FFFFFF"/>
+  <circle cx="150" cy="45" r="28" fill="#7F1D1D" stroke="#000726" stroke-width="2"/>
+  <path d="M 142 55 C 145 42, 155 35, 158 48 Z" fill="#FFFFFF"/>
+  <text x="50%" y="96" text-anchor="middle" font-family="'Oswald', sans-serif" font-weight="900" font-size="30" fill="#000726" letter-spacing="4">
+    CINCH
+  </text>
+  <text x="50%" y="110" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="8" fill="#991B1B" letter-spacing="3">
+    WESTERN WEAR & DENIM
+  </text>
+</svg>

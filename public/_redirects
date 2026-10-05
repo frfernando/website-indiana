@@ -3,3 +3,9 @@
 /webmail/* https://webmail.indianaranch.com.br/  302
 /cpanel   https://cpanel.indianaranch.com.br/   302
 /cpanel/*  https://cpanel.indianaranch.com.br/   302
+
+# Redirecionamento 301 de postagens descontinuadas do blog para a listagem oficial
+/blog/caneleiras-e-boleteiras-protecao-equina-pistas/ /blog 301
+/blog/caneleiras-e-boleteiras-protecao-equina-pistas /blog 301
+/blog/marcas-importadas-western-classic-equine-willard-brasil/ /blog 301
+/blog/marcas-importadas-western-classic-equine-willard-brasil /blog 301

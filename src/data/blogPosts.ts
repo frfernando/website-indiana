@@ -306,106 +306,6 @@ export const blogPosts: BlogPost[] = [
     }
   },
   {
-    slug: 'marcas-importadas-western-classic-equine-willard-brasil',
-    title: 'Marcas importadas no Brasil: onde comprar Classic Equine, Willard e Cactus com procedência',
-    description: 'Saiba como identificar equipamentos western importados originais com nota fiscal, garantia e pronta entrega imediata.',
-    category: 'Marcas Oficiais',
-    filterCat: 'lacos',
-    badge: 'Marcas Originais',
-    date: '02 Set 2026',
-    readTime: '5 min',
-    author: 'Departamento de Importação Indiana Ranch',
-    image: '/images/blog/marcas-importadas-western-classic-equine-willard-brasil.avif',
-    bullets: [
-      'Diferença entre produtos importados oficiais e réplicas',
-      'Catálogo Classic Equine, Willard Rope e Cactus Ropes',
-      'Garantia de procedência e nota fiscal de importação'
-    ],
-    faq: [
-      {
-        question: 'Como saber se uma corda Willard ou Classic Equine é original?',
-        answer: 'Todos os produtos oficiais importados pela Indiana Ranch possuem etiquetas e lacres de fábrica com numeração de lote, além de serem acompanhados por nota fiscal eletrônica brasileira.'
-      },
-      {
-        question: 'A Indiana Ranch tem pronta entrega de produtos americanos?',
-        answer: 'Sim, mantemos um dos maiores centros de distribuição do Brasil em Indiana/SP com estoque físico de pronta entrega para lojistas e consumidores finais.'
-      }
-    ],
-    content: {
-      intro: 'Com a expansão dos esportes equestres no Brasil, o mercado foi inundado por falsificações e réplicas de baixa qualidade que copiam o design de marcas americanas líderes, mas utilizam nylon frágil e costuras que se rompem sob tração.',
-      sections: [
-        {
-          heading: '1. A Tradição das Marcas que Dominam a NFR (National Finals Rodeo)',
-          text: [
-            'Marcas como Classic Equine, Willard Rope Co., Fast Back Ropes e Cactus Gear são o padrão adotado pelos maiores laçadores e treinadores dos Estados Unidos.',
-            'A precisão do balanceamento dessas cordas e o corte anatômico das caneleiras são resultado de décadas de testes biomecânicos e desenvolvimento com atletas campeões.'
-          ]
-        },
-        {
-          heading: '2. Importação Legalizada e Segurança na Compra',
-          text: [
-            'Ao comprar através de canais não oficiais ou importadores informais, o cliente perde o direito à garantia contra defeitos de fabricação e corre o risco de apreensão fiscal.',
-            'A Indiana Ranch é importadora e distribuidora registrada há mais de 30 anos, fornecendo mercadoria 100% legalizada com despacho diário para todas as regiões do Brasil.'
-          ],
-          tip: 'Segurança: Exija sempre nota fiscal com a descrição exata da marca e modelo do equipamento adquirido.'
-        }
-      ],
-      conclusion: 'Invista no melhor que o mercado mundial oferece com a tranquilidade da distribuição oficial da Indiana Ranch.'
-    },
-    relatedCategory: {
-      title: 'Marcas Importadas Oficiais',
-      desc: 'Confira nosso catálogo de marcas internacionais consagradas com estoque imediato.',
-      href: '/#marcas'
-    }
-  },
-  {
-    slug: 'caneleiras-e-boleteiras-protecao-equina-pistas',
-    title: 'Caneleiras e boleteiras: como evitar lesões tendíneas em pistas pesadas',
-    description: 'Análise técnica sobre densidade do neoprene ventilado, fixação anatômica e proteção de ligamentos flexores em giros e paradas bruscas.',
-    category: 'Proteção Equina',
-    filterCat: 'protecao',
-    badge: 'Proteção Equina',
-    date: '28 Ago 2026',
-    readTime: '5 min',
-    author: 'Equipe Técnica Indiana Ranch',
-    image: '/images/blog/caneleiras-e-boleteiras-protecao-equina-pistas.avif',
-    bullets: [
-      'Proteção contra choque entre membros opostos',
-      'Fecho de velcro quadruplo de alta aderência',
-      'Prevenção de hipertermia nos tendões'
-    ],
-    faq: [
-      {
-        question: 'Qual a diferença entre caneleira de proteção frontal e protetor de boleto?',
-        answer: 'A caneleira protege os tendões flexores contra o choque das patas traseiras durante giros rápidos. O protetor de boleto e as campânulas protegem a coroa do casco e evitam lesões graves de alcance quando a pata de trás atinge o talão da pata dianteira.'
-      }
-    ],
-    content: {
-      intro: 'Em provas de alta performance como Três Tambores e Laço, a carga exercida sobre os tendões flexores superficiais e profundos do cavalo pode ultrapassar várias centenas de quilos por passada. Equipamentos de proteção de alta densidade atuam absorvendo a onda de choque antes que ela sobrecarregue os ligamentos.',
-      sections: [
-        {
-          heading: '1. O Neoprene Ventilado e o Risco de Hipertermia',
-          text: [
-            'O tendão equino é sensível a temperaturas elevadas. Protetores selados de borracha barata funcionam como estufas, aquecendo o tendão além do limite seguro.',
-            'Nossa linha de caneleiras utiliza neoprene perfurado com canais de escoamento térmico e forro antibacteriano, mantendo os tendões estabilizados sem acúmulo de calor prejudicial.'
-          ]
-        },
-        {
-          heading: '2. Ajuste e Fixação com Velcro Militar',
-          text: [
-            'A pressão do fechamento deve ser uniforme em toda a extensão do cano. Fechar com força excessiva interrompe o fluxo linfático, enquanto fecho frouxo permite entrada de areia entre o protetor e a pele, agindo como uma lixa durante as paradas bruscas.'
-          ]
-        }
-      ],
-      conclusion: 'Proteger hoje é garantir que seu animal de pistas compita com saúde e integridade por muitos anos.'
-    },
-    relatedCategory: {
-      title: 'Linha de Proteção Equina',
-      desc: 'Caneleiras anatômicas, boleteiras e campânulas de alta densidade com pronta entrega.',
-      href: '/categorias#protecao'
-    }
-  },
-  {
     slug: 'passo-a-passo-comprar-selaria-atacado-distribuidora',
     title: 'Como comprar selaria no atacado direto da distribuidora com CNPJ: guia para lojistas',
     description: 'Tudo o que lojistas e donos de casas agropecuárias precisam saber para se cadastrar, acessar preços de fábrica e receber mercadoria com nota fiscal.',
@@ -424,7 +324,7 @@ export const blogPosts: BlogPost[] = [
     faq: [
       {
         question: 'Qual o valor do pedido mínimo para comprar no atacado?',
-        answer: 'Trabalhamos com condições flexíveis para que lojas de todos os portes possam manter seus estoques abastecidos sem imobilizar grandes volumes de capital. Consulte a tabela atualizada no WhatsApp comercial (18) 99665-2244.'
+        answer: 'O pedido mínimo para abertura de cadastro no atacado B2B é de R$ 5.000,00 fracionado, permitindo que a sua loja física monte uma grade completa e diversificada com as marcas líderes. Consulte a tabela atualizada no WhatsApp comercial (18) 99665-2244.'
       },
       {
         question: 'A Indiana Ranch atende lojas em outros estados?',
@@ -459,7 +359,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'gestao-estoque-selaria-lojas-agropecuarias',
-    title: 'Gestão de estoque de selaria para lojas agropecuárias e haras',
+    title: 'Gestão de estoque de selaria para lojas agropecuárias e revendas country',
     description: 'Estratégias comprovadas para montar um mix de produtos western de alto giro e margem sólida no atacado.',
     category: 'Atacado & B2B',
     filterCat: 'b2b',
@@ -480,7 +380,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     content: {
-      intro: 'Lojas agropecuárias e pet shops que inserem um setor de selaria e moda country de alta qualidade conseguem elevar o ticket médio de compra em mais de 40%, atraindo produtores rurais, treinadores e criadores da região.',
+      intro: 'Lojas físicas agropecuárias e selarias que inserem um setor de moda country e artigos de montaria de alta qualidade conseguem elevar o ticket médio de compra em mais de 40%, atraindo grande movimento para o balcão e fortalecendo as vendas da loja física.',
       sections: [
         {
           heading: '1. Produtos de Curva A: Giro Contínuo',
@@ -500,7 +400,7 @@ export const blogPosts: BlogPost[] = [
     },
     relatedCategory: {
       title: 'Seja um Revendedor Credenciado',
-      desc: 'Solicite a tabela B2B de atacado com condições exclusivas para lojistas e haras.',
+      desc: 'Solicite a tabela B2B de atacado com condições exclusivas para lojistas e revendas agropecuárias.',
       href: '/contato'
     }
   },

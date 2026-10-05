@@ -7,13 +7,13 @@ const faqs = [
         num: "1",
         categoria: "Cadastro & Acesso B2B",
         pergunta: "Quem tem direito à tabela de atacado e quais os requisitos para cadastro de CNPJ?",
-        resposta: "Atendemos pessoas jurídicas com CNPJ ativo nos ramos agropecuário, selarias, agrocomerciais, lojas country e western, pet shops, cooperativas rurais, haras e centros de treinamento equestre (inclusive MEI com atividade comercial). Para liberação da tabela atacadista e condições B2B, basta informar o número do CNPJ, Inscrição Estadual (quando aplicável) e dados de contato dos responsáveis de compras."
+        resposta: "Nosso canal B2B atende exclusivamente lojistas com CNPJ ativo proprietários de lojas físicas nos segmentos de agropecuária, selaria, casa de ração e loja country de balcão e vitrine (inclusive MEI comercial). Para liberação da tabela de atacado e condições B2B, basta informar o CNPJ da sua loja física, Inscrição Estadual (quando aplicável) e dados de contato do responsável por compras."
     },
     {
         num: "2",
         categoria: "Investimento & Giro",
         pergunta: "Qual é o valor do pedido mínimo para abertura de cadastro e para reposições de estoque?",
-        resposta: "Para o primeiro pedido de abertura de cadastro, o valor mínimo é acessível — a partir de R$ 1.500,00 —, pensado especificamente para que sua loja monte um mix inicial de alta demanda sem imobilizar grande volume de capital. Nas compras subsequentes de reposição, o piso mínimo é flexibilizado para que você mantenha sua vitrine sempre abastecida e com giro rápido."
+        resposta: "Para o primeiro pedido de abertura de cadastro no atacado, o valor mínimo é de R$ 5.000,00 fracionado. Esse valor permite que sua loja física monte um mix representativo com mantas, arreios, protetores equinos e acessórios das marcas mais procuradas, sem obrigatoriedade de caixas ou grades fechadas. Nas compras subsequentes de reposição de estoque, oferecemos condições ágeis e flexíveis para manter suas prateleiras sempre abastecidas."
     },
     {
         num: "3",
@@ -23,15 +23,15 @@ const faqs = [
     },
     {
         num: "4",
-        categoria: "Faturamento & Crédito",
-        pergunta: "Como funciona a análise de crédito e o faturamento via boleto bancário a prazo?",
-        resposta: "O primeiro pedido geralmente é liquidado à vista via Pix com desconto financeiro comercial ou no cartão de crédito corporativo em até 6x. A partir do preenchimento da ficha cadastral com referências comerciais e aprovação pelo nosso setor de crédito, liberamos faturamento programado por Boleto Bancário (prazos usuais de 28, 30 ou 30/60 dias), possibilitando que sua loja gire as vendas antes do pagamento da fatura."
+        categoria: "Formas de Pagamento",
+        pergunta: "Quais são as formas de pagamento aceitas para compras no atacado? A Indiana Ranch trabalha com boleto?",
+        resposta: "As compras no atacado são realizadas exclusivamente via Pix à vista com desconto comercial de atacado. A Indiana Ranch não trabalha com cartão de crédito nem boleto bancário, política que nos permite repassar o menor custo de fábrica e as melhores margens de lucro direto aos lojistas parceiros, garantindo emissão de NF-e e despacho expresso sem taxas ou intermediações financeiras."
     },
     {
         num: "5",
         categoria: "Segurança Fiscal & Procedência",
         pergunta: "Todos os produtos importados possuem Nota Fiscal Eletrônica (NF-e) e desembaraço alfandegário oficial?",
-        resposta: "Sim, com 100% de conformidade fiscal e jurídica. Todas as marcas internacionais que importamos (Classic Equine, Weaver Leather, Cactus Ropes, Fast Back Ropes, Willard, Heel-O-Matic) e nossas manufaturas nacionais próprias (Top Equine e Austin Western) são faturadas com Nota Fiscal Eletrônica com CFOP de revenda, lote rastreável e desembaraço aduaneiro regularizado. Sua empresa comercializa itens de procedência atestada, livre de riscos fiscais."
+        resposta: "Sim, com 100% de conformidade fiscal e jurídica. Todas as marcas internacionais que importamos (Professional's Choice, Weaver Leather, Fast Back Ropes, Willard, Heel-O-Matic) e nossas manufaturas nacionais próprias (Top Equine e Austin Western) são faturadas com Nota Fiscal Eletrônica com CFOP de revenda, lote rastreável e desembaraço aduaneiro regularizado. Sua empresa comercializa itens de procedência atestada, livre de riscos fiscais."
     },
     {
         num: "6",
@@ -68,7 +68,7 @@ const faqs = [
 
 <Layout
     title="Dúvidas Frequentes & Condições B2B — FAQ Indiana Ranch"
-    description="Respostas completas para lojistas e revendedores country sobre pedido mínimo, faturamento no CNPJ, margens de lucro, despacho em 24h e garantias da Indiana Ranch."
+    description="Respostas completas para lojistas e revendedores do comércio agropecuário sobre pedido mínimo, faturamento no CNPJ, margens de lucro, despacho em 24h e garantias da Indiana Ranch."
     currentPath="/faq"
     faqItems={faqs}
 >
@@ -90,10 +90,10 @@ const faqs = [
             <div class="max-w-3xl">
                 <span class="badge-indiana px-3.5 py-1.5 inline-block mb-3 rounded-[3px]">Distribuição Atacadista • Parceria Comercial</span>
                 <h1 class="font-western text-3xl sm:text-5xl lg:text-6xl text-[#000726] tracking-tight leading-tight">
-                    DÚVIDAS FREQUENTES DE LOJISTAS & HARAS
+                    DÚVIDAS FREQUENTES DE LOJISTAS & REVENDA
                 </h1>
                 <p class="text-slate-700 text-sm sm:text-base lg:text-lg mt-4 leading-relaxed font-sans">
-                    Tudo o que sua loja country, agropecuária ou haras precisa saber para abastecer o balcão com as marcas líderes mundiais: pedido mínimo fracionado, faturamento no CNPJ, margens de lucro, logística ágil e segurança fiscal.
+                    Tudo o que sua loja física, agropecuária ou selaria precisa saber para abastecer prateleiras e balcão com as marcas líderes mundiais: pedido mínimo fracionado, faturamento no CNPJ, margens de revenda sólidas, logística ágil e segurança fiscal.
                 </p>
                 <div class="flex flex-wrap gap-4 mt-6 text-xs text-slate-600 font-medium">
                     <div class="flex items-center gap-1.5">

@@ -100,11 +100,14 @@ export async function sendResendEmail(options: SendEmailOptions): Promise<SendEm
  */
 export function buildContactNotificationHtml(data: ContactFormData, meta: { ip?: string; userAgent?: string; timestamp?: string }): string {
     const profileLabels: Record<string, string> = {
-        lojista: 'Lojista / Revenda Agropecuária (Atacado)',
-        haras: 'Haras / Centro de Treinamento',
+        lojista: 'Lojista / Loja Agropecuária Física (Atacado)',
+        selaria: 'Selaria / Loja Country com Balcão',
+        casa_racao: 'Casa de Ração & Produtos Veterinários',
+        outro_comercio: 'Outra Loja ou Comércio Físico',
+        consumidor: 'Consumidor Final / Cavaleiro',
         competidor: 'Competidor / Atleta de Prova',
         veterinario: 'Veterinário / Ferrador',
-        consumidor: 'Consumidor Final / Proprietário'
+        haras: 'Outra Loja ou Comércio Físico'
     };
 
     const cleanProfile = profileLabels[data.profile] || data.profile;

@@ -16,13 +16,13 @@ Documento detalhado de contexto institucional, especificações de produtos, mar
 
 ## 2. Marcas Importadas e Representadas
 
-### Classic Equine (EUA)
+### Professional's Choice (EUA)
 - Referência máxima em medicina e proteção esportiva equina.
-- Tecnologias: Caneleiras Legacy2 (sistema de suporte do boleto e suspensor), mantas Zone Pad com inserção Zoombang (polímero não newtoniano que dissipa até 90% do impacto), cloches Dyno No-Turn com formato anatômico que não gira na pata.
+- Tecnologias: Caneleiras ortopédicas SMB (Sports Medicine Boots com suporte do boleto e suspensor), mantas anatômicas e protetores de alta absorção de impacto.
 
-### Cactus Ropes (EUA)
-- Desenvolvido em parceria com campeões mundiais de laço como Trevor Brazile e Stran Smith.
-- Linhas consagradas: Laço C4, Bad Boy, Thrilla, laços de pezeiro (heel) e cabeceiro (head) com tratamento em cera especial para resistência climática tropical.
+### Willard Rope Co. (EUA)
+- Fabricação tradicional de cordas e laços para Team Roping e bezerro.
+- Precisão de peso, corpo e calibragem resistente ao calor para provas e trabalho na arena.
 
 ### Weaver Leather (EUA)
 - Fábrica sediada em Mt. Hope, Ohio, com tradição artesanal amish.
@@ -53,12 +53,10 @@ Documento detalhado de contexto institucional, especificações de produtos, mar
 
 ## 4. Políticas Comerciais e Atendimento B2B
 - **Público Atendido:**
-  - Lojas agropecuárias e revendas country em todo o Brasil.
-  - Haras, centros hípicos e centros de treinamento (CTs).
-  - Atletas profissionais e competidores de provas equestres.
-  - Consumidores finais (orientação para revendedores autorizados).
+  - Lojas físicas agropecuárias, selarias e comércios country locais em todo o Brasil.
+  - Revendas com ponto de venda físico, balcão de atendimento e vitrine.
 - **Condições para Lojistas:**
-  - Pedido mínimo inicial flexível para abertura de cadastro com CNPJ ativo no ramo de artigos agropecuários, calçados ou vestuário.
+  - Pedido mínimo inicial de R$ 5.000,00 fracionado para abertura de cadastro com CNPJ ativo no ramo de artigos agropecuários, calçados ou vestuário.
   - Faturamento com prazos diferenciados mediante aprovação cadastral.
   - Expedição rápida via transportadoras credenciadas com rastreio direto da Estância Indiana.
 - **Autenticidade e Garantia:**

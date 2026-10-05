@@ -32,9 +32,6 @@ Documento detalhado de contexto institucional, especificações de produtos, mar
 - Foco em precisão milimétrica, consistência de laçada no calor brasileiro e equilíbrio dinâmico.
 - Modelos: Mach 3, Cobalt, Ultimate.
 
-### Heel-O-Matic (EUA)
-- Simuladores mecânicos de boi e novilho para treinamento de Team Roping e Laço Individual.
-
 ### Martin Saddlery (EUA)
 - Selaria construída artesanalmente sob medida para conformações anatômicas de Quarto de Milha, Paint Horse e Crioulo.
 
